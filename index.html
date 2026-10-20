@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Obscura Graphica | Compendium of Epistemic Diagrams, Topologies &amp; Visual Calculi</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- SVG Paper Texture Effect -->
+    <svg class="paper-grain" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <filter id="grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.15 0"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#grain)" />
+    </svg>
+
+    <!-- Global Delegated Tooltip Element -->
+    <div id="diagram-tooltip" class="tooltip" role="tooltip"></div>
+
+    <!-- MAIN PAGE CONTAINER -->
+    <div class="container">
+
+        <!-- HEADER / MASTHEAD -->
+        <header class="masthead">
+            <div class="top-banner">
+                <span>VOL. IX — NO. 108 • ARCHIVAL EDITION</span>
+                <span class="small-caps">A Treasury of Non-Euclidean Topologies, Ontological Calculi, Literary Chronotopes &amp; Combinatory Machines</span>
+                <span>CIRCA 270 AD – 1988</span>
+            </div>
+            <div class="masthead-title-wrap">
+                <h1 class="masthead-title">Atlas Obscura Graphica</h1>
+                <p class="masthead-subtitle">
+                    An Editorial Compendium of Experimental, Esoteric, Theoretical, Avant-Garde, Metaphysical &amp; Progressively Minimalist Knowledge Visuals
+                </p>
+                <div class="ornament-line">◆ ◇ ◆ COMPANION TO DIAGRAMMATOLOGY &amp; FORMAL POETICS ◆ ◇ ◆</div>
+            </div>
+        </header>
+
+        <!-- HERO SECTION: FEATURED PLATE / CURIOSITY OF THE DAY -->
+        <section class="hero-curiosity" aria-label="Featured Specimen Stage">
+            <div class="hero-header-bar">
+                <div class="hero-header-left">
+                    <span class="hero-badge">Featured Plate</span>
+                    <span class="mono" id="hero-ref-code" style="font-size: 0.8rem;">PLATE I • REF: CALC-1969-LOF</span>
+                </div>
+                <div class="hero-nav-controls">
+                    <button class="hero-nav-btn" onclick="stepHeroPlate(-1)" title="Previous Plate">← Prev</button>
+                    <select id="hero-plate-select" class="hero-select" onchange="renderHeroStage(this.value)" aria-label="Select Featured Plate"></select>
+                    <button class="hero-nav-btn" onclick="randomizeHeroPlate()" title="Draw Random Curiosity">🎲 Draw Plate</button>
+                    <button class="hero-nav-btn" onclick="stepHeroPlate(1)" title="Next Plate">Next →</button>
+                </div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-visual-frame" id="hero-visual-frame">
+                    <div id="hero-svg-Mount" style="width: 100%; display: flex; justify-content: center;"></div>
+                    <div class="hero-caption" id="hero-caption">
+                        Figure I — George Spencer-Brown, Laws of Form (1969).
+                    </div>
+                </div>
+
+                <div class="hero-info">
+                    <div>
+                        <div class="hero-meta" id="hero-meta">PROGRESSIVELY MINIMALIST • ONTOLOGICAL CALCULUS</div>
+                        <h2 class="hero-title" id="hero-title">Spencer-Brown’s Laws of Form</h2>
+                        <div class="hero-origin" id="hero-origin">George Spencer-Brown (1969)</div>
+                        <div class="hero-axiom" id="hero-axiom"></div>
+                        <p class="hero-blurb" id="hero-blurb"></p>
+                        <div class="use-case-box">
+                            <strong id="hero-use-case-label">Epistemic &amp; Systems Resonance:</strong>
+                            <span id="hero-use-case-text"></span>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Triad Triggers -->
+                    <div class="action-triad" id="hero-action-triad"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTROLS: TAXONOMY FILTERS, SEARCH & PROGRESSIVE MINIMALISM VIEW MODES -->
+        <section class="controls-section" aria-label="Taxonomy and Display Controls">
+            <div class="controls-top-row">
+                <div class="filter-group">
+                    <span class="filter-label">Epistemic Taxonomy:</span>
+                    <button class="filter-chip active" data-cat="all" data-label="All Plates" onclick="filterGrid('all', this)">All Plates (38)</button>
+                    <button class="filter-chip" data-cat="minimalist" data-label="Progressively Minimalist" onclick="filterGrid('minimalist', this)">Progressively Minimalist</button>
+                    <button class="filter-chip" data-cat="theoretical" data-label="Theoretical &amp; Philosophical" onclick="filterGrid('theoretical', this)">Theoretical &amp; Philosophical</button>
+                    <button class="filter-chip" data-cat="esoteric" data-label="Esoteric &amp; Metaphysical" onclick="filterGrid('esoteric', this)">Esoteric &amp; Metaphysical</button>
+                    <button class="filter-chip" data-cat="experimental" data-label="Experimental &amp; Avant-Garde" onclick="filterGrid('experimental', this)">Experimental &amp; Avant-Garde</button>
+                    <button class="filter-chip" data-cat="hypercomplex" data-label="Hyper-Complex &amp; Nuanced" onclick="filterGrid('hypercomplex', this)">Hyper-Complex &amp; Nuanced</button>
+                    <button class="filter-chip" data-cat="obscure" data-label="Rare &amp; Obscure Historical" onclick="filterGrid('obscure', this)">Rare &amp; Obscure Historical</button>
+                </div>
+            </div>
+
+            <div class="controls-bottom-row">
+                <div class="search-box-wrap">
+                    <label for="atlas-search" class="filter-label" style="margin:0;">Index Query:</label>
+                    <input type="search" id="atlas-search" class="search-input" placeholder="Search thinker, concept, century, or formalism (e.g., Peirce, Oulipo, Spinoza, Thom)..." oninput="handleSearchInput(this.value)">
+                </div>
+
+                <div class="view-mode-group">
+                    <span class="filter-label">Density Mode:</span>
+                    <button class="view-btn active" onclick="setViewMode('compendium', this)">Compendium Grid</button>
+                    <button class="view-btn" onclick="setViewMode('minimalist', this)">Minimalist Plate Atlas</button>
+                    <button class="view-btn" onclick="setViewMode('ledger', this)">Chronological Ledger</button>
+                </div>
+
+                <div class="status-count" id="status-count-readout">
+                    Showing 38 of 38 curated epistemic schemas
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY GRID OF 38 SPECIMENS -->
+        <main class="gallery-grid" id="gallery-grid"></main>
+
+        <!-- CHRONOLOGICAL & TAXONOMIC LEDGER TABLE VIEW -->
+        <section class="ledger-view-container" id="ledger-view" aria-label="Chronological Ledger">
+            <table class="ledger-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Plate</th>
+                        <th>Epistemic Schema / Title</th>
+                        <th>Thinker / Architect</th>
+                        <th>Domain</th>
+                        <th>Formal Mechanisms</th>
+                    </tr>
+                </thead>
+                <tbody id="ledger-tbody"></tbody>
+            </table>
+        </section>
+
+        <!-- COLOPHON / FOOTER -->
+        <footer class="colophon">
+            <div class="colophon-grid">
+                <div class="colophon-section">
+                    <h4>I. Scope of the Compendium</h4>
+                    <p>Dedicated to the preservation, philosophical exegesis, and algorithmic reconstruction of non-standard epistemic diagrams—from medieval rotary volvelles and two-dimensional concept-scripts to Oulipian matrices and radical minimalist calculi.</p>
+                </div>
+                <div class="colophon-section">
+                    <h4>II. Philosophical &amp; Literary Canon</h4>
+                    <p>Featuring G. Spencer-Brown, Edmund Husserl, C. S. Peirce, Gottlob Frege, A. J. Greimas, Gilles Deleuze, Jacques Lacan, Michel Serres, Ramon Llull, Giordano Bruno, Robert Fludd, G. W. Leibniz, Laurence Sterne, Viktor Shklovsky, Stéphane Mallarmé, Georges Perec, Cornelius Cardew, Vladimir Nabokov, Kazimir Malevich, Sol LeWitt, Emma Kunz, Iannis Xenakis, Christopher Alexander, Henri Poincaré, Stafford Beer, Étienne-Jules Marey, W. E. B. Du Bois, Charles Joseph Minard, Joseph Priestley, Porphyry of Tyre, Herman Chernoff, H. Riall Sankey, Florence Nightingale, Paul Klee, Baruch Spinoza, Kurt Lewin, Charles Howard Hinton, Oskar Schlemmer, &amp; René Thom.</p>
+                </div>
+                <div class="colophon-section">
+                    <h4>III. Structural Molds &amp; Apparatus</h4>
+                    <p>Specimens inhabit adaptive archival molds—Standard Plates, Double-Wide Treatises, Nocturnal Camera Obscura Cosmograms, and Minimalist Axiom Frames. Each opens into a 4-tab apparatus with live SVG synthesis and a Chiasmic Collider.</p>
+                </div>
+            </div>
+            <div style="border-top: 1px dashed var(--border-color); padding-top: 16px;">
+                &copy; MMXXVI Atlas Obscura Graphica • Typeset in Garamond/Georgia Serif &amp; Monospace Syntax with Inline Parametric SVG Rendering
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- REUSABLE SCHOLARLY MODAL & INTERACTIVE APPARATUS -->
+    <div class="modal-overlay" id="interactive-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-container">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <h3 id="modal-title">Diagram Title</h3>
+                    <span id="modal-subtitle">Historical Schema Subtitle</span>
+                </div>
+                <div class="modal-header-actions">
+                    <button class="modal-step-btn" onclick="stepModalPlate(-1)" title="Previous Plate (←)">← Prev Plate</button>
+                    <button class="modal-step-btn" onclick="stepModalPlate(1)" title="Next Plate (→)">Next Plate →</button>
+                    <button class="modal-close" onclick="closeModal()" aria-label="Close Modal">&times;</button>
+                </div>
+            </div>
+
+            <!-- Modal Navigation Tabs -->
+            <div class="modal-nav-tabs">
+                <button class="tab-btn active" id="tab-btn-example" onclick="switchTab('example')">I. Visual Plate &amp; Exegesis</button>
+                <button class="tab-btn" id="tab-btn-script" onclick="switchTab('script')">II. Formal Calculus &amp; Script</button>
+                <button class="tab-btn" id="tab-btn-builder" onclick="switchTab('builder')">III. Interactive Apparatus</button>
+                <button class="tab-btn" id="tab-btn-collider" onclick="switchTab('collider')">IV. Chiasmic Collider</button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="modal-body">
+
+                <!-- TAB 1: VISUAL SPECIMEN & THREE-COLUMN SCHOLARLY EXEGESIS -->
+                <div class="tab-content active" id="tab-content-example">
+                    <div class="interactive-stage" id="example-render-area"></div>
+                    <div class="card-axiom-quote" id="modal-axiom-banner" style="margin-top: 16px; font-size: 0.92rem;"></div>
+
+                    <div class="exegesis-grid">
+                        <div class="exegesis-col">
+                            <h4>I. Epistemological Stakes &amp; Context</h4>
+                            <p id="exegesis-stakes"></p>
+                        </div>
+                        <div class="exegesis-col">
+                            <h4>II. Visual Grammar &amp; Structural Mechanics</h4>
+                            <p id="exegesis-mechanics"></p>
+                        </div>
+                        <div class="exegesis-col">
+                            <h4>III. Intellectual Lineage &amp; Literary Echoes</h4>
+                            <p id="exegesis-lineage"></p>
+                        </div>
+                    </div>
+
+                    <div class="lineage-links-bar">
+                        <strong style="color: var(--accent-teal); text-transform: uppercase; font-size: 0.76rem; letter-spacing: 0.06em;">Connected Epistemic Plates:</strong>
+                        <div id="modal-lineage-chips" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
+                    </div>
+
+                    <div class="use-case-box" style="margin-top: 14px; margin-bottom: 0; background-color: var(--bg-card); border-left-color: var(--accent-rust);">
+                        <strong>Annotated Bibliographic Apparatus (Primary &amp; Critical Sources):</strong>
+                        <p id="modal-bib-primary" style="font-size: 0.85rem; color: var(--ink-primary); margin-top: 4px;"></p>
+                        <p id="modal-bib-secondary" style="font-size: 0.83rem; color: var(--ink-secondary); margin-top: 4px;"></p>
+                    </div>
+                </div>
+
+                <!-- TAB 2: FORMAL NOTATION / USAGE SCRIPT -->
+                <div class="tab-content" id="tab-content-script">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+                        <strong id="script-lang-heading" style="font-size: 0.92rem; color: var(--accent-rust); text-transform: uppercase; letter-spacing: 0.06em;">Formal Calculus &amp; Generative Protocol</strong>
+                        <span class="mono" style="font-size: 0.78rem; color: var(--ink-muted);">Executable Formalism / Reference Implementation</span>
+                    </div>
+                    <div style="position: relative;">
+                        <button class="btn-copy" onclick="copyCode()">Copy Formal Script</button>
+                        <pre class="code-block" id="script-code-area"></pre>
+                    </div>
+                    <div style="margin-top: 14px; font-size: 0.84rem; color: var(--ink-muted); font-style: italic;">
+                        * Formal definitions map historical or philosophical axioms directly to computational data structures and parametric SVG coordinates.
+                    </div>
+                </div>
+
+                <!-- TAB 3: INTERACTIVE GENERATOR APPARATUS -->
+                <div class="tab-content" id="tab-content-builder">
+                    <div class="builder-layout">
+                        <div class="builder-controls" id="builder-form-controls"></div>
+                        <div class="interactive-stage" id="builder-preview-area"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: CHIASMIC COLLIDER (THE FRICTION AGENT) -->
+                <div class="tab-content" id="tab-content-collider">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; background: var(--bg-card); padding: 12px 16px; border: 1px solid var(--border-color);">
+                        <div>
+                            <strong style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-rust);">Epistemic Friction Agent (Chiasmic Intersection)</strong>
+                            <p style="font-size: 0.84rem; color: var(--ink-secondary);">Force the active plate to collide structurally with a second schema from the compendium:</p>
+                        </div>
+                        <select id="collider-partner-select" onchange="updateColliderSynthesis()" style="padding: 7px 12px; font-family: var(--font-serif); font-size: 0.88rem; border: 1px solid var(--border-dark); background: #fff;"></select>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px;">
+                        <div style="background: var(--bg-stage); border: 1px solid var(--border-color); padding: 14px;">
+                            <div id="collider-title-left" class="mono" style="font-size: 0.78rem; font-weight: bold; color: var(--accent-rust); margin-bottom: 8px; text-align: center;"></div>
+                            <div id="collider-svg-left" style="height: 210px; display: flex; align-items: center; justify-content: center;"></div>
+                        </div>
+                        <div style="background: var(--bg-stage); border: 1px solid var(--border-color); padding: 14px;">
+                            <div id="collider-title-right" class="mono" style="font-size: 0.78rem; font-weight: bold; color: var(--accent-teal); margin-bottom: 8px; text-align: center;"></div>
+                            <div id="collider-svg-right" style="height: 210px; display: flex; align-items: center; justify-content: center;"></div>
+                        </div>
+                    </div>
+
+                    <div class="use-case-box" style="margin-bottom: 0;">
+                        <strong>Generated Dialectical Synthesis Prompt (Wildcard Ignition Key):</strong>
+                        <p id="collider-synthesis-prompt" style="font-size: 0.94rem; color: var(--ink-primary); margin-top: 4px; line-height: 1.55;"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/specimens.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

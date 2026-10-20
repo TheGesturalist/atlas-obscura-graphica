@@ -1,0 +1,4111 @@
+/* ==========================================================================
+   ATLAS OBSCURA GRAPHICA — CURATORIAL COMPENDIUM DATABASE (38 PLATES)
+   Spanning Progressively Minimalist, Theoretical, Esoteric, Experimental,
+   Hyper-Complex, and Rare Historical Epistemic Visualizations.
+   ========================================================================== */
+
+const SPECIMEN_LIST = [
+    /* ======================================================================
+       PLATE I — G. SPENCER-BROWN: LAWS OF FORM (1969)
+       ====================================================================== */
+    {
+        id: 'spencer-brown',
+        number: 'PLATE I',
+        refCode: 'REF: CALC-1969-LOF',
+        title: 'Spencer-Brown’s Laws of Form (The Mark of Distinction)',
+        subtitle: 'The Primary Arithmetic & Imaginary Self-Referential Re-Entry (1969)',
+        thinker: 'George Spencer-Brown',
+        year: '1969',
+        yearSort: 1969,
+        provenance: 'London • Allen & Unwin (Prefaced by Bertrand Russell)',
+        category: 'minimalist',
+        categoryLabel: 'Progressively Minimalist • Ontological Calculus',
+        secondaryTags: ['Radical Reduction', 'Distinction Calculus', 'Autopoiesis', 'Re-Entry'],
+        mold: 'wide',
+        axiomQuote: '“Draw a distinction. Call it the first distinction. Call the space in which it is drawn the space severed or cloven by the distinction.” — G. Spencer-Brown',
+        blurb: 'Perhaps the most radically minimalist formal treatise ever printed. Beginning in a featureless void, Spencer-Brown introduces a single right-angled typographic glyph—the Mark (┐)—which simultaneously acts as an injunction to cross a boundary and the name of the marked state. From two purely spatial laws (Calling and Crossing), all of Boolean algebra and self-referential temporal oscillation emerge.',
+        useCaseLabel: 'Epistemic & Systems Resonance',
+        useCase: 'Foundation for Niklas Luhmann’s operative social systems theory, Francisco Varela’s biological calculus of autopoiesis, and self-referential cybernetic state machines where observer and observed cleave from a single act of indication.',
+        triadLabels: ['I. Axiom Plate', 'II. Primary Calculus', 'III. Distinction Engine'],
+        exegesis: {
+            stakes: 'Western logic traditionally assumes a pre-existing world of named objects and binary truth values (True/False) before operations begin. Spencer-Brown strips logic back to a pre-ontological threshold: how does form arise from void at all? Before anything can be observed, a universe must sever itself into an inside (the marked state) and an outside (the unmarked state). The single glyph ┐ fuses operator and operand, command and value, into one indivisible gesture.',
+            mechanics: 'The Primary Arithmetic is governed by two topological reduction rules. Axiom 1 (The Law of Calling / Condensation): two adjacent marks condense into one (┐┐ = ┐), because naming a distinction twice adds no new boundary. Axiom 2 (The Law of Crossing / Cancellation): a mark nested inside a mark cancels into the unmarked void (⟦┐⟧ = ·), because recrossing a boundary returns the observer to the outside. In Chapter 11, Spencer-Brown introduces Re-Entry—a mark that feeds its own tail back into its interior space (f = ⟦f⟧), generating an imaginary state that oscillates in time like √−1.',
+            lineage: 'Praised by Bertrand Russell as "a calculus of great power and simplicity," Laws of Form became the hidden spine of second-order cybernetics (Heinz von Foerster), Francisco Varela’s A Calculus for Self-Reference (1975), Louis Kauffman’s knot logic, and Niklas Luhmann’s Die Gesellschaft der Gesellschaft.'
+        },
+        relatedPlates: ['peirce', 'frege', 'husserl', 'lacan-borromean'],
+        scriptLang: 'Primary Arithmetic Axioms & Recursive Python Reduction Kernel',
+        script: `<span class="code-comment"># G. Spencer-Brown — Laws of Form (1969) Recursive Evaluator</span>
+<span class="code-comment"># Representation: () = Marked State [Cross], empty tuple = Unmarked Void</span>
+<span class="code-comment"># Axiom 1 (Law of Calling):  () ()  ==>  ()       [Condensation]</span>
+<span class="code-comment"># Axiom 2 (Law of Crossing): (( ))  ==>  void     [Cancellation]</span>
+
+<span class="code-keyword">def</span> <span class="code-func">reduce_form</span>(expr):
+    <span class="code-string">"""Recursively reduces any nested Spencer-Brown mark expression to canonical form."""</span>
+    <span class="code-comment"># Step 1: Reduce all interior subspaces first</span>
+    reduced_children = [<span class="code-func">reduce_form</span>(child) <span class="code-keyword">for</span> child <span class="code-keyword">in</span> expr]
+    <span class="code-comment"># Filter out void (empty) subspaces</span>
+    non_void = [c <span class="code-keyword">for</span> c <span class="code-keyword">in</span> reduced_children <span class="code-keyword">if</span> c <span class="code-keyword">is not</span> <span class="code-keyword">None</span>]
+    
+    <span class="code-comment"># Law of Calling: multiple adjacent marks in the same space condense to one</span>
+    <span class="code-keyword">if</span> <span class="code-func">len</span>(non_void) > 0:
+        condensed_interior = non_void[0]  <span class="code-comment"># ┐┐ = ┐</span>
+        <span class="code-comment"># Law of Crossing: if the mark contains an empty mark (()), it cancels to Void</span>
+        <span class="code-keyword">if</span> condensed_interior == ():
+            <span class="code-keyword">return</span> <span class="code-keyword">None</span>  <span class="code-comment"># ⟦┐⟧ = unmarked state (void)</span>
+        <span class="code-keyword">return</span> (condensed_interior,)
+    <span class="code-keyword">return</span> ()  <span class="code-comment"># Single uncrossed mark ┐</span>
+
+<span class="code-comment"># Chapter 11: Imaginary Self-Referential Re-Entry (f = ⟦f⟧)</span>
+<span class="code-keyword">def</span> <span class="code-func">re_entry_stream</span>(steps=8, initial=0):
+    <span class="code-string">"""Simulates temporal autonomy emerged from spatial self-inclusion."""</span>
+    state = initial
+    <span class="code-keyword">for</span> t <span class="code-keyword">in</span> <span class="code-func">range</span>(steps):
+        state = 1 - state  <span class="code-comment"># Oscillation in time resolves contradiction in space</span>
+        <span class="code-keyword">yield</span> f<span class="code-string">"t={t}: {'┐ (Marked)' if state else '· (Void)'}"</span>`,
+        builderControls: [
+            { id: 'depth', label: 'Nested Crossing Depth (n)', type: 'range', min: 1, max: 6, value: 3 },
+            { id: 'adjacent', label: 'Adjacent Calling Marks (m)', type: 'range', min: 1, max: 4, value: 2 },
+            { id: 'reentry', label: 'Chapter 11 Re-Entry Loop', type: 'select', options: ['Enabled (Autonomous Oscillation f = ⟦f⟧)', 'Disabled (Pure Primary Arithmetic)'] }
+        ],
+        renderSvg: (params) => {
+            const depth = params ? parseInt(params.depth) : 3;
+            const adjacent = params ? parseInt(params.adjacent) : 2;
+            const hasReentry = params ? String(params.reentry).startsWith('Enabled') : true;
+            const isMarked = (depth % 2 === 1);
+
+            let nestedMarks = '';
+            const baseX = 55;
+            const baseY = 55;
+            const maxW = 240;
+            const maxH = 140;
+
+            for (let i = 0; i < depth; i++) {
+                const inset = i * 20;
+                const x = baseX + inset;
+                const y = baseY + inset;
+                const w = maxW - inset * 2;
+                const h = maxH - inset * 1.6;
+                const strokeColor = (i === 0) ? '#2b241f' : (i % 2 === 1 ? '#9e3b22' : '#2a5a5b');
+                nestedMarks += `
+                    <g class="interactive-path" data-info="Distinction Depth ${i + 1}: Cleaves interior space m_${i + 1} from exterior m_${i}">
+                        <path d="M ${x} ${y} L ${x + w} ${y} L ${x + w} ${y + h}" fill="none" stroke="${strokeColor}" stroke-width="${2.6 - i * 0.25}" stroke-linecap="square"/>
+                        <text x="${x + 6}" y="${y + 13}" font-family="Courier New" font-size="8.5" fill="${strokeColor}">m${i + 1}</text>
+                    </g>`;
+            }
+
+            let callingMarks = '';
+            const callStartX = 335;
+            for (let j = 0; j < adjacent; j++) {
+                const cx = callStartX + j * 36;
+                callingMarks += `
+                    <g class="interactive-path" data-info="Law of Calling (Axiom 1): Mark ${j + 1} of ${adjacent} condenses to a single Mark">
+                        <path d="M ${cx} 68 L ${cx + 26} 68 L ${cx + 26} 98" fill="none" stroke="#2b241f" stroke-width="2.2"/>
+                    </g>`;
+            }
+
+            const reentryPath = hasReentry ? `
+                <g class="interactive-path" data-info="Imaginary Re-Entry (Ch. 11): The outside of the outermost mark re-enters its deepest interior, creating time (t)">
+                    <path d="M ${baseX + maxW} ${baseY + maxH} L ${baseX + maxW} 218 L ${baseX + (depth - 1) * 20 + 25} 218 L ${baseX + (depth - 1) * 20 + 25} ${baseY + (depth - 1) * 20 + 28}" 
+                          fill="none" stroke="#9e3b22" stroke-width="1.8" stroke-dasharray="4,2"/>
+                    <circle cx="${baseX + (depth - 1) * 20 + 25}" cy="${baseY + (depth - 1) * 20 + 28}" r="3.5" fill="#9e3b22"/>
+                    <text x="${baseX + 75}" y="232" font-family="Georgia" font-style="italic" font-size="9.5" fill="#9e3b22">f = ⟦ f ⟧  (Re-entry into the form: oscillation in time)</text>
+                </g>` : '';
+
+            return `<svg viewBox="0 0 520 260" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="520" height="260" fill="#fdfcf9"/>
+                <!-- Subtle grid of the Unmarked Void -->
+                <line x1="312" y1="20" x2="312" y2="240" stroke="#e2d8c7" stroke-width="1" stroke-dasharray="3,3"/>
+                
+                <text x="55" y="34" font-family="Georgia" font-size="10" fill="#5c5246" letter-spacing="0.06em">I. LAW OF CROSSING (DEPTH = ${depth})</text>
+                ${nestedMarks}
+                ${reentryPath}
+
+                <text x="335" y="34" font-family="Georgia" font-size="10" fill="#5c5246" letter-spacing="0.06em">II. LAW OF CALLING (m = ${adjacent})</text>
+                ${callingMarks}
+                <text x="335" y="122" font-family="Courier New" font-size="10" fill="#5c5246">≡ Condensation (Axiom 1):</text>
+                <path d="M 355 135 L 390 135 L 390 168" fill="none" stroke="#9e3b22" stroke-width="2.5"/>
+
+                <!-- Reduction Verdict Box -->
+                <rect x="335" y="185" width="165" height="52" fill="#f6f2e9" stroke="#2b241f" stroke-width="1"/>
+                <text x="345" y="203" font-family="Courier New" font-size="8.5" fill="#5c5246">CANONICAL REDUCTION:</text>
+                <text x="345" y="223" font-family="Georgia" font-size="11" font-weight="bold" fill="${isMarked ? '#9e3b22' : '#2a5a5b'}">
+                    ${isMarked ? '┐ MARKED STATE (1)' : '· UNMARKED VOID (0)'}
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE II — EDMUND HUSSERL: INTERNAL TIME-CONSCIOUSNESS (1893–1917)
+       ====================================================================== */
+    {
+        id: 'husserl',
+        number: 'PLATE II',
+        refCode: 'REF: PHEN-1905-ZEIT',
+        title: 'Husserl’s Diagram of Internal Time-Consciousness',
+        subtitle: 'The Orthogonal Lattice of Primal Impression, Retention & Protention (1905)',
+        thinker: 'Edmund Husserl',
+        year: '1905',
+        yearSort: 1905,
+        provenance: 'Göttingen / Freiburg • Vorlesungen zur Phänomenologie des inneren Zeitbewußtseins',
+        category: 'minimalist',
+        categoryLabel: 'Progressively Minimalist • Phenomenological Geometry',
+        secondaryTags: ['Phenomenology', 'Retention/Protention', 'Duration', 'Minimalist Axis'],
+        mold: 'minimal',
+        axiomQuote: '“The now-point has for consciousness a comet’s tail of retentions referring to the earlier now-points of the motion.” — Edmund Husserl',
+        blurb: 'How does consciousness hear a melody rather than a series of disconnected, instantaneous acoustic sparks? With austere geometric economy—a horizontal line of advancing Now-points intersected by sinking diagonals—Husserl mapped the two-dimensional thickness of the "Living Present," showing how every instant continuously sinks into retention while projecting a forward horizon of protention.',
+        useCaseLabel: 'Phenomenological & Literary Resonance',
+        useCase: 'Essential model for narrative temporality (Proustian involuntary memory), Derrida’s deconstruction of pure presence in Speech and Phenomena, and recurrent neural/attention window memory decay.',
+        triadLabels: ['I. Phenomenal Lattice', 'II. Temporal Calculus', 'III. Continuum Apparatus'],
+        exegesis: {
+            stakes: 'If consciousness existed solely in an indivisible knife-edge "Now," we could never perceive temporal duration, syntax, or musical phrasing; conversely, if past notes remained present at full intensity, we would hear only a deafening simultaneity of chords. Husserl’s diagram solves this paradox by giving time a second, vertical dimension: the continuous modification of impression into retention.',
+            mechanics: 'The horizontal axis (A — E — P) represents the succession of Primal Impressions (Urimpressionen). As time advances from A to E, the original impression A does not vanish; it slides diagonally downward into the depth of consciousness as A’ (the retention of A at moment E). At a later moment P, E has sunk to E’, while A’ has undergone a retention-of-a-retention into A’’. Every vertical drop line captures the simultaneous harmonic slice of the Living Present.',
+            lineage: 'Edited by Edith Stein and published by Martin Heidegger in 1928, this diagram became the fulcrum of twentieth-century continental philosophy: Maurice Merleau-Ponty reproduced it in Phenomenology of Perception (1945), and Jacques Derrida interrogated its diagonals to formulate the concept of différance (1967).'
+        },
+        relatedPlates: ['spencer-brown', 'priestley', 'marey', 'sterne-shklovsky'],
+        scriptLang: 'Phenomenological Retention Matrix & Continuum Decay Model',
+        script: `<span class="code-comment"># Edmund Husserl — Continuous Modification of the Living Present</span>
+<span class="code-comment"># Horizontal Axis (t): Primal Impressions [Urimpressionen]</span>
+<span class="code-comment"># Vertical Axis (τ):   Retentional Sinking Depth [Abschattung]</span>
+<span class="code-comment"># Diagonal Lines:      Identity of the temporal object sinking into the past</span>
+
+<span class="code-keyword">import</span> math
+
+<span class="code-keyword">def</span> <span class="code-func">living_present_slice</span>(current_t, events, decay_rate=0.35, protention_span=2.0):
+    <span class="code-string">"""Computes the vertical cross-section of consciousness at Now-point current_t."""</span>
+    retentions = []
+    protentions = []
+    
+    <span class="code-keyword">for</span> t_0, label <span class="code-keyword">in</span> events:
+        delta = current_t - t_0
+        <span class="code-keyword">if</span> delta >= 0:
+            <span class="code-comment"># Sinking diagonal: intensity decays exponentially with retentional depth</span>
+            vivacity = math.exp(-decay_rate * delta)
+            prime_order = <span class="code-string">"'"</span> * <span class="code-func">int</span>(delta)
+            retentions.append((label + prime_order, delta, <span class="code-func">round</span>(vivacity, 3)))
+        <span class="code-keyword">elif</span> <span class="code-func">abs</span>(delta) <= protention_span:
+            <span class="code-comment"># Forward-leaning horizon of anticipation (Protention)</span>
+            protentions.append((f<span class="code-string">"→({label})"</span>, <span class="code-func">abs</span>(delta)))
+            
+    <span class="code-keyword">return</span> {<span class="code-string">"now"</span>: current_t, <span class="code-string">"retentional_tail"</span>: retentions, <span class="code-string">"protentional_horizon"</span>: protentions}`,
+        builderControls: [
+            { id: 'sinkAngle', label: 'Retentional Sinking Angle (deg)', type: 'range', min: 25, max: 65, value: 45 },
+            { id: 'nowSlice', label: 'Active Now-Point Slice (t)', type: 'range', min: 1, max: 4, value: 3 },
+            { id: 'protention', label: 'Protentional Horizon Span', type: 'range', min: 20, max: 90, value: 55 }
+        ],
+        renderSvg: (params) => {
+            const angle = params ? parseInt(params.sinkAngle) : 45;
+            const nowIdx = params ? parseInt(params.nowSlice) : 3;
+            const protSpan = params ? parseInt(params.protention) : 55;
+            const slope = Math.tan((angle * Math.PI) / 180) * 0.85;
+
+            const nodes = [
+                { label: 'A', x: 75 },
+                { label: 'B', x: 155 },
+                { label: 'C', x: 235 },
+                { label: 'D', x: 315 },
+                { label: 'E', x: 395 }
+            ];
+            const baseY = 52;
+
+            let diagonals = '';
+            let verticals = '';
+            let annotations = '';
+
+            nodes.forEach((n, i) => {
+                const maxIdx = 4;
+                const endX = nodes[maxIdx].x;
+                const dy = (endX - n.x) * slope * 0.65;
+                diagonals += `
+                    <line x1="${n.x}" y1="${baseY}" x2="${endX}" y2="${baseY + dy}" 
+                          stroke="#2b241f" stroke-width="${i <= nowIdx ? 1.5 : 0.8}" 
+                          stroke-dasharray="${i <= nowIdx ? 'none' : '3,3'}"
+                          class="interactive-path" data-info="Sinking Diagonal of ${n.label}: Tracks how primal impression ${n.label} recedes into retentional continuum ${n.label}' → ${n.label}''"/>`;
+                annotations += `
+                    <circle cx="${n.x}" cy="${baseY}" r="${i === nowIdx ? 4.5 : 3}" fill="${i === nowIdx ? '#9e3b22' : '#2b241f'}"/>
+                    <text x="${n.x}" y="${baseY - 12}" font-family="Georgia" font-size="11" font-weight="${i === nowIdx ? 'bold' : 'normal'}" text-anchor="middle" fill="${i === nowIdx ? '#9e3b22' : '#2b241f'}">${n.label}</text>`;
+            });
+
+            // Active vertical cross-section at nowIdx
+            const activeX = nodes[nowIdx].x;
+            const maxDepthY = baseY + (activeX - nodes[0].x) * slope * 0.65;
+            verticals += `
+                <line x1="${activeX}" y1="${baseY}" x2="${activeX}" y2="${maxDepthY + 12}" stroke="#9e3b22" stroke-width="2.2"
+                      class="interactive-path" data-info="Vertical Slice of Simultaneous Consciousness at Now-Point ${nodes[nowIdx].label}"/>`;
+
+            for (let j = 0; j < nowIdx; j++) {
+                const ry = baseY + (activeX - nodes[j].x) * slope * 0.65;
+                const primes = "'".repeat(nowIdx - j);
+                verticals += `
+                    <circle cx="${activeX}" cy="${ry}" r="3.2" fill="#9e3b22" class="interactive-path" data-info="Retention ${nodes[j].label}${primes}: Past impression ${nodes[j].label} held inside present moment ${nodes[nowIdx].label}"/>
+                    <text x="${activeX + 9}" y="${ry + 4}" font-family="Georgia" font-style="italic" font-size="10" fill="#9e3b22">${nodes[j].label}${primes}</text>`;
+            }
+
+            // Protention cone
+            const protCone = `
+                <g class="interactive-path" data-info="Protentional Horizon: Forward-leaning anticipation projecting ${protSpan}ms into the not-yet">
+                    <polygon points="${activeX},${baseY} ${activeX + protSpan},${baseY - 18} ${activeX + protSpan},${baseY + 26}" fill="#2a5a5b" opacity="0.16" stroke="#2a5a5b" stroke-width="1" stroke-dasharray="3,2"/>
+                    <text x="${activeX + protSpan / 2}" y="${baseY - 22}" font-family="Georgia" font-style="italic" font-size="8.5" text-anchor="middle" fill="#2a5a5b">Protention →</text>
+                </g>`;
+
+            return `<svg viewBox="0 0 500 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="500" height="250" fill="#ffffff"/>
+                <!-- Horizontal Axis of Now-Points -->
+                <line x1="40" y1="${baseY}" x2="465" y2="${baseY}" stroke="#2b241f" stroke-width="1.8"/>
+                <polygon points="465,${baseY - 3.5} 474,${baseY} 465,${baseY + 3.5}" fill="#2b241f"/>
+                <text x="45" y="25" font-family="Courier New" font-size="8.5" fill="#5c5246">HORIZONTAL: SERIES OF PRIMAL NOW-POINTS (URIMPRESSIONEN)</text>
+                
+                ${protCone}
+                ${diagonals}
+                ${verticals}
+                ${annotations}
+
+                <text x="50" y="232" font-family="Georgia" font-style="italic" font-size="9.5" fill="#5c5246">
+                    Vertical Chord at ${nodes[nowIdx].label}: [${nodes.slice(0, nowIdx + 1).map((n, k) => n.label + "'".repeat(nowIdx - k)).join(' ⊕ ')}] — The “Comet’s Tail” of Retention
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE III — CHARLES SANDERS PEIRCE: EXISTENTIAL GRAPHS (1896–1903)
+       ====================================================================== */
+    {
+        id: 'peirce',
+        number: 'PLATE III',
+        refCode: 'REF: LOG-1897-PEIRCE',
+        title: 'Peirce’s Existential Graphs (Alpha, Beta & Gamma Cuts)',
+        subtitle: 'Topological Sheet of Assertion, Sep Cuts & Lines of Identity (1896–1903)',
+        thinker: 'Charles Sanders Peirce',
+        year: '1897',
+        yearSort: 1897,
+        provenance: 'Arisbe, Milford, Pennsylvania • Lowell Lectures & MS 514',
+        category: 'theoretical',
+        categoryLabel: 'Theoretical & Philosophical • Topological Logic',
+        secondaryTags: ['Iconic Logic', 'Diagrammatology', 'Sheet of Assertion', 'Pragmatism'],
+        mold: 'standard',
+        axiomQuote: '“My Existential Graphs are my chef d’œuvre... a moving picture of the action of the mind in thought.” — C. S. Peirce',
+        blurb: 'Rejecting algebraic symbolism as arbitrary and linear, Charles Sanders Peirce invented a purely topological calculus where the blank page itself is the Sheet of Assertion. Conjunction is mere spatial co-presence; negation is a closed oval surgical incision ("Cut" or Sep) severing a region from the sheet; implication is a Scroll (a cut inside a cut); and existence is a heavy continuous Line of Identity.',
+        useCaseLabel: 'Epistemic & Computational Resonance',
+        useCase: 'Direct ancestor of Conceptual Graphs (John Sowa), category-theoretic string diagrams, and non-linear visual theorem provers.',
+        triadLabels: ['I. Sheet of Assertion', 'II. Topological Rules', 'III. Cut Apparatus'],
+        exegesis: {
+            stakes: 'Why must logical reasoning be written as a line of algebraic characters? Peirce argued that deduction is fundamentally diagrammatic and observational: we construct an icon of relations, modify it according to permissive spatial transformations, and observe what new topological configurations emerge. In Existential Graphs, logical connectives (AND, NOT, IMPLIES, EXISTS) are replaced entirely by spatial containment and continuity.',
+            mechanics: 'In the Alpha part (propositional logic), writing P and Q side-by-side on the Sheet of Assertion asserts (P ∧ Q). Drawing a single fine oval Cut around P negates it (¬P). Drawing an outer Cut around P and an inner Cut around Q creates the "Scroll" ¬(P ∧ ¬Q), which is equivalent to material implication (P → Q). In the Beta part (first-order predicate logic), a thick Line of Identity asserts existential quantification (∃x); when that line crosses into an odd-numbered Cut, it automatically becomes universally quantified (∀x).',
+            lineage: 'Long neglected because type-setters could not easily print nested topological ovals, Peirce’s Existential Graphs were championed by Don D. Roberts, Sun-Joo Shin, Frederik Stjernfelt (Diagrammatology, 2007), and Gilles Deleuze.'
+        },
+        relatedPlates: ['spencer-brown', 'frege', 'greimas', 'llull'],
+        scriptLang: 'Peircean Illative Transformation Rules & Topological Compiler',
+        script: `<span class="code-comment"># Charles Sanders Peirce — Alpha & Beta Existential Graph Compiler</span>
+<span class="code-comment"># Sheet of Assertion = Top-level set; Cut(...) = Closed oval negation boundary</span>
+
+<span class="code-keyword">class</span> <span class="code-func">Cut</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self, *contents):
+        self.contents = <span class="code-func">list</span>(contents)  <span class="code-comment"># Juxtaposition on sheet = Conjunction (∧)</span>
+
+    <span class="code-keyword">def</span> <span class="code-func">to_classical_logic</span>(self):
+        inner = <span class="code-string">" ∧ "</span>.join(
+            c.to_classical_logic() <span class="code-keyword">if</span> <span class="code-func">isinstance</span>(c, Cut) <span class="code-keyword">else</span> <span class="code-func">str</span>(c)
+            <span class="code-keyword">for</span> c <span class="code-keyword">in</span> self.contents
+        )
+        <span class="code-comment"># Peircean Scroll Detection: Cut(P, Cut(Q))  <==>  (P → Q)</span>
+        <span class="code-keyword">if</span> <span class="code-func">len</span>(self.contents) == 2 <span class="code-keyword">and</span> <span class="code-func">isinstance</span>(self.contents[1], Cut):
+            antecedent = self.contents[0]
+            consequent = self.contents[1].contents[0]
+            <span class="code-keyword">return</span> f<span class="code-string">"({antecedent} → {consequent})"</span>
+        <span class="code-keyword">return</span> f<span class="code-string">"¬({inner})"</span>
+
+<span class="code-comment"># Beta Graph Example: "Every human is mortal"</span>
+<span class="code-comment"># Inscribed as an Outer Cut containing "x is Human" and an Inner Cut on "x is Mortal"</span>
+scroll_syllogism = <span class="code-func">Cut</span>(<span class="code-string">"Human(x)"</span>, <span class="code-func">Cut</span>(<span class="code-string">"Mortal(x)"</span>))
+<span class="code-func">print</span>(scroll_syllogism.to_classical_logic())  <span class="code-comment"># Outputs: (Human(x) → Mortal(x))</span>`,
+        builderControls: [
+            { id: 'mode', label: 'Peircean Graph Schema', type: 'select', options: ['Scroll of Implication (∀x: Human → Mortal)', 'Contradiction & Double Cut (¬¬P ≡ P)', 'Gamma Modal Broken Cut (Contingency ◊P)'] },
+            { id: 'lineWeight', label: 'Beta Line of Identity Gauge', type: 'range', min: 2, max: 6, value: 4 },
+            { id: 'cutEccentricity', label: 'Sep Oval Enclosure Expansion', type: 'range', min: 80, max: 130, value: 105 }
+        ],
+        renderSvg: (params) => {
+            const mode = params ? params.mode : 'Scroll of Implication (∀x: Human → Mortal)';
+            const lw = params ? parseInt(params.lineWeight) : 4;
+            const rx = params ? parseInt(params.cutEccentricity) : 105;
+
+            const isGamma = String(mode).includes('Gamma');
+            const isDouble = String(mode).includes('Double');
+
+            return `<svg viewBox="0 0 460 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="460" height="250" fill="#fbf8f1"/>
+                <rect x="12" y="12" width="436" height="226" fill="none" stroke="#d8cebe" stroke-width="1"/>
+                <text x="24" y="28" font-family="Courier New" font-size="8.5" fill="#8c8070">SHEET OF ASSERTION (RECTO: UNCONDITIONED TRUTH)</text>
+
+                <!-- Outer Sep Cut (Oddly Enclosed = Negative / Antecedent Area) -->
+                <ellipse cx="230" cy="128" rx="${rx + 60}" ry="76" 
+                         fill="#f4e8e4" fill-opacity="0.45"
+                         stroke="#9e3b22" stroke-width="1.8" 
+                         stroke-dasharray="${isGamma ? '6,4' : 'none'}"
+                         class="interactive-path" data-info="Outer Cut (Sep): Oddly enclosed negative area. In Gamma mode, dashed enclosure denotes modal possibility (¬◊¬)"/>
+
+                <!-- Inner Sep Cut (Evenly Enclosed = Positive / Consequent Area) -->
+                <ellipse cx="295" cy="128" rx="${rx * 0.72}" ry="48" 
+                         fill="#fdfbf7" 
+                         stroke="#2a5a5b" stroke-width="1.8"
+                         class="interactive-path" data-info="Inner Cut: Evenly enclosed positive area (2 cuts = implication consequent)"/>
+
+                <!-- Beta Heavy Line of Identity (Quantifier Ligature) -->
+                <path d="M 145 128 C 195 105, 240 150, 285 128" 
+                      fill="none" stroke="#2b241f" stroke-width="${lw}" stroke-linecap="round"
+                      class="interactive-path" data-info="Beta Line of Identity: Heavy continuous ligature asserting existential identity across the cut boundary"/>
+                <circle cx="145" cy="128" r="${lw + 1}" fill="#2b241f"/>
+                <circle cx="285" cy="128" r="${lw + 1}" fill="#2b241f"/>
+
+                <!-- Rhemes / Predicates -->
+                <text x="135" y="108" font-family="Georgia" font-size="11" font-weight="bold" fill="#2b241f" text-anchor="middle">
+                    ${isDouble ? '— P' : '— is Chimera'}
+                </text>
+                <text x="305" y="108" font-family="Georgia" font-size="11" font-weight="bold" fill="#2a5a5b" text-anchor="middle">
+                    ${isDouble ? '— P (Iterated)' : '— Breathes Fire'}
+                </text>
+
+                <!-- Caption / Formula Readout -->
+                <text x="230" y="226" font-family="Georgia" font-style="italic" font-size="9.5" fill="#5c5246" text-anchor="middle">
+                    Topological Reading: ${isGamma ? 'Gamma Broken Cut: “It is necessary that every Chimera breathes fire”' : (isDouble ? 'Double Cut Involution: ¬( ¬(P) ) ⇔ P' : 'Peircean Scroll: ¬[ ∃x: Chimera(x) ∧ ¬BreathesFire(x) ]')}
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE IV — GOTTLOB FREGE: BEGRIFFSSCHRIFT (1879)
+       ====================================================================== */
+    {
+        id: 'frege',
+        number: 'PLATE IV',
+        refCode: 'REF: LOG-1879-FREGE',
+        title: 'Frege’s Begriffsschrift (Two-Dimensional Concept-Script)',
+        subtitle: 'Spatial Branching Ideography of Pure Thought (Jena, 1879)',
+        thinker: 'Gottlob Frege',
+        year: '1879',
+        yearSort: 1879,
+        provenance: 'Jena • Verlag von Louis Nebert',
+        category: 'minimalist',
+        categoryLabel: 'Progressively Minimalist • Two-Dimensional Logic',
+        secondaryTags: ['Concept-Script', 'Spatial Syntax', 'Analytic Philosophy', '2D Notation'],
+        mold: 'minimal',
+        axiomQuote: '“The comfort of the typesetter is certainly not the summum bonum... Spatial relations on the two-dimensional page reflect logical dependency directly.” — Gottlob Frege',
+        blurb: 'Before Russell and Peano flattened symbolic logic into one-dimensional text strings, Gottlob Frege invented modern predicate logic as a stark two-dimensional circuit diagram. A vertical Judgment Stroke (⊢) ratifies a horizontal Content Stroke (—), while conditional antecedents drop below like perpendicular plumbing hooks and universal quantifiers rest in tiny concave cradles carved into the line.',
+        useCaseLabel: 'Syntactic & Structural Resonance',
+        useCase: 'Abstract syntax tree (AST) visualization, two-dimensional proof assistants, and spatial programming languages that eliminate parentheses altogether.',
+        triadLabels: ['I. Concept-Script', 'II. 2D Grammar', 'III. Stroke Apparatus'],
+        exegesis: {
+            stakes: 'Vernacular human languages suffer from a linear bottleneck: spoken words unfold in one temporal dimension, forcing grammar to smuggle rhetorical emphasis (active vs. passive voice) into logical structure. Frege looked to the two-dimensional surface of the printed page to liberate pure thought from acoustic linearity—eliminating all brackets and parentheses by using vertical branching to represent scope directly.',
+            mechanics: 'Every complete formula begins on the left with a thick vertical Judgment Stroke (Urteilsstrich) joined to a horizontal Content Stroke (Inhaltsstrich). A tiny vertical tick hanging beneath a horizontal stroke denotes Negation. A vertical line dropping down from a horizontal stroke to a lower horizontal stroke denotes Material Implication: the lower branch is the antecedent (Condition), and the upper main trunk is the consequent. A concave dip (—‿—) holding a Gothic letter binds a universal quantifier over the sub-tree to its right.',
+            lineage: 'Though logicians abandoned Frege’s two-dimensional notation due to typesetting expense, it remains the purest spatial realization of analytic philosophy—directly inspiring Wittgenstein’s Tractatus and modern visual AST editors.'
+        },
+        relatedPlates: ['spencer-brown', 'peirce', 'porphyry', 'cardew'],
+        scriptLang: 'Fregean 2D Concept-Script Parser & Linear Equivalency Translator',
+        script: `<span class="code-comment"># Gottlob Frege — Begriffsschrift (1879) 2D-to-Linear Translator</span>
+<span class="code-comment"># In Frege's notation, ONLY two primitives exist:</span>
+<span class="code-comment"># 1. Negation Tick (┬)   2. Conditional Vertical Drop (└─)</span>
+<span class="code-comment"># Conjunction (A ∧ B) is derived as: ¬(A → ¬B)</span>
+
+<span class="code-keyword">class</span> <span class="code-func">FregeStroke</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self, consequent, antecedent=<span class="code-keyword">None</span>, negated=<span class="code-keyword">False</span>, quantifier=<span class="code-keyword">None</span>):
+        self.consequent = consequent  <span class="code-comment"># Upper horizontal trunk</span>
+        self.antecedent = antecedent  <span class="code-comment"># Lower vertical drop branch</span>
+        self.negated = negated        <span class="code-comment"># Vertical negation tick on stroke</span>
+        self.quantifier = quantifier  <span class="code-comment"># Gothic letter in concave hollow ‿</span>
+
+    <span class="code-keyword">def</span> <span class="code-func">linearize</span>(self):
+        core = self.consequent.linearize() <span class="code-keyword">if</span> <span class="code-func">isinstance</span>(self.consequent, FregeStroke) <span class="code-keyword">else</span> self.consequent
+        <span class="code-keyword">if</span> self.antecedent:
+            ant = self.antecedent.linearize() <span class="code-keyword">if</span> <span class="code-func">isinstance</span>(self.antecedent, FregeStroke) <span class="code-keyword">else</span> self.antecedent
+            core = f<span class="code-string">"({ant} → {core})"</span>
+        <span class="code-keyword">if</span> self.quantifier:
+            core = f<span class="code-string">"∀{self.quantifier}{core}"</span>
+        <span class="code-keyword">return</span> f<span class="code-string">"¬{core}"</span> <span class="code-keyword">if</span> self.negated <span class="code-keyword">else</span> core`,
+        builderControls: [
+            { id: 'proposition', label: 'Axiomatic Proposition Type', type: 'select', options: ['Axiom 1: A → (B → A)', 'Modus Ponens Schema', 'Contraposition: (B → A) → (¬A → ¬B)', 'Universal Instantiation: ∀𝔞 f(𝔞) → f(c)'] },
+            { id: 'negTick', label: 'Negation Strokes (┬)', type: 'range', min: 0, max: 3, value: 1 },
+            { id: 'branchDrop', label: 'Vertical Branch Spacing (px)', type: 'range', min: 35, max: 65, value: 48 }
+        ],
+        renderSvg: (params) => {
+            const prop = params ? params.proposition : 'Axiom 1: A → (B → A)';
+            const negCount = params ? parseInt(params.negTick) : 1;
+            const drop = params ? parseInt(params.branchDrop) : 48;
+
+            return `<svg viewBox="0 0 480 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="250" fill="#ffffff"/>
+                
+                <!-- Judgment Stroke (Urteilsstrich) -->
+                <g class="interactive-path" data-info="Judgment Stroke (Urteilsstrich): Asserts that the content to its right is an actualized truth">
+                    <line x1="65" y1="36" x2="65" y2="76" stroke="#2b241f" stroke-width="3.6"/>
+                </g>
+
+                <!-- Main Horizontal Content Stroke + Quantifier Hollow -->
+                <line x1="65" y1="56" x2="125" y2="56" stroke="#2b241f" stroke-width="1.8"/>
+                <path d="M 125 56 Q 137 68 149 56" fill="none" stroke="#9e3b22" stroke-width="1.8"
+                      class="interactive-path" data-info="Universal Quantifier Hollow: Binds Gothic variable 𝔞 across the entire sub-tree to the right"/>
+                <text x="137" y="52" font-family="Georgia" font-weight="bold" font-size="12" text-anchor="middle" fill="#9e3b22">𝔞</text>
+                <line x1="149" y1="56" x2="365" y2="56" stroke="#2b241f" stroke-width="1.8"/>
+
+                <!-- Negation Ticks -->
+                ${negCount >= 1 ? `<line x1="102" y1="56" x2="102" y2="69" stroke="#9e3b22" stroke-width="2.2" class="interactive-path" data-info="Negation Stroke (Verneinungsstrich): Negates the sub-expression to its right"/>` : ''}
+                ${negCount >= 2 ? `<line x1="255" y1="56" x2="255" y2="69" stroke="#9e3b22" stroke-width="2.2"/>` : ''}
+
+                <!-- First Conditional Drop Branch (Antecedent 1) -->
+                <g class="interactive-path" data-info="Primary Conditional Hook: If the lower branch holds, then the upper trunk follows">
+                    <line x1="190" y1="56" x2="190" y2="${56 + drop}" stroke="#2b241f" stroke-width="1.8"/>
+                    <line x1="190" y1="${56 + drop}" x2="365" y2="${56 + drop}" stroke="#2b241f" stroke-width="1.8"/>
+                    ${negCount >= 3 ? `<line x1="280" y1="${56 + drop}" x2="280" y2="${56 + drop + 13}" stroke="#9e3b22" stroke-width="2.2"/>` : ''}
+                </g>
+
+                <!-- Second Conditional Drop Branch (Antecedent 2) -->
+                <g class="interactive-path" data-info="Secondary Nested Conditional Branch: Spatializes nested implication without parentheses">
+                    <line x1="235" y1="${56 + drop}" x2="235" y2="${56 + drop * 2}" stroke="#2a5a5b" stroke-width="1.8"/>
+                    <line x1="235" y1="${56 + drop * 2}" x2="365" y2="${56 + drop * 2}" stroke="#2a5a5b" stroke-width="1.8"/>
+                </g>
+
+                <!-- Terminal Propositional Atoms -->
+                <text x="378" y="61" font-family="Georgia" font-style="italic" font-size="14" fill="#2b241f">Φ(𝔞)</text>
+                <text x="378" y="${61 + drop}" font-family="Georgia" font-style="italic" font-size="14" fill="#2b241f">Ψ(𝔞)</text>
+                <text x="378" y="${61 + drop * 2}" font-family="Georgia" font-style="italic" font-size="14" fill="#2a5a5b">Χ(𝔞)</text>
+
+                <!-- Footer Annotation -->
+                <text x="65" y="232" font-family="Courier New" font-size="9.5" fill="#5c5246">
+                    SCHEMA: ${prop}  |  ZERO PARENTHESES REQUIRED
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE V — KAZIMIR MALEVICH: SUPREMATIST ANALYTICAL CHARTS (1924–1927)
+       ====================================================================== */
+    {
+        id: 'malevich',
+        number: 'PLATE V',
+        refCode: 'REF: AVT-1927-GINKHUK',
+        title: 'Malevich’s Analytical Charts of the “Additional Element”',
+        subtitle: 'Visual Bacteriology of Cézannism, Cubism & Suprematism (GINKhUK, 1924–1927)',
+        thinker: 'Kazimir Malevich',
+        year: '1927',
+        yearSort: 1927,
+        provenance: 'Leningrad / Bauhaus Dessau • Die Gegenstandslose Welt',
+        category: 'minimalist',
+        categoryLabel: 'Progressively Minimalist • Avant-Garde Formalism',
+        secondaryTags: ['Suprematism', 'Russian Formalism', 'Visual Bacteriology', 'GINKhUK'],
+        mold: 'standard',
+        axiomQuote: '“Just as a bacteriologist isolates the comma bacillus in cholera, the artist-scientist isolates the Additional Element that restructures the entire plastic organism.” — Kazimir Malevich',
+        blurb: 'At the Leningrad State Institute of Artistic Culture (GINKhUK), Malevich and his laboratory assistants created 22 clinical diagnostic charts. Treating aesthetic movements as biological systems, he isolated the micro-geometric "bacillus" (the Additional Element) that infects and transforms perception: from Cézanne’s fibrous curve to the Cubist sickle-arc and the Suprematist dynamic diagonal.',
+        useCaseLabel: 'Critical & Aesthetic Resonance',
+        useCase: 'Morphological style analysis, Russian Formalist literary theory (isolating the "dominant" in poetics), and minimalist visual system diagnostics.',
+        triadLabels: ['I. Diagnostic Chart', 'II. Formal Bacillus', 'III. Suprematist Lab'],
+        exegesis: {
+            stakes: 'Malevich refused to view abstraction as arbitrary subjective expression. Instead, working alongside Russian Formalist literary theorists like Viktor Shklovsky and Boris Eikhenbaum in 1920s Leningrad, he sought an objective science of plastic form: why do certain geometric relationships feel static and earthbound while others achieve weightless cosmic velocity?',
+            mechanics: 'Each GINKhUK chart divides the page into diagnostic registers. In the first register, Malevich extracts the structural "norm" and the infecting "Additional Element" (e.g., the fibrous S-curve of Cézannism, the compound sickle-and-straight-line fracture of Cubism, or the unmoored diagonal vector of Suprematism). Subsequent registers show how introducing the Suprematist straight line dissolves volumetric gravity into pure non-objective sensation upon a white abyss.',
+            lineage: 'Carried by Malevich in rolled canvas tubes to Warsaw and Berlin in 1927 and partially published in Bauhaus Book No. 11 (Die Gegenstandslose Welt), these charts bridge clinical laboratory diagrams and radical constructivist abstraction.'
+        },
+        relatedPlates: ['sterne-shklovsky', 'lewitt', 'cardew', 'dubois'],
+        scriptLang: 'GINKhUK Formal Bacteriology Matrix & Vector Balance Calculator',
+        script: `<span class="code-comment"># Kazimir Malevich — Theory of the Additional Element (GINKhUK Chart No. 9)</span>
+<span class="code-comment"># Isolates the geometric pathogen governing each plastic system</span>
+
+PLASTIC_SYSTEMS = {
+    <span class="code-string">"Cezannism"</span>: {
+        <span class="code-string">"additional_element"</span>: <span class="code-string">"Fibrous S-Curve"</span>,
+        <span class="code-string">"curvature_ratio"</span>: 0.78,
+        <span class="code-string">"dynamic_angle_deg"</span>: 12,
+        <span class="code-string">"sensation"</span>: <span class="code-string">"Tactile Static Weight"</span>
+    },
+    <span class="code-string">"Cubism"</span>: {
+        <span class="code-string">"additional_element"</span>: <span class="code-string">"Sickle-Arc + Straight Fracture"</span>,
+        <span class="code-string">"curvature_ratio"</span>: 0.45,
+        <span class="code-string">"dynamic_angle_deg"</span>: 90,
+        <span class="code-string">"sensation"</span>: <span class="code-string">"Displaced Structural Dissonance"</span>
+    },
+    <span class="code-string">"Suprematism"</span>: {
+        <span class="code-string">"additional_element"</span>: <span class="code-string">"Pure Dynamic Diagonal & Plane"</span>,
+        <span class="code-string">"curvature_ratio"</span>: 0.00,
+        <span class="code-string">"dynamic_angle_deg"</span>: 32,
+        <span class="code-string">"sensation"</span>: <span class="code-string">"Weightless Non-Objective Velocity"</span>
+    }
+}`,
+        builderControls: [
+            { id: 'diagAngle', label: 'Suprematist Dynamic Vector Angle', type: 'range', min: 15, max: 65, value: 32 },
+            { id: 'sickleCurve', label: 'Cubist Sickle-Fracture Tension', type: 'range', min: 0, max: 50, value: 18 },
+            { id: 'weightRatio', label: 'Planar Scale vs. White Abyss', type: 'range', min: 20, max: 80, value: 48 }
+        ],
+        renderSvg: (params) => {
+            const angle = params ? parseInt(params.diagAngle) : 32;
+            const curve = params ? parseInt(params.sickleCurve) : 18;
+            const scale = params ? parseInt(params.weightRatio) : 48;
+
+            return `<svg viewBox="0 0 460 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="460" height="250" fill="#fcfaf5"/>
+                <!-- Three Diagnostic Specimens (Cézannism / Cubism / Suprematism) -->
+                <g stroke="#d8cebe" stroke-width="1" fill="none">
+                    <rect x="20" y="34" width="125" height="175"/>
+                    <rect x="167" y="34" width="125" height="175"/>
+                    <rect x="314" y="34" width="125" height="175"/>
+                </g>
+
+                <g font-family="Courier New" font-size="7.5" fill="#5c5246" text-anchor="middle">
+                    <text x="82" y="25">I. CÉZANNISM (FIBROUS)</text>
+                    <text x="230" y="25">II. CUBISM (SICKLE-ARC)</text>
+                    <text x="377" y="25">III. SUPREMATISM (VECTOR)</text>
+                </g>
+
+                <!-- Panel 1: Fibrous Curve -->
+                <g class="interactive-path" data-info="Stage I — Cézannist Additional Element: The undulating fibrous curve binding volume to atmospheric surface">
+                    <path d="M 55 180 C ${35 - curve} 135, ${130 + curve} 105, 85 55" fill="none" stroke="#5c5246" stroke-width="2.2"/>
+                    <path d="M 70 185 C ${50 - curve} 140, ${145 + curve} 110, 100 60" fill="none" stroke="#8c8070" stroke-width="1.2" stroke-dasharray="3,2"/>
+                </g>
+
+                <!-- Panel 2: Cubist Sickle & Straight Line -->
+                <g class="interactive-path" data-info="Stage II — Cubist Additional Element: The sickle-shaped arc intersecting vertical/horizontal structural axes">
+                    <line x1="230" y1="48" x2="230" y2="195" stroke="#2b241f" stroke-width="1.8"/>
+                    <line x1="185" y1="120" x2="275" y2="120" stroke="#2b241f" stroke-width="1.2"/>
+                    <path d="M 195 170 A ${45 + curve} ${45 + curve} 0 0 1 268 72" fill="none" stroke="#9e3b22" stroke-width="3"/>
+                    <rect x="208" y="95" width="38" height="48" fill="#2a5a5b" opacity="0.22"/>
+                </g>
+
+                <!-- Panel 3: Suprematist Dynamic Plane & Vector -->
+                <g transform="translate(377, 122) rotate(${-angle})" class="interactive-path" data-info="Stage III — Suprematist Additional Element: Pure dynamic diagonal vector (${angle}°) suspended in the white abyss">
+                    <rect x="${-scale * 0.65}" y="${-scale * 0.45}" width="${scale * 1.1}" height="${scale * 0.35}" fill="#2b241f"/>
+                    <rect x="${-scale * 0.35}" y="${scale * 0.05}" width="${scale * 0.9}" height="${scale * 0.14}" fill="#9e3b22"/>
+                    <line x1="-58" y1="-8" x2="58" y2="-8" stroke="#c88a2d" stroke-width="2"/>
+                </g>
+
+                <text x="230" y="232" font-family="Georgia" font-style="italic" font-size="9.5" fill="#5c5246" text-anchor="middle">
+                    GINKhUK Analytical Protocol: Dynamic Vector = ${angle}° | Sickle Curvature = ${curve} | Scale = ${scale}%
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE VI — SOL LEWITT: INCOMPLETE OPEN CUBES (1974)
+       ====================================================================== */
+    {
+        id: 'lewitt',
+        number: 'PLATE VI',
+        refCode: 'REF: MIN-1974-LEWITT',
+        title: 'Sol LeWitt’s Taxonomic Matrix of Incomplete Open Cubes',
+        subtitle: '122 Canonical Isometric Variations of Connected Absence (1974)',
+        thinker: 'Sol LeWitt',
+        year: '1974',
+        yearSort: 1974,
+        provenance: 'New York • John Weber Gallery (Assisted by Robbe & Paul)',
+        category: 'minimalist',
+        categoryLabel: 'Progressively Minimalist • Conceptual Combinatorics',
+        secondaryTags: ['Conceptual Art', 'Exhaustive Combinatorics', 'Isometric Grid', 'Beckettian Logic'],
+        mold: 'minimal',
+        axiomQuote: '“The idea becomes a machine that makes the art... Irrational thoughts should be followed absolutely and logically.” — Sol LeWitt',
+        blurb: 'How many ways can you subtract edges from a 12-edge cube such that the remaining edges remain connected in one piece and still span all three spatial dimensions (X, Y, Z)? Working with mathematicians, Sol LeWitt isolated exactly 122 rotationally distinct variations—transforming the Platonic cube into a Beckettian theater of systematic erosion.',
+        useCaseLabel: 'Combinatorial & Architectural Resonance',
+        useCase: 'Graph connectivity and spanning-tree enumeration, generative architectural grammars, and constraint-driven minimalist design systems.',
+        triadLabels: ['I. Isometric Matrix', 'II. Burnside Enumeration', 'III. Cube Subtraction'],
+        exegesis: {
+            stakes: 'As art critic Rosalind Krauss observed in her landmark essay "LeWitt in Progress" (1977), LeWitt’s exhaustive permutations are not a triumph of cold Cartesian rationalism, but its delirious parody—akin to Samuel Beckett’s Watt calculating every possible combination of his shoes and socks. By executing a simple rule to absolute exhaustion, conceptual minimalism reveals the uncanny poetry of pure syntax.',
+            mechanics: 'A complete cube possesses 12 edges. An "incomplete open cube" must retain between 3 edges (the minimum required to span three orthogonal axes) and 11 edges (one edge removed), subject to two constraints: (1) all remaining edges must form a single connected graph, and (2) at least one edge must lie along each of the X, Y, and Z axes. Factoring out the 24 rotational symmetries of the cube in 3D space leaves exactly 122 canonical structures (e.g., three 3-part cubes, five 4-part, fourteen 5-part, up to one 11-part cube).',
+            lineage: 'Stands alongside François Morellet’s random geometric systems, Hanne Darboven’s calendar indices, and Oulipian potential literature as a monument of rule-based minimalism.'
+        },
+        relatedPlates: ['spencer-brown', 'perec-oulipo', 'malevich', 'llull'],
+        scriptLang: 'Burnside Lemma Rotational Equivalence & Isometric Edge Mask',
+        script: `<span class="code-comment"># Sol LeWitt — Incomplete Open Cubes (1974) Canonical Distribution</span>
+<span class="code-comment"># 12 edges total; valid open cubes retain k ∈ [3..11] connected 3D edges</span>
+
+CANONICAL_COUNTS_BY_EDGES = {
+    3: 3,    <span class="code-comment"># Minimal 3-axis tripods (3/1, 3/2, 3/3)</span>
+    4: 5,    <span class="code-comment"># 4-part variations</span>
+    5: 14,   <span class="code-comment"># 5-part variations</span>
+    6: 24,   <span class="code-comment"># 6-part variations</span>
+    7: 32,   <span class="code-comment"># Peak combinatorial entropy (32 distinct variations)</span>
+    8: 25,   <span class="code-comment"># 8-part variations</span>
+    9: 13,   <span class="code-comment"># 9-part variations</span>
+    10: 5,   <span class="code-comment"># 10-part variations</span>
+    11: 1    <span class="code-comment"># Single missing edge (11/1)</span>
+}  <span class="code-comment"># Sum = 122 Canonical Incomplete Open Cubes</span>`,
+        builderControls: [
+            { id: 'edgeCount', label: 'Active Edges Retained (k of 12)', type: 'range', min: 3, max: 11, value: 7 },
+            { id: 'permutationSeed', label: 'Rotational Variant Index', type: 'range', min: 1, max: 12, value: 4 },
+            { id: 'showGhost', label: 'Absent Cube Armature (Ghost Edges)', type: 'select', options: ['Show Dashed Absent Edges', 'Pure Minimalist Solid Struts Only'] }
+        ],
+        renderSvg: (params) => {
+            const k = params ? parseInt(params.edgeCount) : 7;
+            const seed = params ? parseInt(params.permutationSeed) : 4;
+            const showGhost = params ? String(params.showGhost).includes('Show') : true;
+
+            // Isometric vertices of a cube centered at (165, 125)
+            const v = [
+                [165, 45],  // 0: top
+                [235, 82],  // 1: upper right
+                [235, 162], // 2: lower right
+                [165, 200], // 3: bottom
+                [95, 162],  // 4: lower left
+                [95, 82],   // 5: upper left
+                [165, 120], // 6: front center
+                [165, 124]  // 7: back center (slightly offset for isometric depth)
+            ];
+            // 12 edges as pairs of vertex coordinates
+            const allEdges = [
+                [v[0], v[1]], [v[1], v[2]], [v[2], v[3]], [v[3], v[4]],
+                [v[4], v[5]], [v[5], v[0]], [v[5], v[6]], [v[1], v[6]],
+                [v[3], v[6]], [v[0], [165, 128]], [[165, 128], v[2]], [[165, 128], v[4]]
+            ];
+
+            // Deterministically pick k edges using seed while ensuring first 3 span X, Y, Z
+            const activeSet = new Set([0, 1, 6]);
+            for (let i = 0; i < 12 && activeSet.size < k; i++) {
+                const idx = (i * 5 + seed) % 12;
+                activeSet.add(idx);
+            }
+
+            let ghostLines = '';
+            let solidLines = '';
+            allEdges.forEach((edge, idx) => {
+                const [[x1, y1], [x2, y2]] = edge;
+                if (activeSet.has(idx)) {
+                    solidLines += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#2b241f" stroke-width="5" stroke-linecap="round" class="interactive-path" data-info="Active Strut #${idx + 1}: Retained structural edge of ${k}-part open cube"/>`;
+                } else if (showGhost) {
+                    ghostLines += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#c8b9a6" stroke-width="1.2" stroke-dasharray="3,3" class="interactive-path" data-info="Subtracted Edge #${idx + 1}: Present only as negative conceptual trace"/>`;
+                }
+            });
+
+            // Distribution bar chart on the right
+            const dist = [[3,3],[4,5],[5,14],[6,24],[7,32],[8,25],[9,13],[10,5],[11,1]];
+            let bars = '';
+            dist.forEach(([edges, count], i) => {
+                const bx = 305 + i * 17;
+                const bh = count * 3.8;
+                const by = 195 - bh;
+                const isCurr = edges === k;
+                bars += `
+                    <rect x="${bx}" y="${by}" width="12" height="${bh}" fill="${isCurr ? '#9e3b22' : '#d8cebe'}" class="interactive-path" data-info="${edges}-Part Open Cubes: ${count} rotationally distinct topological forms"/>
+                    <text x="${bx + 6}" y="208" font-family="Courier New" font-size="7.5" text-anchor="middle" fill="${isCurr ? '#9e3b22' : '#5c5246'}">${edges}</text>`;
+            });
+
+            return `<svg viewBox="0 0 490 245" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="490" height="245" fill="#ffffff"/>
+                <text x="30" y="28" font-family="Courier New" font-size="9" fill="#5c5246">VARIATION ${k}/${seed} (${k} EDGES PRESENT, ${12 - k} ABSENT)</text>
+                ${ghostLines}
+                ${solidLines}
+                <line x1="285" y1="30" x2="285" y2="215" stroke="#e2d8c7" stroke-width="1"/>
+                <text x="305" y="45" font-family="Courier New" font-size="8.5" fill="#5c5246">CANONICAL DISTRIBUTION (Σ = 122)</text>
+                ${bars}
+                <text x="305" y="226" font-family="Georgia" font-style="italic" font-size="9" fill="#5c5246">Equivalence Class k=${k}: ${dist.find(d => d[0] === k)[1]} canonical forms</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE VII — A. J. GREIMAS: THE SEMIOTIC SQUARE (1966–1968)
+       ====================================================================== */
+    {
+        id: 'greimas',
+        number: 'PLATE VII',
+        refCode: 'REF: SEM-1968-GREIMAS',
+        title: 'Greimas’s Semiotic Square (Le Carré Sémiotique)',
+        subtitle: 'Four-Pole Generative Topology of Contrariety, Contradiction & Meta-Terms (1968)',
+        thinker: 'Algirdas Julien Greimas & François Rastier',
+        year: '1968',
+        yearSort: 1968,
+        provenance: 'Paris • Yale French Studies (“The Interaction of Semiotic Constraints”) & Du Sens',
+        category: 'theoretical',
+        categoryLabel: 'Theoretical & Philosophical • Structuralist Semiotics',
+        secondaryTags: ['Structuralism', 'Narrative Grammar', 'Fredric Jameson', 'Liminal Fourth Term'],
+        mold: 'standard',
+        axiomQuote: '“The semiotic square is the elementary structure of signification—the logical engine through which any binary opposition generates its own hidden fourth term.” — A. J. Greimas',
+        blurb: 'Expanding Aristotle’s Square of Opposition into a dynamic structuralist compass, Greimas demonstrated that no binary opposition (S₁ vs. S₂) is ever simply two-sided. Every dyad generates two sub-contraries (¬S₁ and ¬S₂) along with four peripheral Meta-Terms—culminating in the elusive Neutral Term (neither S₁ nor S₂) where literary and ideological breakthroughs occur.',
+        useCaseLabel: 'Literary & Ideological Resonance',
+        useCase: 'Mapping ideological antinomies in narrative fiction (Fredric Jameson), analyzing legal/cultural illegitimacy (Lawful / Outlaw / Liminal), and concept-space expansion.',
+        triadLabels: ['I. Semiotic Square', 'II. Structural Relations', 'III. Dyad Combinator'],
+        exegesis: {
+            stakes: 'Human thought is chronically trapped in binary oppositions: Legitimate vs. Illegitimate, Life vs. Death, Culture vs. Nature. Greimas revealed that beneath every binary assertion (S₁ vs. S₂) lies a deeper, harder operation: simple negation (¬S₁), which opens a space that is not yet committed to the opposite pole S₂. As Fredric Jameson famously argued in The Political Unconscious, the entire drama of a literary work consists in rotating around the four corners of this square until the "fourth term" or neutral synthesis cracks open the ideological prison.',
+            mechanics: 'The upper horizontal axis links S₁ and S₂ in a relation of Contrariety (strong opposition). Diagonal vectors cross the center to establish Contradiction (S₁ ↔ ¬S₁ and S₂ ↔ ¬S₂). Vertical vectors link S₁ to ¬S₂ and S₂ to ¬S₁ in relations of Deixis / Implication. Finally, combining the upper pair yields the Complex Meta-Term (S₁ + S₂: Both/And), while combining the lower sub-contraries yields the Neutral Meta-Term (¬S₁ + ¬S₂: Neither/Nor).',
+            lineage: 'Derived from Aristotle and Boethius’s logical square via Louis Hjelmslev’s glossematics and Claude Lévi-Strauss’s structural anthropology, and deployed extensively by Fredric Jameson, Rosalind Krauss ("Sculpture in the Expanded Field", 1979), and Bruno Latour.'
+        },
+        relatedPlates: ['porphyry', 'peirce', 'serres-chiasmus', 'lacan-borromean'],
+        scriptLang: 'Greimasian 10-Position Semiotic Matrix & Meta-Term Synthesizer',
+        script: `<span class="code-comment"># A. J. Greimas — Semiotic Square (Le Carré Sémiotique, 1968)</span>
+<span class="code-comment"># Computes the 4 primary poles, 6 relational vectors, and 4 second-order meta-terms</span>
+
+<span class="code-keyword">def</span> <span class="code-func">construct_semiotic_square</span>(s1, s2, complex_term, neutral_term):
+    <span class="code-keyword">return</span> {
+        <span class="code-string">"primary_contraries"</span>: (s1, s2),
+        <span class="code-string">"sub_contraries"</span>: (f<span class="code-string">"Non-{s2}"</span>, f<span class="code-string">"Non-{s1}"</span>),
+        <span class="code-string">"contradictions"</span>: [(s1, f<span class="code-string">"Non-{s1}"</span>), (s2, f<span class="code-string">"Non-{s2}"</span>)],
+        <span class="code-string">"deixis_implications"</span>: [(s1, f<span class="code-string">"Non-{s2}"</span>), (s2, f<span class="code-string">"Non-{s1}"</span>)],
+        <span class="code-string">"meta_terms"</span>: {
+            <span class="code-string">"complex_axis (S1 + S2)"</span>: complex_term,
+            <span class="code-string">"neutral_axis (¬S1 + ¬S2)"</span>: neutral_term
+        }
+    }
+
+<span class="code-comment"># Example: Cultural Illegitimacy / The Nothos Archetype</span>
+nothos_square = <span class="code-func">construct_semiotic_square</span>(
+    s1=<span class="code-string">"Gnēsios (Legitimate Heir)"</span>, s2=<span class="code-string">"Xenos (Alien / Outsider)"</span>,
+    complex_term=<span class="code-string">"Sovereign Exception"</span>, neutral_term=<span class="code-string">"Nothos (The Liminal Bastard)"</span>
+)`,
+        builderControls: [
+            { id: 'preset', label: 'Epistemic Dyad Preset', type: 'select', options: [
+                'Illegitimacy: Gnēsios (Heir) vs. Xenos (Stranger)',
+                'Ontology: Being (Life) vs. Non-Being (Death)',
+                'Krauss Expanded Field: Landscape vs. Architecture',
+                'Veridiction: Being vs. Seeming (Truth / Lie / Secret)'
+            ] },
+            { id: 's1Custom', label: 'Override Pole S₁ (Optional)', type: 'text', value: '' },
+            { id: 's2Custom', label: 'Override Pole S₂ (Optional)', type: 'text', value: '' }
+        ],
+        renderSvg: (params) => {
+            const preset = params ? params.preset : 'Illegitimacy: Gnēsios (Heir) vs. Xenos (Stranger)';
+            let s1 = 'GNĒSIOS (Heir)', s2 = 'XENOS (Outsider)', ns1 = '¬GNĒSIOS (Disinherited)', ns2 = '¬XENOS (Insider-Without-Title)', comp = 'COMPLEX: Dynastic Totality', neut = 'NEUTRAL: Nothos (Liminal)';
+
+            if (String(preset).includes('Ontology')) {
+                s1 = 'LIFE (S₁)'; s2 = 'DEATH (S₂)'; ns1 = 'NON-LIFE (¬S₁)'; ns2 = 'NON-DEATH (¬S₂)';
+                comp = 'COMPLEX: Revenant / Undead'; neut = 'NEUTRAL: Spectral Suspension';
+            } else if (String(preset).includes('Krauss')) {
+                s1 = 'LANDSCAPE'; s2 = 'ARCHITECTURE'; ns1 = 'NOT-LANDSCAPE'; ns2 = 'NOT-ARCHITECTURE';
+                comp = 'COMPLEX: Site Construction'; neut = 'NEUTRAL: Sculpture (Classic)';
+            } else if (String(preset).includes('Veridiction')) {
+                s1 = 'BEING (Essence)'; s2 = 'SEEMING (Mask)'; ns1 = 'NON-BEING'; ns2 = 'NON-SEEMING';
+                comp = 'COMPLEX: Truth'; neut = 'NEUTRAL: Falsehood';
+            }
+
+            if (params && params.s1Custom && params.s1Custom.trim() !== '') {
+                s1 = params.s1Custom.trim();
+                ns1 = 'NON-' + s1;
+            }
+            if (params && params.s2Custom && params.s2Custom.trim() !== '') {
+                s2 = params.s2Custom.trim();
+                ns2 = 'NON-' + s2;
+            }
+
+            return `<svg viewBox="0 0 490 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="490" height="250" fill="#fdfbf7"/>
+
+                <!-- Meta-Terms (Complex Top, Neutral Bottom) -->
+                <rect x="145" y="10" width="200" height="22" rx="2" fill="#f4e8e4" stroke="#9e3b22" stroke-width="1"/>
+                <text x="245" y="24" font-family="Georgia" font-size="9" font-weight="bold" fill="#9e3b22" text-anchor="middle">${comp}</text>
+
+                <rect x="145" y="218" width="200" height="22" rx="2" fill="#e6f0f0" stroke="#2a5a5b" stroke-width="1"/>
+                <text x="245" y="232" font-family="Georgia" font-size="9" font-weight="bold" fill="#2a5a5b" text-anchor="middle">${neut}</text>
+
+                <!-- Relational Axes -->
+                <!-- Contrariety (Top Horizontal) -->
+                <line x1="150" y1="68" x2="340" y2="68" stroke="#9e3b22" stroke-width="2" class="interactive-path" data-info="Axis of Contrariety (S₁ ↔ S₂): Reciprocal presupposition of strong binary opposites"/>
+                <!-- Sub-Contrariety (Bottom Horizontal) -->
+                <line x1="150" y1="182" x2="340" y2="182" stroke="#2a5a5b" stroke-width="1.6" stroke-dasharray="4,3" class="interactive-path" data-info="Axis of Sub-Contrariety (¬S₂ ↔ ¬S₁): Open field of double negation"/>
+                <!-- Contradiction Diagonals -->
+                <line x1="135" y1="82" x2="355" y2="168" stroke="#2b241f" stroke-width="1.5" class="interactive-path" data-info="Diagonal of Contradiction (S₁ ↔ ¬S₁): Pure privative negation"/>
+                <line x1="355" y1="82" x2="135" y2="168" stroke="#2b241f" stroke-width="1.5" class="interactive-path" data-info="Diagonal of Contradiction (S₂ ↔ ¬S₂): Pure privative negation"/>
+                <!-- Deixis Verticals -->
+                <line x1="100" y1="84" x2="100" y2="166" stroke="#c88a2d" stroke-width="1.6" stroke-dasharray="2,2" class="interactive-path" data-info="Positive Deixis (S₁ → ¬S₂): Complementary implication"/>
+                <line x1="390" y1="84" x2="390" y2="166" stroke="#c88a2d" stroke-width="1.6" stroke-dasharray="2,2" class="interactive-path" data-info="Negative Deixis (S₂ → ¬S₁): Complementary implication"/>
+
+                <!-- Four Corner Nodes -->
+                <rect x="35" y="52" width="130" height="30" fill="#fbf8f1" stroke="#2b241f" stroke-width="1.6"/>
+                <text x="100" y="71" font-family="Georgia" font-size="9.5" font-weight="bold" fill="#2b241f" text-anchor="middle">${s1}</text>
+
+                <rect x="325" y="52" width="130" height="30" fill="#fbf8f1" stroke="#2b241f" stroke-width="1.6"/>
+                <text x="390" y="71" font-family="Georgia" font-size="9.5" font-weight="bold" fill="#2b241f" text-anchor="middle">${s2}</text>
+
+                <rect x="35" y="168" width="130" height="30" fill="#fbf8f1" stroke="#2a5a5b" stroke-width="1.4"/>
+                <text x="100" y="187" font-family="Georgia" font-size="8.5" fill="#2a5a5b" text-anchor="middle">${ns2}</text>
+
+                <rect x="325" y="168" width="130" height="30" fill="#fbf8f1" stroke="#2a5a5b" stroke-width="1.4"/>
+                <text x="390" y="187" font-family="Georgia" font-size="8.5" fill="#2a5a5b" text-anchor="middle">${ns1}</text>
+
+                <text x="245" y="62" font-family="Courier New" font-size="7.5" fill="#9e3b22" text-anchor="middle">CONTRARIETY</text>
+                <text x="245" y="128" font-family="Courier New" font-size="7.5" fill="#5c5246" text-anchor="middle">CONTRADICTION (×)</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE VIII — GILLES DELEUZE: THE BAROQUE HOUSE / LE PLI (1988)
+       ====================================================================== */
+    {
+        id: 'deleuze-fold',
+        number: 'PLATE VIII',
+        refCode: 'REF: TOP-1988-DELEUZE',
+        title: 'Deleuze’s Allegory of the Baroque House (Le Pli)',
+        subtitle: 'Two-Story Monadological Topology of Matter & Soul (1988)',
+        thinker: 'Gilles Deleuze',
+        year: '1988',
+        yearSort: 1988,
+        provenance: 'Paris • Les Éditions de Minuit (Le Pli: Leibniz et le Baroque)',
+        category: 'theoretical',
+        categoryLabel: 'Theoretical & Philosophical • Monadological Topology',
+        secondaryTags: ['Leibniz', 'The Fold', 'Camera Obscura', 'Immanence'],
+        mold: 'nocturnal',
+        axiomQuote: '“The Baroque differentiates folds along two infinities, as if infinity were composed of two stages or floors: the pleats of matter, and the folds in the soul.” — Gilles Deleuze',
+        blurb: 'Drawn by Deleuze on page 7 of Le Pli, the Baroque House reimagines subjectivity without interiority-versus-exteriority dualism. A lower floor pierced by five sensory apertures receives the surging pleats of sensible matter; above it sits a completely closed, windowless dark room (the Monad) lined with a taut canvas that vibrates in resonance through a single connecting torsional crease.',
+        useCaseLabel: 'Ontological & Architectural Resonance',
+        useCase: 'Non-Cartesian models of embodied cognition, folded parametric architecture, and interface theory where internal representation is an inflection of external forces.',
+        triadLabels: ['I. Baroque House', 'II. Inflection Calculus', 'III. Fold Apparatus'],
+        exegesis: {
+            stakes: 'How can Leibniz’s Monad have "no windows by which anything could come in or go out," yet still mirror the entire cosmos? Deleuze resolves this riddle topologically through the Fold (Le Pli): the inside is nothing other than a folding-in of the outside. Rather than two separate substances (Mind and Body), there is one continuous fabric folded across two distinct floors.',
+            mechanics: 'The diagram is split horizontally by a pleated ceiling/floor. The Lower Floor is open to the street through five arches (the five senses) and a main door, where masses of matter press in like ocean waves. A central vertical/curved vector—the Vinculum or torsional crease—transmits these differential micro-perceptions upward into the Upper Floor: a dark room (camera obscura) with zero windows, where an elastic drapery diversifies into innate virtual folds.',
+            lineage: 'Synthesizes Gottfried Wilhelm Leibniz’s Monadology (1714), Stéphane Mallarmé’s poetry of the folded fan, Bernini’s ecstatic marble drapery, and Bernard Cache’s architectural theory of the inflection point.'
+        },
+        relatedPlates: ['leibniz-iching', 'mallarme', 'fludd', 'spencer-brown'],
+        scriptLang: 'Parametric Inflection Curve & Dual-Floor Harmonic Resonance Model',
+        script: `<span class="code-comment"># Gilles Deleuze — Le Pli (1988): Dual-Floor Monadological Inflection</span>
+<span class="code-comment"># Lower Floor: Pleats of Matter [Receptive Sensory Apertures = 5]</span>
+<span class="code-comment"># Upper Floor: Folds in the Soul [Windowless Camera Obscura Drapery]</span>
+
+<span class="code-keyword">import</span> math
+
+<span class="code-keyword">def</span> <span class="code-func">baroque_inflection</span>(x, torsion=1.4, matter_freq=3.0):
+    <span class="code-string">"""Computes coupled lower-matter oscillation and upper-monad drapery fold."""</span>
+    <span class="code-comment"># Point of inflection where concavity reverses (Bernard Cache / Leibniz)</span>
+    lower_pleat = math.sin(x * matter_freq) * math.cos(x * 0.5)
+    vinculum_coupling = math.tanh(torsion * lower_pleat)
+    upper_soul_fold = vinculum_coupling * math.sin(x * matter_freq * 2.0 + math.pi / 3)
+    <span class="code-keyword">return</span> {<span class="code-string">"matter_pleat"</span>: lower_pleat, <span class="code-string">"monad_drapery"</span>: upper_soul_fold}`,
+        builderControls: [
+            { id: 'draperyFolds', label: 'Upper Monad Drapery Folds', type: 'range', min: 2, max: 7, value: 4 },
+            { id: 'torsion', label: 'Vinculum Crease Torsion', type: 'range', min: 10, max: 60, value: 35 },
+            { id: 'matterSurge', label: 'Lower Sensory Matter Amplitude', type: 'range', min: 8, max: 32, value: 20 }
+        ],
+        renderSvg: (params) => {
+            const folds = params ? parseInt(params.draperyFolds) : 4;
+            const torsion = params ? parseInt(params.torsion) : 35;
+            const surge = params ? parseInt(params.matterSurge) : 20;
+
+            let upperPleats = '';
+            for (let i = 0; i < folds; i++) {
+                const yOff = 42 + i * (65 / folds);
+                upperPleats += `
+                    <path d="M 115 ${yOff} C ${175 + torsion} ${yOff - 18}, ${285 - torsion} ${yOff + 18}, 345 ${yOff}" 
+                          fill="none" stroke="#e09f5a" stroke-width="1.6"
+                          class="interactive-path" data-info="Upper Floor (Camera Obscura): Innate virtual fold #${i + 1} vibrating without windows"/>`;
+            }
+
+            let arches = '';
+            for (let a = 0; a < 5; a++) {
+                const ax = 128 + a * 44;
+                arches += `
+                    <path d="M ${ax} 225 L ${ax} 195 A 14 14 0 0 1 ${ax + 28} 195 L ${ax + 28} 225" 
+                          fill="#120f0d" stroke="#a69885" stroke-width="1.4"
+                          class="interactive-path" data-info="Sensory Aperture #${a + 1}: Receptive arch of the lower floor admitting material oscillations"/>`;
+            }
+
+            return `<svg viewBox="0 0 460 255" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="460" height="255" fill="#191613"/>
+                
+                <!-- Upper Floor: Blind Windowless Monad -->
+                <rect x="95" y="24" width="270" height="96" fill="#211d19" stroke="#e09f5a" stroke-width="1.8"/>
+                <text x="230" y="17" font-family="Courier New" font-size="8" fill="#e09f5a" text-anchor="middle">UPPER FLOOR: WINDOWLESS MONAD (FOLDS IN THE SOUL)</text>
+                ${upperPleats}
+
+                <!-- Dividing Crease / Vinculum -->
+                <path d="M 85 120 Q 230 ${120 - torsion * 0.35} 375 120" fill="none" stroke="#9e3b22" stroke-width="2.6"
+                      class="interactive-path" data-info="The Fold / Vinculum: Torsional membrane transmitting lower material oscillations into upper monadic reading"/>
+
+                <!-- Lower Floor: Receptive Matter with 5 Sensory Arches -->
+                <rect x="95" y="120" width="270" height="105" fill="#27221d" stroke="#a69885" stroke-width="1.5"/>
+                <path d="M 105 162 Q 165 ${162 - surge} 230 162 T 355 162" fill="none" stroke="#82c0c2" stroke-width="2"
+                      class="interactive-path" data-info="Pleats of Matter: External physical waves entering through the five sensory openings"/>
+                ${arches}
+                <text x="230" y="242" font-family="Courier New" font-size="8" fill="#a89b8c" text-anchor="middle">LOWER FLOOR: 5 SENSORY APERTURES (PLEATS OF MATTER)</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE IX — JACQUES LACAN: BORROMEAN KNOT & THE SINTHOME (1972–1975)
+       ====================================================================== */
+    {
+        id: 'lacan-borromean',
+        number: 'PLATE IX',
+        refCode: 'REF: TOP-1975-LACAN',
+        title: 'Lacan’s Borromean Knot & The Fourth Ring of the Sinthome',
+        subtitle: 'Non-Metaphorical Brunnian Topology of Real, Symbolic, Imaginary & Joyce (1975)',
+        thinker: 'Jacques Lacan',
+        year: '1975',
+        yearSort: 1975,
+        provenance: 'Paris • Séminaire XXII (R.S.I.) & Séminaire XXIII (Le Sinthome)',
+        category: 'theoretical',
+        categoryLabel: 'Theoretical & Philosophical • Psychoanalytic Topology',
+        secondaryTags: ['Borromean Link', 'Real-Symbolic-Imaginary', 'James Joyce', 'Objet petit a'],
+        mold: 'standard',
+        axiomQuote: '“Topology is not ‘designed to guide us’ in structure. This topology IS the structure—as retroaction of the chain’s order.” — Jacques Lacan',
+        blurb: 'In his final seminars, Lacan abandoned linguistic diagrams for literal knot theory. The Real, the Symbolic, and the Imaginary form a Brunnian (Borromean) link: no two rings are directly linked, yet all three are held together such that cutting any single ring sets all three free. At their triple central wedging sits objet petit a, while a fourth corrective loop—the Sinthome (James Joyce’s artifice)—repairs a slipped knot.',
+        useCaseLabel: 'Topological & Literary Resonance',
+        useCase: 'Modeling three-body mutual dependency systems (where pairwise links fail without the third), literary analysis of modernist writing as psychic prosthesis, and Brunnian network resilience.',
+        triadLabels: ['I. Borromean Link', 'II. Brunnian Braid', 'III. Knot Apparatus'],
+        exegesis: {
+            stakes: 'Why did Lacan spend his final years tying loops of string and consulting mathematician Pierre Soury? Because metaphor always lies by substituting one signifier for another, whereas a Borromean knot physically embodies the "Real" of an impasse: three heterogeneous registers (the unthinkable Real, the grammatical Symbolic, and the narcissistic Imaginary) that have no common measure, yet cohere solely through their mutual wedging (coinçage).',
+            mechanics: 'In a standard 3-ring Borromean link, Ring 1 lies over Ring 2, Ring 2 lies over Ring 3, and Ring 3 lies over Ring 1 in an alternating cyclic over-under braid. Their central triple intersection houses objet petit a (surplus-jouissance), while pairwise overlaps generate J_A (Jouissance of the Other), J_Φ (Phallic Jouissance), and Sens (Meaning). In Seminar XXIII, Lacan shows that if the knot is mis-tied (as in Joyce), a fourth surgical ring—le sinthome—can lace through the slip to prevent psychic dissolution.',
+            lineage: 'Borrowed from the coat of arms of the aristocratic Borromeo family of Milan, formalized in algebraic topology via Massey products, and applied by Lacan to James Joyce’s Finnegans Wake.'
+        },
+        relatedPlates: ['spencer-brown', 'greimas', 'deleuze-fold', 'nabokov'],
+        scriptLang: 'Brunnian Gauss Crossing Code & Massey Triple Product Check',
+        script: `<span class="code-comment"># Jacques Lacan — Seminar XXIII: Le Sinthome (1975-1976)</span>
+<span class="code-comment"># Pairwise Linking Number lk(R,S) = lk(S,I) = lk(I,R) = 0</span>
+<span class="code-comment"># Milnor Triple Invariant μ(1,2,3) = ±1 (Non-trivial Brunnian binding)</span>
+
+<span class="code-keyword">def</span> <span class="code-func">evaluate_lacanian_knot</span>(cut_ring=<span class="code-keyword">None</span>, sinthome_fourth_ring=<span class="code-keyword">False</span>):
+    registers = {<span class="code-string">"R"</span>: <span class="code-string">"The Real"</span>, <span class="code-string">"S"</span>: <span class="code-string">"The Symbolic"</span>, <span class="code-string">"I"</span>: <span class="code-string">"The Imaginary"</span>}
+    <span class="code-keyword">if</span> cut_ring <span class="code-keyword">in</span> registers <span class="code-keyword">and not</span> sinthome_fourth_ring:
+        <span class="code-keyword">return</span> {
+            <span class="code-string">"cohesion"</span>: <span class="code-keyword">False</span>,
+            <span class="code-string">"state"</span>: f<span class="code-string">"Severing {cut_ring} dissolves the entire R-S-I triad (Psychotic Unknotting)"</span>
+        }
+    <span class="code-keyword">return</span> {
+        <span class="code-string">"cohesion"</span>: <span class="code-keyword">True</span>,
+        <span class="code-string">"central_wedge"</span>: <span class="code-string">"objet petit a (Surplus-Jouissance)"</span>,
+        <span class="code-string">"prosthesis"</span>: <span class="code-string">"Σ Sinthome Active (Joycean Ego-Artifice)"</span> <span class="code-keyword">if</span> sinthome_fourth_ring <span class="code-keyword">else</span> <span class="code-string">"Canonical 3-Ring Borromean"</span>
+    }`,
+        builderControls: [
+            { id: 'spread', label: 'Triadic Ring Eccentricity (px)', type: 'range', min: 22, max: 46, value: 32 },
+            { id: 'sinthome', label: 'Σ Fourth Ring (Joycean Sinthome)', type: 'select', options: ['Active (4-Ring Sinthome Repair)', 'Absent (Pure 3-Ring R.S.I. Link)'] },
+            { id: 'sever', label: 'Topological Severance Test', type: 'select', options: ['Intact (All Registers Bound)', 'Sever Symbolic Ring (Unknotting)'] }
+        ],
+        renderSvg: (params) => {
+            const d = params ? parseInt(params.spread) : 32;
+            const hasSinthome = params ? String(params.sinthome).includes('Active') : true;
+            const isSevered = params ? String(params.sever).includes('Sever') : false;
+
+            const cx = 230, cy = 126, r = 56;
+            const rX = cx, rY = cy - d * 0.85;
+            const sX = cx - d, sY = cy + d * 0.65;
+            const iX = cx + d, iY = cy + d * 0.65;
+
+            return `<svg viewBox="0 0 460 255" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="460" height="255" fill="#fdfbf7"/>
+
+                <!-- Ring R: The Real (Top, Rust) -->
+                <circle cx="${rX}" cy="${rY}" r="${r}" fill="#9e3b22" fill-opacity="0.07" stroke="#9e3b22" stroke-width="3.5"
+                        class="interactive-path" data-info="THE REAL (R): That which resists symbolization absolutely; impossible core"/>
+                <text x="${rX}" y="${rY - r - 7}" font-family="Georgia" font-size="10" font-weight="bold" fill="#9e3b22" text-anchor="middle">R (THE REAL)</text>
+
+                <!-- Ring I: The Imaginary (Bottom Right, Ochre) -->
+                <circle cx="${iX}" cy="${iY}" r="${r}" fill="#c88a2d" fill-opacity="0.07" stroke="#c88a2d" stroke-width="3.5"
+                        class="interactive-path" data-info="THE IMAGINARY (I): Specular image, gestalt body, and dualistic identification"/>
+                <text x="${iX + 42}" y="${iY + r + 13}" font-family="Georgia" font-size="10" font-weight="bold" fill="#c88a2d" text-anchor="middle">I (IMAGINARY)</text>
+
+                <!-- Ring S: The Symbolic (Bottom Left, Teal) -->
+                <circle cx="${sX}" cy="${sY}" r="${r}" fill="#2a5a5b" fill-opacity="0.07" stroke="#2a5a5b" stroke-width="3.5"
+                        stroke-dasharray="${isSevered ? '7,6' : 'none'}"
+                        class="interactive-path" data-info="THE SYMBOLIC (S): Autonomous chain of signifiers, Law, and the Other"/>
+                <text x="${sX - 42}" y="${sY + r + 13}" font-family="Georgia" font-size="10" font-weight="bold" fill="#2a5a5b" text-anchor="middle">S (SYMBOLIC)</text>
+
+                <!-- Borromean Over-Under Crossing Masks -->
+                <circle cx="${cx}" cy="${cy + 4}" r="13" fill="#2b241f" fill-opacity="0.12"
+                        class="interactive-path" data-info="Objet petit a: Triple central wedging (coinçage) of Real, Symbolic, and Imaginary"/>
+                <text x="${cx}" y="${cy + 8}" font-family="Georgia" font-style="italic" font-weight="bold" font-size="13" fill="#2b241f" text-anchor="middle">a</text>
+
+                <!-- Pairwise Intersections -->
+                <text x="${cx - 34}" y="${cy - 12}" font-family="Georgia" font-style="italic" font-size="9" fill="#5c5246" text-anchor="middle">J_Φ</text>
+                <text x="${cx + 34}" y="${cy - 12}" font-family="Georgia" font-style="italic" font-size="9" fill="#5c5246" text-anchor="middle">J_A</text>
+                <text x="${cx}" y="${cy + 42}" font-family="Georgia" font-style="italic" font-size="9" fill="#5c5246" text-anchor="middle">Sens</text>
+
+                <!-- Fourth Ring: The Sinthome (Σ) -->
+                ${hasSinthome ? `
+                <ellipse cx="${cx}" cy="${cy + 4}" rx="92" ry="30" fill="none" stroke="#2b241f" stroke-width="2.2" stroke-dasharray="5,2"
+                         class="interactive-path" data-info="LE SINTHOME (Σ): The fourth prosthetic ring (Joyce's writing) lacing the triad against unknotting"/>
+                <text x="385" y="${cy + 8}" font-family="Courier New" font-weight="bold" font-size="10" fill="#2b241f">Σ SINTHOME</text>
+                ` : ''}
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE X — MICHEL SERRES: THE PARASITE & CHIASMIC TRIAD (1980)
+       ====================================================================== */
+    {
+        id: 'serres-chiasmus',
+        number: 'PLATE X',
+        refCode: 'REF: COM-1980-SERRES',
+        title: 'Michel Serres’s Parasitic Cascade & The Excluded Third',
+        subtitle: 'Information Theory, Noise Interception & The Hermes Chiasmus (1980)',
+        thinker: 'Michel Serres',
+        year: '1980',
+        yearSort: 1980,
+        provenance: 'Paris • Éditions Grasset (Le Parasite)',
+        category: 'theoretical',
+        categoryLabel: 'Theoretical & Philosophical • Epistemology of Noise',
+        secondaryTags: ['The Parasite', 'Excluded Third', 'Information Theory', 'Hermes'],
+        mold: 'standard',
+        axiomQuote: '“To hold a dialogue is to suppose a third man and to seek to exclude him; a successful communication is the exclusion of the third.” — Michel Serres',
+        blurb: 'Playing on the triple meaning of the French word "parasite" (biological organism, social uninvited guest, and electrostatic white noise on a wire), Michel Serres redrew Claude Shannon’s communication diagram. A parasite does not connect two stations (Node A → Node B); instead, it bifurcates the arrow itself—intercepting the relation-of-a-relation until noise forces the system to leap to a higher order of complexity.',
+        useCaseLabel: 'Cybernetic & Literary Resonance',
+        useCase: 'Communication protocol theory, René Girard’s mimetic triangulation, and analyzing how static/interruption acts as a generative catalyst in systems.',
+        triadLabels: ['I. Parasitic Cascade', 'II. Noise Calculus', 'III. Interception Stage'],
+        exegesis: {
+            stakes: 'Classical logic (the Law of the Excluded Middle) and Shannon information theory both treat noise as a mere external nuisance to be scrubbed from the channel between Sender and Receiver. Serres turns this inside out: without the Third Man (the Parasite / Noise / Hermes), no dialogue could even cohere, because Sender and Receiver only unite as allies in their shared effort to expel the noise.',
+            mechanics: 'Start with a directed flow arrow from Station S₁ (Host/Producer) to Station S₂ (Receiver). The Parasite P₁ does not sit at a node; its vector lands perpendicularly upon the arrow itself (intercepting the relation rather than the thing). Then a second parasite P₂ intercepts the arrow of P₁, forming an asymmetrical cascade of arrows-upon-arrows. What looks like noise at Level N becomes the organizing code at Level N+1.',
+            lineage: 'Draws simultaneously on La Fontaine’s Fables ("The Town Rat and the Country Rat"), Henri Atlan’s biophysics ("Order from Noise"), Leibniz’s communication of substances, and Claude Shannon’s 1948 schematic.'
+        },
+        relatedPlates: ['greimas', 'beer-vsm', 'spencer-brown', 'peirce'],
+        scriptLang: 'Serresian Relation-Interception Operator & Order-from-Noise Cascade',
+        script: `<span class="code-comment"># Michel Serres — Le Parasite (1980): Arrow-on-Arrow Interception Operator</span>
+<span class="code-comment"># Standard Edge:  e_0 = (Host_A  --->  Guest_B)</span>
+<span class="code-comment"># Parasitic Edge: e_1 = (e_0     --->  Parasite_1)  [Targets the RELATION, not the node]</span>
+
+<span class="code-keyword">class</span> <span class="code-func">ParasiticCascade</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self, source, target):
+        self.base_channel = (source, target)
+        self.interceptors = []
+
+    <span class="code-keyword">def</span> <span class="code-func">graft_parasite</span>(self, parasite_name, noise_entropy):
+        <span class="code-string">"""Attaches a new vector onto the previous relational arrow."""</span>
+        target_relation = self.interceptors[-1] <span class="code-keyword">if</span> self.interceptors <span class="code-keyword">else</span> self.base_channel
+        self.interceptors.append({
+            <span class="code-string">"host_relation"</span>: target_relation,
+            <span class="code-string">"parasite"</span>: parasite_name,
+            <span class="code-string">"transmuted_order"</span>: <span class="code-func">round</span>(noise_entropy * 1.618, 2)
+        })`,
+        builderControls: [
+            { id: 'cascadeDepth', label: 'Parasitic Interception Depth (Pₙ)', type: 'range', min: 1, max: 4, value: 3 },
+            { id: 'noiseAmp', label: 'Channel Static / Entropy Injection', type: 'range', min: 5, max: 35, value: 18 },
+            { id: 'triadMode', label: 'Epistemic Register', type: 'select', options: ['Information Theory (Sender / Receiver / Static)', 'Fable Register (Country Rat / Town Rat / Tax Farmer)', 'Logic Register (Same / Other / Excluded Third)'] }
+        ],
+        renderSvg: (params) => {
+            const depth = params ? parseInt(params.cascadeDepth) : 3;
+            const noise = params ? parseInt(params.noiseAmp) : 18;
+            const mode = params ? params.triadMode : 'Information Theory (Sender / Receiver / Static)';
+
+            let n1 = 'SENDER (S₁)', n2 = 'RECEIVER (S₂)', pLabel = 'PARASITE / NOISE';
+            if (String(mode).includes('Fable')) {
+                n1 = 'PRODUCTION (Host)'; n2 = 'TABLE (Guest)'; pLabel = 'INTERRUPTION (Noise)';
+            } else if (String(mode).includes('Logic')) {
+                n1 = 'THESIS (Same)'; n2 = 'ANTITHESIS (Other)'; pLabel = 'THE INCLUDED THIRD';
+            }
+
+            let cascadeSvg = '';
+            const pCoords = [
+                [230, 65, 230, 125],
+                [230, 95, 315, 95],
+                [272, 95, 272, 42],
+                [272, 68, 360, 68]
+            ];
+
+            for (let i = 0; i < depth; i++) {
+                const [x1, y1, x2, y2] = pCoords[i];
+                const col = i % 2 === 0 ? '#9e3b22' : '#c88a2d';
+                cascadeSvg += `
+                    <g class="interactive-path" data-info="Parasitic Vector P_${i + 1}: Intercepts the relational arrow of level ${i} rather than a terminal station">
+                        <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${col}" stroke-width="2.2"/>
+                        <circle cx="${x2}" cy="${y2}" r="4.5" fill="${col}"/>
+                        <text x="${x1 + 8}" y="${y1 - 6}" font-family="Courier New" font-size="8.5" font-weight="bold" fill="${col}">P${i + 1}</text>
+                    </g>`;
+            }
+
+            return `<svg viewBox="0 0 470 245" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="470" height="245" fill="#fdfbf7"/>
+
+                <!-- Primary Channel (S1 -> S2) -->
+                <rect x="30" y="160" width="115" height="34" fill="#fbf8f1" stroke="#2b241f" stroke-width="1.6"/>
+                <text x="87" y="181" font-family="Georgia" font-size="9" font-weight="bold" text-anchor="middle" fill="#2b241f">${n1}</text>
+
+                <rect x="325" y="160" width="115" height="34" fill="#fbf8f1" stroke="#2b241f" stroke-width="1.6"/>
+                <text x="382" y="181" font-family="Georgia" font-size="9" font-weight="bold" text-anchor="middle" fill="#2b241f">${n2}</text>
+
+                <!-- Base Relation Arrow with Noise Modulation -->
+                <path d="M 145 177 Q 190 ${177 - noise} 230 177 T 325 177" fill="none" stroke="#2a5a5b" stroke-width="2.5"
+                      class="interactive-path" data-info="Primary Relational Channel (S₁ → S₂): Perturbed by ${noise}dB of parasitic interference"/>
+                <line x1="230" y1="125" x2="230" y2="177" stroke="#9e3b22" stroke-width="2.2" stroke-dasharray="3,2"/>
+                <circle cx="230" cy="177" r="4.5" fill="#9e3b22"/>
+
+                <!-- Cascade of Interceptions -->
+                ${cascadeSvg}
+
+                <rect x="145" y="16" width="180" height="22" fill="#f4e8e4" stroke="#9e3b22" stroke-width="1"/>
+                <text x="235" y="30" font-family="Georgia" font-size="8.5" font-weight="bold" text-anchor="middle" fill="#9e3b22">${pLabel} (DEPTH = ${depth})</text>
+
+                <text x="235" y="226" font-family="Georgia" font-style="italic" font-size="9.5" text-anchor="middle" fill="#5c5246">
+                    Relation-of-Relation Law: eₙ₊₁ = (eₙ ⊸ Pₙ₊₁) — “Noise begets a new system”
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XI — RAMON LLULL: ARS BREVIS / THE FOURTH FIGURE VOLVELLE (1305)
+       ====================================================================== */
+    {
+        id: 'llull',
+        number: 'PLATE XI',
+        refCode: 'REF: ARS-1305-LLULL',
+        title: 'Ramon Llull’s Ars Magna (The Fourth Figure Volvelle)',
+        subtitle: 'Concentric Paper Combinatory Wheel of the Nine Absolute Principles (1305–1308)',
+        thinker: 'Ramon Llull (Doctor Illuminatus)',
+        year: '1305',
+        yearSort: 1305,
+        provenance: 'Montpellier / Pisa / Majorca • Ars Brevis & Ars Generalis Ultima',
+        category: 'esoteric',
+        categoryLabel: 'Esoteric & Metaphysical • Mechanical Combinatorics',
+        secondaryTags: ['Volvelle', 'Ars Combinatoria', 'Paper Computer', 'Nine Dignities'],
+        mold: 'wide',
+        axiomQuote: '“The Fourth Figure has three circles, the uppermost of which is immovable, and the two lower ones are movable, so that the intellect may mechanically exhaust all ternary truths.” — Ramon Llull, Ars Brevis (1308)',
+        blurb: 'Six centuries before Babbage and Turing, Catalan mystic and logician Ramon Llull constructed the first mechanical rotary information processor out of parchment disks held together by a central silk thread. Inscribed with a nine-letter symbolic alphabet (B through K), rotating the two inner wheels against the fixed outer rim generates 84 non-repeating ternary chambers (BCD, BCE...) to interrogate every conceivable philosophical proposition.',
+        useCaseLabel: 'Computational & Epistemic Lineage',
+        useCase: 'Direct ancestor of Leibniz’s Dissertatio de Arte Combinatoria (1666), cryptographic cipher disks (Alberti), and generative prompt permutation matrices.',
+        triadLabels: ['I. Fourth Volvelle', 'II. Llullian Alphabet', 'III. Rotary Combinator'],
+        exegesis: {
+            stakes: 'In an era when Aristotelian scholasticism relied on static syllogistic memory, Llull asked a revolutionary question: what if truth could be discovered not merely by recalling known premises, but by mechanically combining primary conceptual atoms? By assigning letters B–K to nine divine/ontological Dignities (Goodness, Greatness, Eternity, Power, Wisdom, Will, Virtue, Truth, Glory) and nine Relative Principles (Difference, Concordance, Contrariety, Beginning, Middle, End, Majority, Equality, Minority), Llull turned metaphysics into an exhaustive combinatorial algebra.',
+            mechanics: 'The First Figure (A) is a complete graph (K₉) connecting all nine letters on a single circle. The Third Figure tabulates 36 binary chambers (BC, BD...). The crowning Fourth Figure stacks three concentric parchment disks: the outer circle (B–K) is fixed to the manuscript page, while the middle circle and inner circle rotate independently around a central pivot pin, forming C(9,3) = 84 distinct non-repeating ternary syllogistic cameras.',
+            lineage: 'Studied obsessively by Giordano Bruno, Athanasius Kircher, and the young Gottfried Wilhelm Leibniz (1666); satirized by Jonathan Swift as the "Engine of Lagado" in Gulliver’s Travels (1726); and celebrated by Martin Gardner and Umberto Eco as the birth of Western formal computation.'
+        },
+        relatedPlates: ['bruno', 'leibniz-iching', 'perec-oulipo', 'peirce'],
+        scriptLang: 'Llullian Ternary Camera Generator & Alphabet Lookup Table',
+        script: `<span class="code-comment"># Ramon Llull — Ars Brevis (1308) Fourth Figure Rotary Volvelle</span>
+<span class="code-comment"># Alphabet B..K maps simultaneously to Absolute Dignities & Relative Predicates</span>
+
+LLULL_ALPHABET = {
+    <span class="code-string">'B'</span>: (<span class="code-string">'Bonitas (Goodness)'</span>,    <span class="code-string">'Differentia (Difference)'</span>,  <span class="code-string">'Utrum? (Whether?)'</span>),
+    <span class="code-string">'C'</span>: (<span class="code-string">'Magnitudo (Greatness)'</span>, <span class="code-string">'Concordantia (Concord)'</span>,    <span class="code-string">'Quid? (What?)'</span>),
+    <span class="code-string">'D'</span>: (<span class="code-string">'Aeternitas (Duration)'</span>, <span class="code-string">'Contrarietas (Contrariety)'</span>,<span class="code-string">'De quo? (Of what?)'</span>),
+    <span class="code-string">'E'</span>: (<span class="code-string">'Potestas (Power)'</span>,      <span class="code-string">'Principium (Beginning)'</span>,    <span class="code-string">'Quare? (Why?)'</span>),
+    <span class="code-string">'F'</span>: (<span class="code-string">'Sapientia (Wisdom)'</span>,    <span class="code-string">'Medium (Middle/Measure)'</span>,   <span class="code-string">'Quantum? (How much?)'</span>),
+    <span class="code-string">'G'</span>: (<span class="code-string">'Voluntas (Will)'</span>,       <span class="code-string">'Finis (End/Telos)'</span>,         <span class="code-string">'Quale? (Of what kind?)'</span>),
+    <span class="code-string">'H'</span>: (<span class="code-string">'Virtus (Virtue)'</span>,       <span class="code-string">'Maioritas (Majority)'</span>,      <span class="code-string">'Quando? (When?)'</span>),
+    <span class="code-string">'I'</span>: (<span class="code-string">'Veritas (Truth)'</span>,       <span class="code-string">'Aequalitas (Equality)'</span>,     <span class="code-string">'Ubi? (Where?)'</span>),
+    <span class="code-string">'K'</span>: (<span class="code-string">'Gloria (Glory)'</span>,        <span class="code-string">'Minoritas (Minority)'</span>,      <span class="code-string">'Quomodo? (How?)'</span>)
+}
+
+<span class="code-keyword">def</span> <span class="code-func">read_volvelle_chamber</span>(ring2_shift=1, ring3_shift=2):
+    letters = <span class="code-func">list</span>(LLULL_ALPHABET.keys())
+    c1, c2, c3 = letters[0], letters[ring2_shift % 9], letters[ring3_shift % 9]
+    <span class="code-keyword">return</span> f<span class="code-string">"Camera [{c1}{c2}{c3}]: {LLULL_ALPHABET[c1][2]} {LLULL_ALPHABET[c2][0]} through {LLULL_ALPHABET[c3][1]}"</span>`,
+        builderControls: [
+            { id: 'ring2', label: 'Middle Disk Rotation (Steps 0–8)', type: 'range', min: 0, max: 8, value: 1 },
+            { id: 'ring3', label: 'Inner Disk Rotation (Steps 0–8)', type: 'range', min: 0, max: 8, value: 2 },
+            { id: 'showChords', label: 'First Figure Complete Graph (K₉)', type: 'select', options: ['Show Inner K₉ Combinatorial Web', 'Hide Web (Pure Concentric Volvelle)'] }
+        ],
+        renderSvg: (params) => {
+            const rot2 = params ? parseInt(params.ring2) : 1;
+            const rot3 = params ? parseInt(params.ring3) : 2;
+            const showWeb = params ? String(params.showChords).includes('Show') : true;
+
+            const letters = ['B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K'];
+            const meanings = ['Bonitas', 'Magnitudo', 'Aeternitas', 'Potestas', 'Sapientia', 'Voluntas', 'Virtus', 'Veritas', 'Gloria'];
+            const cx = 155, cy = 128;
+
+            let radialLines = '';
+            let ring1Text = '';
+            let ring2Text = '';
+            let ring3Text = '';
+            let webChords = '';
+            const innerPts = [];
+
+            for (let i = 0; i < 9; i++) {
+                const aRad = ((i * 40 - 90) * Math.PI) / 180;
+                const aMidRad = (((i * 40 + 20) - 90) * Math.PI) / 180;
+
+                // Divider spokes
+                const sx1 = cx + 38 * Math.cos(aMidRad);
+                const sy1 = cy + 38 * Math.sin(aMidRad);
+                const sx2 = cx + 108 * Math.cos(aMidRad);
+                const sy2 = cy + 108 * Math.sin(aMidRad);
+                radialLines += `<line x1="${sx1.toFixed(1)}" y1="${sy1.toFixed(1)}" x2="${sx2.toFixed(1)}" y2="${sy2.toFixed(1)}" stroke="#8c8070" stroke-width="0.9"/>`;
+
+                // Outer Fixed Ring (r = 95)
+                const r1x = cx + 95 * Math.cos(aRad);
+                const r1y = cy + 95 * Math.sin(aRad) + 4;
+                ring1Text += `<text x="${r1x.toFixed(1)}" y="${r1y.toFixed(1)}" font-family="Georgia" font-size="11" font-weight="${i === 0 ? 'bold' : 'normal'}" fill="${i === 0 ? '#9e3b22' : '#2b241f'}" text-anchor="middle">${letters[i]}</text>`;
+
+                // Middle Rotating Ring (r = 72)
+                const idx2 = (i + rot2) % 9;
+                const r2x = cx + 72 * Math.cos(aRad);
+                const r2y = cy + 72 * Math.sin(aRad) + 4;
+                ring2Text += `<text x="${r2x.toFixed(1)}" y="${r2y.toFixed(1)}" font-family="Georgia" font-size="10.5" font-weight="${i === 0 ? 'bold' : 'normal'}" fill="${i === 0 ? '#2a5a5b' : '#2b241f'}" text-anchor="middle">${letters[idx2]}</text>`;
+
+                // Inner Rotating Ring (r = 50)
+                const idx3 = (i + rot3) % 9;
+                const r3x = cx + 50 * Math.cos(aRad);
+                const r3y = cy + 50 * Math.sin(aRad) + 4;
+                ring3Text += `<text x="${r3x.toFixed(1)}" y="${r3y.toFixed(1)}" font-family="Georgia" font-size="10" font-weight="${i === 0 ? 'bold' : 'normal'}" fill="${i === 0 ? '#c88a2d' : '#2b241f'}" text-anchor="middle">${letters[idx3]}</text>`;
+
+                innerPts.push([cx + 36 * Math.cos(aRad), cy + 36 * Math.sin(aRad)]);
+            }
+
+            if (showWeb) {
+                for (let i = 0; i < 9; i++) {
+                    for (let j = i + 1; j < 9; j++) {
+                        webChords += `<line x1="${innerPts[i][0].toFixed(1)}" y1="${innerPts[i][1].toFixed(1)}" x2="${innerPts[j][0].toFixed(1)}" y2="${innerPts[j][1].toFixed(1)}" stroke="#9e3b22" stroke-width="0.45" opacity="0.45"/>`;
+                    }
+                }
+            }
+
+            const topChamber = `B · ${letters[rot2 % 9]} · ${letters[rot3 % 9]}`;
+
+            return `<svg viewBox="0 0 510 256" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="510" height="256" fill="#fcfaf5"/>
+
+                <!-- Highlight Top Active Reading Wedge -->
+                <path d="M ${cx} ${cy} L ${cx - 36} ${cy - 104} A 108 108 0 0 1 ${cx + 36} ${cy - 104} Z" fill="#f4e8e4" opacity="0.55"/>
+
+                <!-- Three Concentric Parchment Disks -->
+                <circle cx="${cx}" cy="${cy}" r="108" fill="none" stroke="#2b241f" stroke-width="2" class="interactive-path" data-info="Outer Fixed Circle (Tabula I): Anchored to the parchment page"/>
+                <circle cx="${cx}" cy="${cy}" r="84" fill="none" stroke="#9e3b22" stroke-width="1.5" class="interactive-path" data-info="Middle Movable Volvelle (Tabula II): Rotated +${rot2} steps"/>
+                <circle cx="${cx}" cy="${cy}" r="60" fill="none" stroke="#2a5a5b" stroke-width="1.5" class="interactive-path" data-info="Inner Movable Volvelle (Tabula III): Rotated +${rot3} steps"/>
+                <circle cx="${cx}" cy="${cy}" r="38" fill="#fdfbf7" stroke="#c88a2d" stroke-width="1.2"/>
+
+                ${radialLines}
+                ${webChords}
+                ${ring1Text}
+                ${ring2Text}
+                ${ring3Text}
+                <circle cx="${cx}" cy="${cy}" r="3.5" fill="#9e3b22"/>
+
+                <!-- Right Side Scholastic Camera Readout -->
+                <rect x="292" y="28" width="198" height="200" fill="#fbf8f1" stroke="#d8cebe" stroke-width="1.2"/>
+                <text x="306" y="48" font-family="Courier New" font-size="8.5" fill="#8c8070">ACTIVE TERNARY CAMERA (APEX):</text>
+                <text x="306" y="72" font-family="Georgia" font-size="18" font-weight="bold" fill="#9e3b22">[ ${topChamber} ]</text>
+
+                <line x1="306" y1="84" x2="476" y2="84" stroke="#d8cebe"/>
+                <text x="306" y="104" font-family="Georgia" font-size="9.5" fill="#2b241f">• Outer (B): <tspan font-style="italic">${meanings[0]}</tspan></text>
+                <text x="306" y="124" font-family="Georgia" font-size="9.5" fill="#2a5a5b">• Middle (${letters[rot2 % 9]}): <tspan font-style="italic">${meanings[rot2 % 9]}</tspan></text>
+                <text x="306" y="144" font-family="Georgia" font-size="9.5" fill="#c88a2d">• Inner (${letters[rot3 % 9]}): <tspan font-style="italic">${meanings[rot3 % 9]}</tspan></text>
+
+                <rect x="306" y="164" width="170" height="50" fill="#f6f2e9" stroke="#a69885" stroke-width="0.8"/>
+                <text x="314" y="180" font-family="Courier New" font-size="7.5" fill="#5c5246">SCHOLASTIC PROPOSITION:</text>
+                <text x="314" y="196" font-family="Georgia" font-style="italic" font-size="8.5" fill="#2b241f">
+                    “Whether ${meanings[0]} is concordant
+                </text>
+                <text x="314" y="208" font-family="Georgia" font-style="italic" font-size="8.5" fill="#2b241f">
+                    with ${meanings[rot2 % 9]} through ${meanings[rot3 % 9]}?”
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XII — ROBERT FLUDD: PYRAMIS FORMALIS & MATERIALIS (1617)
+       ====================================================================== */
+    {
+        id: 'fludd',
+        number: 'PLATE XII',
+        refCode: 'REF: COS-1617-FLUDD',
+        title: 'Robert Fludd’s Interpenetrating Pyramids of Light & Shadow',
+        subtitle: 'Pyramis Formalis vs. Pyramis Materialis & The Sphere of Equality (1617)',
+        thinker: 'Robert Fludd (Engraved by Matthäus Merian)',
+        year: '1617',
+        yearSort: 1617,
+        provenance: 'Oppenheim • Utriusque Cosmi Maioris Scilicet et Minoris Historia',
+        category: 'esoteric',
+        categoryLabel: 'Esoteric & Metaphysical • Hermetic Ratio Chart',
+        secondaryTags: ['Hermeticism', 'Bivariate Gradient', 'Cosmic Monochord', 'Sphaera Aequalitatis'],
+        mold: 'nocturnal',
+        axiomQuote: '“Where the descending Pyramid of Formal Light intersects the ascending Pyramid of Material Shadow in equal measure shines the Sphaera Aequalitatis—the Sun and the Human Heart.” — Robert Fludd',
+        blurb: 'Twenty years before Descartes published his coordinate geometry, English Paracelsian physician Robert Fludd and engraver Matthäus Merian invented the continuous bivariate ratio graph. The cosmos is modeled as two acute isosceles triangles interpenetrating from opposite poles: uncreated Light tapering downward to Earth, and terrestrial Matter tapering upward to the Empyrean.',
+        useCaseLabel: 'Historical & Visual Epistemology',
+        useCase: 'Earliest continuous inverse-proportion area chart in Western print; models dual-opposing gradient fields, signal-to-noise crossfades, and harmonic equilibrium.',
+        triadLabels: ['I. Dual Pyramids', 'II. Harmonic Ratio', 'III. Equilibrium Stage'],
+        exegesis: {
+            stakes: 'How can a single engraving represent the continuous gradation from pure Spirit to gross Matter without breaking the universe into disconnected boxes? Fludd realized that two congruent triangles pointing in opposite directions and sharing the same altitude possess a remarkable geometric property: at any horizontal cross-section y, the width of the descending triangle plus the width of the ascending triangle equals a constant (Lux + Umbra = 100%).',
+            mechanics: 'The upper base anchors the Pyramis Formalis (Light/Form), whose vertex touches the surface of the Earth at the bottom. The lower base anchors the Pyramis Materialis (Shadow/Matter), whose vertex reaches up to the divine threshold. Exactly halfway along the vertical axis—at the intersection of their diagonals—lies the Sphaera Aequalitatis (the Sphere of Equality, 50% Form / 50% Matter), flanked by the double musical octave (Disdiapason) of the Mundane Monochord.',
+            lineage: 'Debated fiercely by Johannes Kepler in the appendix to Harmonices Mundi (1619) and Pierre Gassendi, Fludd’s interpenetrating pyramids bridged Renaissance Hermeticism and quantitative graphical representation.'
+        },
+        relatedPlates: ['deleuze-fold', 'llull', 'bruno', 'kunz'],
+        scriptLang: 'Fluddian Inverse-Triangle Ratio & Mundane Monochord Interval Solver',
+        script: `<span class="code-comment"># Robert Fludd — Utriusque Cosmi (1617): Interpenetrating Pyramid Calculus</span>
+<span class="code-comment"># At any cosmic altitude h ∈ [0.0 (Terra) .. 1.0 (Empyrean)]:</span>
+<span class="code-comment"># Width(Pyramis_Formalis) + Width(Pyramis_Materialis) = 1.0 (Invariant Conservation)</span>
+
+<span class="code-keyword">def</span> <span class="code-func">cosmic_cross_section</span>(altitude_norm):
+    lux_ratio = <span class="code-func">max</span>(0.0, <span class="code-func">min</span>(1.0, altitude_norm))
+    umbra_ratio = 1.0 - lux_ratio
+    
+    <span class="code-keyword">if</span> <span class="code-func">abs</span>(lux_ratio - 0.5) < 0.08:
+        sphere = <span class="code-string">"Sphaera Aequalitatis (Sol / Cor — 1:1 Harmonic Equilibrium)"</span>
+    <span class="code-keyword">elif</span> lux_ratio > 0.66:
+        sphere = <span class="code-string">"Regio Empyrea (Diapason Spiritualis — Form Dominates)"</span>
+    <span class="code-keyword">else</span>:
+        sphere = <span class="code-string">"Regio Elementaris (Diapason Corporea — Matter Dominates)"</span>
+        
+    <span class="code-keyword">return</span> {<span class="code-string">"Lux_Form_%"</span>: <span class="code-func">round</span>(lux_ratio * 100, 1), <span class="code-string">"Umbra_Matter_%"</span>: <span class="code-func">round</span>(umbra_ratio * 100, 1), <span class="code-string">"Sphere"</span>: sphere}`,
+        builderControls: [
+            { id: 'altitude', label: 'Cosmic Cross-Section Altitude (%)', type: 'range', min: 5, max: 95, value: 50 },
+            { id: 'baseSpan', label: 'Pyramid Base Aperture (px)', type: 'range', min: 90, max: 180, value: 140 },
+            { id: 'monochord', label: 'Mundane Monochord Harmonics', type: 'select', options: ['Show Disdiapason Musical Octaves', 'Pure Geometric Interpenetration'] }
+        ],
+        renderSvg: (params) => {
+            const altPct = params ? parseInt(params.altitude) : 50;
+            const span = params ? parseInt(params.baseSpan) : 140;
+            const showChord = params ? String(params.monochord).includes('Show') : true;
+
+            const cx = 230, topY = 28, botY = 222;
+            const height = botY - topY;
+            const sliceY = botY - (altPct / 100) * height;
+            const luxPct = altPct;
+            const umbraPct = 100 - altPct;
+
+            return `<svg viewBox="0 0 480 252" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="252" fill="#191613"/>
+
+                <!-- Ascending Pyramid of Matter (Umbra / Dark Teal-Charcoal) -->
+                <polygon points="${cx - span / 2},${botY} ${cx + span / 2},${botY} ${cx},${topY}" 
+                         fill="#2a5a5b" fill-opacity="0.35" stroke="#82c0c2" stroke-width="1.5"
+                         class="interactive-path" data-info="Pyramis Materialis (Ascending Shadow): Base rooted in Terra, apex reaching toward the Empyrean"/>
+
+                <!-- Descending Pyramid of Form/Light (Lux / Gold-Ochre) -->
+                <polygon points="${cx - span / 2},${topY} ${cx + span / 2},${topY} ${cx},${botY}" 
+                         fill="#e09f5a" fill-opacity="0.32" stroke="#e09f5a" stroke-width="1.5"
+                         class="interactive-path" data-info="Pyramis Formalis (Descending Light): Base anchored in Divine Form, apex touching terrestrial nadir"/>
+
+                <!-- Sphaera Aequalitatis (Midpoint Sun) -->
+                <circle cx="${cx}" cy="${(topY + botY) / 2}" r="18" fill="none" stroke="#e09f5a" stroke-width="1.2" stroke-dasharray="2,2"
+                        class="interactive-path" data-info="Sphaera Aequalitatis (Sphere of Equality): Exact 50/50 equilibrium of Light and Matter"/>
+                <circle cx="${cx}" cy="${(topY + botY) / 2}" r="4" fill="#e09f5a"/>
+
+                <!-- Interactive Cross-Section Slice -->
+                <line x1="75" y1="${sliceY}" x2="395" y2="${sliceY}" stroke="#9e3b22" stroke-width="2.2"/>
+                <text x="80" y="${sliceY - 6}" font-family="Courier New" font-size="8.5" fill="#f4efe6">
+                    LUX: ${luxPct}%  |  UMBRA: ${umbraPct}%
+                </text>
+
+                ${showChord ? `
+                <!-- Mundane Monochord Intervals on Right -->
+                <path d="M 340 ${topY} A 48 48 0 0 1 340 ${(topY + botY) / 2}" fill="none" stroke="#c8b9a6" stroke-width="1" stroke-dasharray="3,2"/>
+                <path d="M 340 ${(topY + botY) / 2} A 48 48 0 0 1 340 ${botY}" fill="none" stroke="#c8b9a6" stroke-width="1" stroke-dasharray="3,2"/>
+                <text x="398" y="${topY + 50}" font-family="Georgia" font-style="italic" font-size="8.5" fill="#c8b9a6">Diapason Spiritualis</text>
+                <text x="398" y="${botY - 45}" font-family="Georgia" font-style="italic" font-size="8.5" fill="#82c0c2">Diapason Corporea</text>
+                ` : ''}
+
+                <text x="${cx}" y="18" font-family="Courier New" font-size="8" fill="#e09f5a" text-anchor="middle">APEX FORMALIS (LUX INFUSA • 100% SPIRIT)</text>
+                <text x="${cx}" y="242" font-family="Courier New" font-size="8" fill="#82c0c2" text-anchor="middle">BASIS MATERIALIS (TERRA • 100% MATTER)</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XIII — GIORDANO BRUNO: DE UMBRIS IDEARUM MEMORY WHEELS (1582)
+       ====================================================================== */
+    {
+        id: 'bruno',
+        number: 'PLATE XIII',
+        refCode: 'REF: MEM-1582-BRUNO',
+        title: 'Giordano Bruno’s Concentric Seals (De Umbris Idearum)',
+        subtitle: 'Five-Ring Astral Memory Cinema of 30 × 30⁵ Permutations (1582)',
+        thinker: 'Giordano Bruno of Nola',
+        year: '1582',
+        yearSort: 1582,
+        provenance: 'Paris / London • De Umbris Idearum & Explicatio Triginta Sigillorum',
+        category: 'esoteric',
+        categoryLabel: 'Esoteric & Metaphysical • Mnemonic Combinatorics',
+        secondaryTags: ['Art of Memory', 'Frances Yates', 'Thirty Seals', 'Shadows of Ideas'],
+        mold: 'nocturnal',
+        axiomQuote: '“Because ideas are infinite and our mind grasps only their moving shadows (umbrae idearum), the inner wheel must turn without ceasing.” — Giordano Bruno (1582)',
+        blurb: 'Supercharging Ramon Llull’s 9-letter wheel into a staggering five-ring concentric engine of 30 radial divisions per wheel (24,300,000 states), heretical philosopher Giordano Bruno transformed the classical Roman Art of Memory from static architectural rooms into a kinetic mental cinema—encoding mythological agents, actions, insignia, and tools to mirror an infinite cosmos inside the human imagination.',
+        useCaseLabel: 'Cognitive & Archival Resonance',
+        useCase: 'High-dimensional associative memory indexing, procedural world/narrative generation, and non-hierarchical relational databases.',
+        triadLabels: ['I. Shadow Wheel', 'II. Thirty Seals', 'III. Mnemonic Engine'],
+        exegesis: {
+            stakes: 'Classical Roman rhetoric (Cicero, Quintilian) taught speakers to memorize facts by placing striking images inside static architectural rooms (loci). Bruno—who championed an infinite universe with no fixed center—realized that a static palace cannot map an infinite cosmos. By mounting his memory loci onto five concentric rotating wheels adapted from Llull, he invented a dynamic associative search engine.',
+            mechanics: 'Each of the five concentric rings is subdivided into 30 radial rays marked by the 23 Latin letters plus 7 Greek and Hebrew characters (A–Z, α, ω, א...). Ring I encodes 30 Mythological Agents (Lycaon, Deucalion, Apollo...); Ring II encodes 30 Actions/Predicates; Ring III encodes 30 Adjectives/Insignia; Ring IV encodes 30 Instruments; and Ring V encodes 30 Modifying Circumstances. Aligning any radial ray synthesizes a vivid composite scene that compresses a five-letter string or philosophical concept.',
+            lineage: 'Reconstructed by Frances Yates in her classic study The Art of Memory (1966) and analyzed by Ioan Couliano in Eros and Magic in the Renaissance (1984) as a proto-cinematic apparatus of the imagination.'
+        },
+        relatedPlates: ['llull', 'fludd', 'leibniz-iching', 'perec-oulipo'],
+        scriptLang: 'Brunonian 5-Ring Combinatorial Cipher & Emblem Synthesizer',
+        script: `<span class="code-comment"># Giordano Bruno — De Umbris Idearum (1582) 5-Ring Memory Cipher</span>
+<span class="code-comment"># 30 Radial Divisions × 5 Concentric Rings = 30^5 (24,300,000 Composite Shadows)</span>
+
+BRUNO_RINGS = {
+    <span class="code-string">"I_Inventor"</span>:    [<span class="code-string">"Lycaon"</span>, <span class="code-string">"Deucalion"</span>, <span class="code-string">"Apollo"</span>, <span class="code-string">"Argus"</span>, <span class="code-string">"Orpheus"</span>, <span class="code-string">"Daedalus"</span>],
+    <span class="code-string">"II_Action"</span>:     [<span class="code-string">"Banquets"</span>, <span class="code-string">"Casts Stones"</span>, <span class="code-string">"Draws Bow"</span>, <span class="code-string">"Watches"</span>, <span class="code-string">"Charms"</span>, <span class="code-string">"Forges Labyrinth"</span>],
+    <span class="code-string">"III_Insignia"</span>:  [<span class="code-string">"Crowned with Wolf-Skin"</span>, <span class="code-string">"Veiled in Mist"</span>, <span class="code-string">"Solar Halo"</span>, <span class="code-string">"Hundred-Eyed"</span>, <span class="code-string">"Golden Lyre"</span>, <span class="code-string">"Waxen Wings"</span>],
+    <span class="code-string">"IV_Instrument"</span>: [<span class="code-string">"Brazen Altar"</span>, <span class="code-string">"Ark of Timber"</span>, <span class="code-string">"Silver Arrow"</span>, <span class="code-string">"Watchtower"</span>, <span class="code-string">"Seven Strings"</span>, <span class="code-string">"Compass & Plumb"</span>],
+    <span class="code-string">"V_Place"</span>:       [<span class="code-string">"Arcadian Grove"</span>, <span class="code-string">"Mount Parnassus"</span>, <span class="code-string">"Delphic Cavern"</span>, <span class="code-string">"Hera's Pasture"</span>, <span class="code-string">"Thracian River"</span>, <span class="code-string">"Cretan Vault"</span>]
+}`,
+        builderControls: [
+            { id: 'rayCount', label: 'Visible Radial Divisions', type: 'range', min: 12, max: 30, value: 24 },
+            { id: 'phaseShift', label: 'Astral Ring Differential Shift', type: 'range', min: 0, max: 5, value: 2 },
+            { id: 'sealIndex', label: 'Primary Mythological Ray (0–5)', type: 'range', min: 0, max: 5, value: 3 }
+        ],
+        renderSvg: (params) => {
+            const rays = params ? parseInt(params.rayCount) : 24;
+            const shift = params ? parseInt(params.phaseShift) : 2;
+            const idx = params ? parseInt(params.sealIndex) : 3;
+
+            const agents = ['Lycaon', 'Deucalion', 'Apollo', 'Argus', 'Orpheus', 'Daedalus'];
+            const actions = ['Banquets', 'Casts Stones', 'Shoots Python', 'Keeps Watch', 'Enchants', 'Builds Maze'];
+            const insignia = ['Wolf-Pelt', 'Pyrrha’s Veil', 'Solar Laurel', '100 Eyes', 'Eurydice’s Shade', 'Wax Wings'];
+            const tools = ['Cleaver', 'River Stones', 'Silver Bow', 'Peacock Plume', 'Tortoise Lyre', 'Labyrinth Thread'];
+
+            const cx = 148, cy = 128;
+            let spokes = '';
+            for (let i = 0; i < rays; i++) {
+                const a = (i * (360 / rays) * Math.PI) / 180;
+                const x1 = cx + 24 * Math.cos(a);
+                const y1 = cy + 24 * Math.sin(a);
+                const x2 = cx + 104 * Math.cos(a);
+                const y2 = cy + 104 * Math.sin(a);
+                spokes += `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#5c5246" stroke-width="0.65"/>`;
+            }
+
+            const radii = [104, 88, 72, 56, 40];
+            const ringColors = ['#e09f5a', '#9e3b22', '#82c0c2', '#c88a2d', '#f4efe6'];
+            let circles = '';
+            radii.forEach((r, k) => {
+                circles += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${ringColors[k]}" stroke-width="1.4" class="interactive-path" data-info="Brunonian Ring ${k + 1} of 5: Encodes 30 radial mnemonic attributes"/>`;
+            });
+
+            return `<svg viewBox="0 0 490 255" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="490" height="255" fill="#191613"/>
+                ${spokes}
+                ${circles}
+                <circle cx="${cx}" cy="${cy}" r="24" fill="#211d19" stroke="#e09f5a" stroke-width="1.5"/>
+                <text x="${cx}" y="${cy + 3}" font-family="Georgia" font-size="9" font-weight="bold" fill="#e09f5a" text-anchor="middle">SOL</text>
+
+                <!-- Highlight Active Radial Vector -->
+                <line x1="${cx}" y1="${cy - 24}" x2="${cx}" y2="${cy - 108}" stroke="#e09f5a" stroke-width="2.5"/>
+
+                <!-- Right Panel: Synthesized Mnemonic Shadow Image -->
+                <rect x="280" y="28" width="192" height="198" fill="#211d19" stroke="#4a4037" stroke-width="1.2"/>
+                <text x="292" y="48" font-family="Courier New" font-size="8" fill="#e09f5a">SIGILLUM UMBRAE (COMPOSITE LOCUS):</text>
+                <text x="292" y="70" font-family="Georgia" font-size="13" font-weight="bold" fill="#f4efe6">
+                    Ray [${idx + 1}.${(idx + shift) % 6 + 1}] — ${agents[idx]}
+                </text>
+                <line x1="292" y1="80" x2="460" y2="80" stroke="#3d352e"/>
+                <text x="292" y="102" font-family="Georgia" font-size="9.5" fill="#e09f5a">I. Agent: <tspan fill="#f4efe6">${agents[idx]}</tspan></text>
+                <text x="292" y="124" font-family="Georgia" font-size="9.5" fill="#9e3b22">II. Action: <tspan fill="#f4efe6">${actions[(idx + shift) % 6]}</tspan></text>
+                <text x="292" y="146" font-family="Georgia" font-size="9.5" fill="#82c0c2">III. Insignia: <tspan fill="#f4efe6">${insignia[(idx + shift * 2) % 6]}</tspan></text>
+                <text x="292" y="168" font-family="Georgia" font-size="9.5" fill="#c88a2d">IV. Instrument: <tspan fill="#f4efe6">${tools[(idx + shift * 3) % 6]}</tspan></text>
+                <text x="292" y="205" font-family="Courier New" font-size="7.5" fill="#a89b8c">PERMUTATION SPACE: ${rays}⁵ = ${Math.pow(rays, 5).toLocaleString()}</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XIV — G. W. LEIBNIZ: DYADIC HEXAGRAM & BINARY CALCULUS (1703)
+       ====================================================================== */
+    {
+        id: 'leibniz-iching',
+        number: 'PLATE XIV',
+        refCode: 'REF: BIN-1703-LEIBNIZ',
+        title: 'Leibniz & Shao Yong’s Dyadic Hexagram Cosmogram',
+        subtitle: 'Isomorphism of Binary Arithmetic (0/1) & The 64 Prior Heaven Hexagrams (1703)',
+        thinker: 'Gottfried Wilhelm Leibniz & Shao Yong (via Joachim Bouvet)',
+        year: '1703',
+        yearSort: 1703,
+        provenance: 'Hanover / Paris / Beijing • Mémoires de l’Académie Royale des Sciences',
+        category: 'esoteric',
+        categoryLabel: 'Esoteric & Metaphysical • Binary Cosmology',
+        secondaryTags: ['Binary Calculus', 'Shao Yong', 'I Ching', 'Creatio ex Nihilo'],
+        mold: 'standard',
+        axiomQuote: '“Omnibus ex nihilo ducendis sufficit unum — To derive all things out of nothing, Unity (1) and Zero (0) suffice.” — G. W. Leibniz (Medallion Design, 1697)',
+        blurb: 'Having invented binary arithmetic (0 and 1) as a metaphysical emblem of Creation out of Nothing, Leibniz received a letter from Jesuit missionary Joachim Bouvet in Beijing enclosing Song-dynasty philosopher Shao Yong’s circular-and-square diagram of the 64 I Ching hexagrams. Mapping broken Yin lines to 0 and unbroken Yang lines to 1 revealed an exact 6-bit binary progression from 000000₂ (0) to 111111₂ (63).',
+        useCaseLabel: 'Computational & Philosophical Lineage',
+        useCase: 'Direct conceptual bridge between Song-dynasty Neo-Confucian combinatorics, Baroque universal characteristic, and modern 6-bit digital registers.',
+        triadLabels: ['I. Dyadic Cosmogram', 'II. 6-Bit Isomorphism', 'III. Hexagram Register'],
+        exegesis: {
+            stakes: 'For Leibniz, binary numbers were not primarily a tool for calculating machines (which he designed in decimal), but an ontological proof: just as every integer can be generated strictly from 1 (God/Being) and 0 (Nothingness/Void), so all complex ideas can be decomposed into primitive binary determinations. Seeing this exact binary ordering mirrored in Shao Yong’s 11th-century Xiantian (Prior Heaven) diagram convinced Leibniz of a universal trans-cultural mathesis.',
+            mechanics: 'Each hexagram consists of 6 stacked horizontal traits (from bottom line to top line). Reading an unbroken Yang line (—) as binary 1 and a broken Yin line (- -) as binary 0 turns Kun (䷁, six broken lines) into 000000₂ = 0, Bo (䷖) into 000001₂ = 1, and Qian (䷀, six solid lines) into 111111₂ = 63. Shao Yong arranged all 64 figures both as an 8×8 Cartesian square inside a circular ring where opposite hexagrams are bitwise complements (XOR 111111₂).',
+        lineage: 'Published in Paris in 1703 ("Explication de l’Arithmétique Binaire"), echoed in Hermann Hesse’s The Glass Bead Game (1943), and analyzed by John Maynard Smith and François Jacob when comparing the 64 hexagrams to the 64 triplet codons (4³ = 2⁶) of the genetic code.'
+        },
+        relatedPlates: ['llull', 'deleuze-fold', 'spencer-brown', 'bruno'],
+        scriptLang: 'Leibnizian 6-Bit Dyadic Encoder & Bitwise Complement Resolver',
+        script: `<span class="code-comment"># G. W. Leibniz (1703) & Shao Yong (c. 1060) — 6-Bit Hexagram Isomorphism</span>
+<span class="code-comment"># Unbroken Yang Line (───) = 1  |  Broken Yin Line (─ ─) = 0</span>
+
+<span class="code-keyword">def</span> <span class="code-func">leibniz_hexagram</span>(n):
+    <span class="code-string">"""Maps integer n ∈ [0..63] to its 6-bit dyadic string, lines, and antipodal complement."""</span>
+    n = <span class="code-func">max</span>(0, <span class="code-func">min</span>(63, n))
+    bits = <span class="code-func">format</span>(n, <span class="code-string">'06b'</span>)
+    complement_n = n ^ 0b111111  <span class="code-comment"># Antipodal hexagram across Shao Yong's circle</span>
+    lines = [<span class="code-string">"━━━━━ (1 Yang)"</span> <span class="code-keyword">if</span> b == <span class="code-string">'1'</span> <span class="code-keyword">else</span> <span class="code-string">"━━ ━━ (0 Yin)"</span> <span class="code-keyword">for</span> b <span class="code-keyword">in</span> bits]
+    <span class="code-keyword">return</span> {
+        <span class="code-string">"decimal"</span>: n,
+        <span class="code-string">"dyadic_register"</span>: bits,
+        <span class="code-string">"antipode_complement"</span>: <span class="code-func">format</span>(complement_n, <span class="code-string">'06b'</span>),
+        <span class="code-string">"stack"</span>: lines
+    }`,
+        builderControls: [
+            { id: 'stateVal', label: 'Dyadic Integer State (0 to 63)', type: 'range', min: 0, max: 63, value: 42 },
+            { id: 'showComplement', label: 'Antipodal Bitwise Complement (XOR)', type: 'select', options: ['Show Antipodal Twin (n ⊕ 63)', 'Single Hexagram Focus'] }
+        ],
+        renderSvg: (params) => {
+            const val = params ? parseInt(params.stateVal) : 42;
+            const showComp = params ? String(params.showComplement).includes('Show') : true;
+            const compVal = val ^ 63;
+            const bits = val.toString(2).padStart(6, '0');
+            const compBits = compVal.toString(2).padStart(6, '0');
+
+            // Render 6 stacked lines for primary hexagram
+            let hexLines = '';
+            let compLines = '';
+            for (let i = 0; i < 6; i++) {
+                const y = 70 + i * 20;
+                const bit = bits[i];
+                const cBit = compBits[i];
+
+                if (bit === '1') {
+                    hexLines += `<line x1="255" y1="${y}" x2="335" y2="${y}" stroke="#9e3b22" stroke-width="7" class="interactive-path" data-info="Trait ${6 - i} (Yang = 1): Unbroken affirmative line"/>`;
+                } else {
+                    hexLines += `
+                        <line x1="255" y1="${y}" x2="288" y2="${y}" stroke="#2b241f" stroke-width="7" class="interactive-path" data-info="Trait ${6 - i} (Yin = 0): Broken privative line"/>
+                        <line x1="302" y1="${y}" x2="335" y2="${y}" stroke="#2b241f" stroke-width="7"/>`;
+                }
+                hexLines += `<text x="242" y="${y + 4}" font-family="Courier New" font-size="9.5" font-weight="bold" fill="${bit === '1' ? '#9e3b22' : '#5c5246'}">${bit}</text>`;
+
+                if (showComp) {
+                    if (cBit === '1') {
+                        compLines += `<line x1="375" y1="${y}" x2="445" y2="${y}" stroke="#2a5a5b" stroke-width="6"/>`;
+                    } else {
+                        compLines += `<line x1="375" y1="${y}" x2="404" y2="${y}" stroke="#8c8070" stroke-width="6"/><line x1="416" y1="${y}" x2="445" y2="${y}" stroke="#8c8070" stroke-width="6"/>`;
+                    }
+                }
+            }
+
+            // Shao Yong Circle + Inner Square on Left
+            const cx = 115, cy = 126, r = 82;
+            const angle = ((val / 64) * 360 - 90) * (Math.PI / 180);
+            const px = cx + r * Math.cos(angle);
+            const py = cy + r * Math.sin(angle);
+            const ox = cx - r * Math.cos(angle);
+            const oy = cy - r * Math.sin(angle);
+
+            return `<svg viewBox="0 0 480 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="250" fill="#fdfbf7"/>
+
+                <!-- Left: Shao Yong Circular & Square Xiantian Cosmogram -->
+                <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#2b241f" stroke-width="2" class="interactive-path" data-info="Shao Yong's Circular Xiantian Ring (64 Perimeter Positions)"/>
+                <circle cx="${cx}" cy="${cy}" r="${r - 8}" fill="none" stroke="#8c8070" stroke-width="1" stroke-dasharray="2,2"/>
+                <rect x="${cx - 44}" y="${cy - 44}" width="88" height="88" fill="#f6f2e9" stroke="#2a5a5b" stroke-width="1.4" class="interactive-path" data-info="Inner 8×8 Terrestrial Matrix (64 Binary Cells)"/>
+                
+                <!-- Antipodal Diameter Line -->
+                <line x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${ox.toFixed(1)}" y2="${oy.toFixed(1)}" stroke="#c88a2d" stroke-width="1.5" stroke-dasharray="3,2"/>
+                <circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="5" fill="#9e3b22"/>
+                <circle cx="${ox.toFixed(1)}" cy="${oy.toFixed(1)}" r="4.5" fill="#2a5a5b"/>
+
+                <!-- Right: Leibniz Dyadic Register -->
+                <text x="295" y="42" font-family="Courier New" font-size="9" font-weight="bold" fill="#9e3b22" text-anchor="middle">STATE ${val} (${bits}₂)</text>
+                ${showComp ? `<text x="410" y="42" font-family="Courier New" font-size="8.5" fill="#2a5a5b" text-anchor="middle">XOR ${compVal} (${compBits}₂)</text>` : ''}
+                ${hexLines}
+                ${compLines}
+
+                <text x="240" y="228" font-family="Georgia" font-style="italic" font-size="9.5" fill="#5c5246" text-anchor="middle">
+                    Leibniz Dyadic Equation: ${val}₁₀ = ${bits}₂  |  Bitwise Sum with Antipode: ${val} + ${compVal} = 63 (111111₂)
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XV — STERNE & SHKLOVSKY: NARRATIVE DIGRESSION CURVES (1762 / 1921)
+       ====================================================================== */
+    {
+        id: 'sterne-shklovsky',
+        number: 'PLATE XV',
+        refCode: 'REF: LIT-1762-SHANDY',
+        title: 'Sterne & Shklovsky’s Narrative Digression Curves',
+        subtitle: 'Topological Plot Trajectories of Tristram Shandy (1762) & Russian Formalism (1921)',
+        thinker: 'Laurence Sterne (1762) & Viktor Shklovsky (1921)',
+        year: '1762',
+        yearSort: 1762,
+        provenance: 'London (Vol. VI, Ch. 40) & Petrograd (Opoiaz / Theory of Prose)',
+        category: 'experimental',
+        categoryLabel: 'Experimental & Avant-Garde • Literary Topology',
+        secondaryTags: ['Fabula vs. Syuzhet', 'Metafiction', 'Russian Formalism', 'Digression'],
+        mold: 'wide',
+        axiomQuote: '“Digressions, incontestably, are the sunshine;—they are the life, the soul of reading;—take them out of this book for instance,—you might as well take the book along with them.” — Laurence Sterne (1762)',
+        blurb: 'In Volume VI, Chapter 40 of Tristram Shandy, Laurence Sterne interrupts his novel to draw five woodcut serpentine graphs mapping the non-linear trajectories of his own previous five volumes—complete with retrogradations, loops, and orthogonal tangents—contrasted against the dead ruler-straight line of "a cabbage-planter." In 1921, Viktor Shklovsky superimposed a structuralist vector diagram proving that in literature, digression IS the plot (syuzhet).',
+        useCaseLabel: 'Literary & Narrative Theory Resonance',
+        useCase: 'Decoupling chronological story-time (fabula) from discourse-time (syuzhet), mapping hypertext/nonlinear storytelling, and structuralist narratology.',
+        triadLabels: ['I. Shandean Curves', 'II. Syuzhet Calculus', 'III. Digression Stage'],
+        exegesis: {
+            stakes: 'Conventional criticism treats plot as a straight causal road from A to B, viewing digressions as decorative detours. By graphing his own prose as an erratic seismograph and contrasting it with a Euclidean straight line stamped "Cicero / Cabbage-Planter," Sterne invented visual narratology 150 years before Russian Formalism. Viktor Shklovsky declared Tristram Shandy "the most typical novel in world literature" precisely because it lays bare the device (obnazhenie priema) of temporal retardation.',
+            mechanics: 'Sterne’s original engraving charts Volumes I through V as five distinct topological curves where horizontal progression represents main action, loops upward/downward represent thematic excursions (labeled A, B, C, D), and backward hooks represent chronological flashbacks (retrogradations). Shklovsky’s 1921 companion diagram plots multiple motif-threads (Uncle Toby, the midwife, the nose) jumping discontinuously via vertical dotted splicing vectors.',
+            lineage: 'Directly inspired Honoré de Balzac’s meandering snake line on the title page of La Peau de Chagrin (1831), Kurt Vonnegut’s "Shapes of Stories" thesis, and Gérard Genette’s Figure III (analepsis/prolepsis).'
+        },
+        relatedPlates: ['husserl', 'nabokov', 'perec-oulipo', 'mallarme'],
+        scriptLang: 'Shklovskian Fabula-to-Syuzhet Perturbation & Digression Integrator',
+        script: `<span class="code-comment"># Laurence Sterne (1762) & Viktor Shklovsky (1921) — Syuzhet Trajectory Generator</span>
+<span class="code-comment"># Fabula (Story): Monotonic linear time t ∈ [0..T]</span>
+<span class="code-comment"># Syuzhet (Plot): Non-linear path with digression loops & retrograde hooks</span>
+
+<span class="code-keyword">import</span> math
+
+<span class="code-keyword">def</span> <span class="code-func">shandean_volume_curve</span>(steps=100, digression_amp=28.0, retrograde_loops=3):
+    path = []
+    <span class="code-keyword">for</span> i <span class="code-keyword">in</span> <span class="code-func">range</span>(steps):
+        u = i / steps
+        <span class="code-comment"># Retrograde X-axis hooks (chronological flashbacks / analepses)</span>
+        x = 40 + u * 420 - 16 * math.sin(u * math.pi * retrograde_loops * 2)
+        <span class="code-comment"># Orthogonal Y-axis digressions (Uncle Toby's fortifications, Slawkenbergius)</span>
+        y = 110 + digression_amp * math.sin(u * math.pi * 7) * math.cos(u * math.pi * 3)
+        path.append((<span class="code-func">round</span>(x, 1), <span class="code-func">round</span>(y, 1)))
+    <span class="code-keyword">return</span> path`,
+        builderControls: [
+            { id: 'digressionAmp', label: 'Digression Excursion Amplitude', type: 'range', min: 5, max: 48, value: 30 },
+            { id: 'retroLoops', label: 'Retrograde Flashback Loops', type: 'range', min: 1, max: 6, value: 3 },
+            { id: 'cabbageLine', label: 'The “Cabbage-Planter’s” Straight Line', type: 'select', options: ['Show Idealized Linear Fabula (Baseline)', 'Hide Baseline (Pure Shandean Syuzhet)'] }
+        ],
+        renderSvg: (params) => {
+            const amp = params ? parseInt(params.digressionAmp) : 30;
+            const loops = params ? parseInt(params.retroLoops) : 3;
+            const showBase = params ? String(params.cabbageLine).includes('Show') : true;
+
+            let pts = [];
+            for (let i = 0; i <= 90; i++) {
+                const u = i / 90;
+                const x = 45 + u * 420 - (loops * 4.2) * Math.sin(u * Math.PI * loops * 2.5);
+                const y = 98 + amp * Math.sin(u * Math.PI * 8) * Math.cos(u * Math.PI * 3);
+                pts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+            }
+
+            return `<svg viewBox="0 0 510 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="510" height="250" fill="#fcfaf5"/>
+                <text x="45" y="26" font-family="Courier New" font-size="8.5" fill="#5c5246">STERNE (VOL. VI, CH. 40): SERPENTINE DIGRESSION TRAJECTORY (INV. T.S.)</text>
+
+                <!-- Shandean Serpentine Curve -->
+                <polyline points="${pts.join(' ')}" fill="none" stroke="#2b241f" stroke-width="2.2"
+                          class="interactive-path" data-info="Syuzhet Curve (Vols. I–V): Loops mark retrogradations; spikes mark digressions on noses & fortifications"/>
+
+                <!-- Annotated Digression Vertices (A, B, C, D) -->
+                <circle cx="135" cy="${98 - amp * 0.8}" r="3.5" fill="#9e3b22"/>
+                <text x="135" y="${90 - amp * 0.8}" font-family="Georgia" font-style="italic" font-size="10" fill="#9e3b22" text-anchor="middle">A (Digression)</text>
+
+                <circle cx="265" cy="${98 + amp * 0.85}" r="3.5" fill="#2a5a5b"/>
+                <text x="265" y="${114 + amp * 0.85}" font-family="Georgia" font-style="italic" font-size="10" fill="#2a5a5b" text-anchor="middle">B (Retrogradation)</text>
+
+                <circle cx="385" cy="${98 - amp * 0.7}" r="3.5" fill="#c88a2d"/>
+                <text x="385" y="${90 - amp * 0.7}" font-family="Georgia" font-style="italic" font-size="10" fill="#c88a2d" text-anchor="middle">C (Parenthesis)</text>
+
+                ${showBase ? `
+                <!-- The Straight Line of the Cabbage-Planter -->
+                <line x1="45" y1="198" x2="465" y2="198" stroke="#9e3b22" stroke-width="2"
+                      class="interactive-path" data-info="The Straight Line (Fabula): “A line drawn as straight as I could draw it, by a writing-master’s ruler”"/>
+                <line x1="45" y1="192" x2="45" y2="204" stroke="#9e3b22" stroke-width="1.5"/>
+                <line x1="465" y1="192" x2="465" y2="204" stroke="#9e3b22" stroke-width="1.5"/>
+                <text x="255" y="218" font-family="Georgia" font-style="italic" font-size="9.5" fill="#9e3b22" text-anchor="middle">
+                    “This right line,—the path-way for Christians and Cabbage-Planters” (Unperturbed Fabula)
+                </text>
+                ` : ''}
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XVI — STÉPHANE MALLARMÉ: UN COUP DE DÉS CONSTELLATION (1897)
+       ====================================================================== */
+    {
+        id: 'mallarme',
+        number: 'PLATE XVI',
+        refCode: 'REF: POE-1897-MALLARME',
+        title: 'Mallarmé’s Un Coup de Dés (The Typographic Constellation)',
+        subtitle: 'Polyphonic Double-Page Spatial Score & The Central Fold (1897)',
+        thinker: 'Stéphane Mallarmé',
+        year: '1897',
+        yearSort: 1897,
+        provenance: 'Paris • Cosmopolis (May 1897) / Ambroise Vollard Folio',
+        category: 'experimental',
+        categoryLabel: 'Experimental & Avant-Garde • Spatial Poetics',
+        secondaryTags: ['Spatial Typography', 'Le Pli', 'Constellation', '707 Cipher'],
+        mold: 'nocturnal',
+        axiomQuote: '“The ‘blanks’ indeed take on importance, striking first... Everything happens by shortcut, hypothetically; narrative is avoided.” — Stéphane Mallarmé, Preface (1897)',
+        blurb: 'In his final masterpiece ("A Throw of the Dice Will Never Abolish Chance"), Mallarmé exploded the vertical column of verse across the double-page spread (Recto/Verso). The white margin ceases to be empty background and becomes a silent musical staff where Didot font sizes, Roman vs. Italic voices, and diagonal drift across the gutter-fold create a celestial map of Ursa Major.',
+        useCaseLabel: 'Typographic & Literary Resonance',
+        useCase: 'Concrete poetry, non-linear interface typography, polyphonic visual hierarchy, and spatialized hypertext layouts.',
+        triadLabels: ['I. Double Spread', 'II. Polyphonic Staff', 'III. Constellation Stage'],
+        exegesis: {
+            stakes: 'For two thousand years, Western poetry treated the printed line as a passive phonetic transcript of the voice. Mallarmé reconceived the double-page spread as an autonomous visual-conceptual prism: the reader’s eye scans both horizontally across the central fold (le pli) and vertically down subordinate clauses, reading three or four typographic voices simultaneously like an orchestral score.',
+            mechanics: 'The poem weaves three primary typographic strata across 11 double-page openings: (1) the dominant spine in 48pt Bold All-Caps ("JAMAIS UN COUP DE DÉS N’ABOLIRA LE HASARD"), (2) the secondary philosophical meditation in medium Roman/Italics, and (3) the whispering parenthetical eddies in small type. On the final spread, the words cluster in the upper-left verso and cascade diagonally across the central fold toward the lower-right recto, forming the exact seven-star geometry of the Septentrion (Big Dipper).',
+            lineage: 'Praised by Paul Valéry ("He tried to raise a page to the power of the starry sky"), foundational for Apollinaire’s Calligrammes, Marinetti, Marcel Broodthaers (who replaced every line of the poem with solid black bars in 1969), and Quentin Meillassoux’s numerical decryption.'
+        },
+        relatedPlates: ['deleuze-fold', 'cardew', 'sterne-shklovsky', 'perec-oulipo'],
+        scriptLang: 'Mallarméan Spatial Dispersion & Broodthaers Black-Bar Mask Protocol',
+        script: `<span class="code-comment"># Stéphane Mallarmé — Un Coup de Dés (1897) / Marcel Broodthaers (1969)</span>
+<span class="code-comment"># Maps typographic voice strata onto 2D Double-Page Spread (Verso | Fold | Recto)</span>
+
+SPATIAL_STRATA = [
+    {<span class="code-string">"voice"</span>: 1, <span class="code-string">"style"</span>: <span class="code-string">"CAPS_ROMAN_28PT"</span>,  <span class="code-string">"x"</span>: 0.14, <span class="code-string">"y"</span>: 0.18, <span class="code-string">"text"</span>: <span class="code-string">"EXCEPTÉ"</span>},
+    {<span class="code-string">"voice"</span>: 2, <span class="code-string">"style"</span>: <span class="code-string">"CAPS_ITALIC_18PT"</span>, <span class="code-string">"x"</span>: 0.28, <span class="code-string">"y"</span>: 0.28, <span class="code-string">"text"</span>: <span class="code-string">"PEUT-ÊTRE"</span>},
+    {<span class="code-string">"voice"</span>: 3, <span class="code-string">"style"</span>: <span class="code-string">"roman_10pt"</span>,       <span class="code-string">"x"</span>: 0.44, <span class="code-string">"y"</span>: 0.42, <span class="code-string">"text"</span>: <span class="code-string">"aussi loin qu'un endroit"</span>},
+    {<span class="code-string">"voice"</span>: 3, <span class="code-string">"style"</span>: <span class="code-string">"roman_10pt"</span>,       <span class="code-string">"x"</span>: 0.56, <span class="code-string">"y"</span>: 0.51, <span class="code-string">"text"</span>: <span class="code-string">"fusionne avec au delà"</span>},
+    {<span class="code-string">"voice"</span>: 1, <span class="code-string">"style"</span>: <span class="code-string">"CAPS_ROMAN_28PT"</span>,  <span class="code-string">"x"</span>: 0.72, <span class="code-string">"y"</span>: 0.68, <span class="code-string">"text"</span>: <span class="code-string">"UNE CONSTELLATION"</span>},
+    {<span class="code-string">"voice"</span>: 4, <span class="code-string">"style"</span>: <span class="code-string">"italic_9pt"</span>,       <span class="code-string">"x"</span>: 0.68, <span class="code-string">"y"</span>: 0.84, <span class="code-string">"text"</span>: <span class="code-string">"Toute Pensée émet un Coup de Dés"</span>}
+]`,
+        builderControls: [
+            { id: 'renderMode', label: 'Visual Representation Mode', type: 'select', options: ['Mallarmé (1897 Typographic Constellation)', 'Broodthaers (1969 Structural Black Bars)', 'Hybrid (Typography + Septentrion Vectors)'] },
+            { id: 'drift', label: 'Diagonal Drift Across the Fold', type: 'range', min: 10, max: 55, value: 32 },
+            { id: 'gutter', label: 'Central Pli (Gutter Shadow) Width', type: 'range', min: 2, max: 18, value: 8 }
+        ],
+        renderSvg: (params) => {
+            const mode = params ? params.renderMode : 'Hybrid (Typography + Septentrion Vectors)';
+            const drift = params ? parseInt(params.drift) : 32;
+            const gutter = params ? parseInt(params.gutter) : 8;
+
+            const isBars = String(mode).includes('Broodthaers');
+            const showVec = String(mode).includes('Hybrid');
+
+            const stars = [
+                { x: 65, y: 48, w: 72, h: 11, text: 'EXCEPTÉ', size: 12, bold: true },
+                { x: 112, y: 74, w: 64, h: 8, text: 'PEUT-ÊTRE', size: 9.5, italic: true },
+                { x: 148, y: 102, w: 85, h: 6, text: 'aussi loin qu’un endroit', size: 8, italic: false },
+                { x: 258, y: 118 + drift * 0.2, w: 92, h: 6, text: 'fusionne avec au delà', size: 8, italic: false },
+                { x: 310, y: 146 + drift * 0.3, w: 78, h: 7, text: 'froid d’oubli et de désuétude', size: 7.5, italic: true },
+                { x: 295, y: 175 + drift * 0.35, w: 132, h: 12, text: 'UNE CONSTELLATION', size: 11.5, bold: true },
+                { x: 280, y: 212, w: 148, h: 6, text: 'Toute Pensée émet un Coup de Dés', size: 8, italic: false }
+            ];
+
+            let vectorLines = '';
+            if (showVec) {
+                const pts = stars.map(s => `${s.x + s.w / 2},${s.y}`).join(' ');
+                vectorLines = `<polyline points="${pts}" fill="none" stroke="#e09f5a" stroke-width="1" stroke-dasharray="3,3" class="interactive-path" data-info="Septentrion (Ursa Major) Vector: Seven-star trajectory crossing from Verso to Recto"/>`;
+            }
+
+            let items = '';
+            stars.forEach((s, i) => {
+                if (isBars) {
+                    items += `<rect x="${s.x}" y="${s.y - s.h + 2}" width="${s.w}" height="${s.h}" fill="#f4efe6" class="interactive-path" data-info="Broodthaers (1969) Structural Bar #${i + 1}: Replaces ‘${s.text}’ with pure spatial mass"/>`;
+                } else {
+                    items += `
+                        <g class="interactive-path" data-info="Stratum ${i + 1}: “${s.text}”">
+                            ${showVec ? `<circle cx="${s.x - 6}" cy="${s.y - 3}" r="2.2" fill="#e09f5a"/>` : ''}
+                            <text x="${s.x}" y="${s.y}" font-family="Georgia" font-size="${s.size}" font-weight="${s.bold ? 'bold' : 'normal'}" font-style="${s.italic ? 'italic' : 'normal'}" fill="${s.bold ? '#f4efe6' : '#c8b9a6'}">${s.text}</text>
+                        </g>`;
+                }
+            });
+
+            return `<svg viewBox="0 0 490 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="490" height="250" fill="#191613"/>
+                <!-- Double-Page Spread (Verso & Recto) -->
+                <rect x="26" y="18" width="219" height="214" fill="#211d19" stroke="#3d352e" stroke-width="1"/>
+                <rect x="245" y="18" width="219" height="214" fill="#211d19" stroke="#3d352e" stroke-width="1"/>
+                
+                <!-- Central Fold (Le Pli) -->
+                <rect x="${245 - gutter / 2}" y="18" width="${gutter}" height="214" fill="#0f0d0b" opacity="0.85"
+                      class="interactive-path" data-info="Le Pli (The Central Fold): Hinge of the double-page folio separating Verso (Left) and Recto (Right)"/>
+
+                ${vectorLines}
+                ${items}
+
+                <text x="40" y="224" font-family="Courier New" font-size="7.5" fill="#8c8070">VERSO (PAGE X)</text>
+                <text x="450" y="224" font-family="Courier New" font-size="7.5" fill="#8c8070" text-anchor="end">RECTO (PAGE XI)</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XVII — GEORGES PEREC & OULIPO: KNIGHT'S TOUR & CLINAMEN (1978)
+       ====================================================================== */
+    {
+        id: 'perec-oulipo',
+        number: 'PLATE XVII',
+        refCode: 'REF: OUL-1978-PEREC',
+        title: 'Perec’s Knight’s Tour & Clinamen Matrix (La Vie mode d’emploi)',
+        subtitle: '10 × 10 Parisian Apartment Cross-Section, Graeco-Latin Bi-Square & Missing 66th Square (1978)',
+        thinker: 'Georges Perec & Claude Berge (Oulipo)',
+        year: '1978',
+        yearSort: 1978,
+        provenance: 'Paris • Hachette / P.O.L (La Vie mode d’emploi: Romans)',
+        category: 'experimental',
+        categoryLabel: 'Experimental & Avant-Garde • Oulipian Combinatorics',
+        secondaryTags: ['Oulipo', 'Knight’s Tour', 'Clinamen', 'Graeco-Latin Bi-Square'],
+        mold: 'standard',
+        axiomQuote: '“The system of constraints must be destroyed by an anti-constraint inside it: the Clinamen—because a tiny swerve of the atom is what creates the world.” — Georges Perec',
+        blurb: 'To structure his encyclopedic masterpiece Life A User’s Manual, Oulipo member Georges Perec removed the street façade of a ten-story Parisian apartment house (a 10×10 grid of 100 rooms). Rather than moving room by room, the narrative jumps via a 10×10 Chess Knight’s Tour—until at move 66, Perec deliberately skips the bottom-left cellar square (the Clinamen), ending the 100-square grid at Chapter 99.',
+        useCaseLabel: 'Algorithmic & Literary Resonance',
+        useCase: 'Procedural narrative generation, Hamiltonian path routing on grids, orthogonal experimental design (Latin squares), and intentional symmetry-breaking.',
+        triadLabels: ['I. 10×10 Elevation', 'II. Bi-Square Protocol', 'III. Knight’s Tour Stage'],
+        exegesis: {
+            stakes: 'The Ouvroir de Littérature Potentielle (Oulipo), co-founded by Raymond Queneau and mathematician François Le Lionnais in 1960, proved that strict mathematical constraints do not suffocate literary imagination—they liberate it from cliché. Yet Perec added a crucial philosophical twist borrowed from Lucretius and Epicurus: a totalizing formal machine must contain one deliberate flaw (the clinamen) so that freedom and human contingency survive inside determinism.',
+            mechanics: 'A standard chessboard is 8×8, so Perec had to solve a Hamiltonian Knight’s Tour on a 10×10 board (visiting all 100 squares in L-shaped moves without landing on any room twice). Furthermore, inside each room, the objects, literary quotations, colors, and postures were dictated by an Orthogonal Graeco-Latin Bi-Square of Order 10—a mathematical problem Euler himself had conjectured was impossible until solved in 1959.',
+            lineage: 'Stands alongside Raymond Queneau’s Cent mille milliards de poèmes (1961), Italo Calvino’s The Castle of Crossed Destinies (1973), and Jacques Roubaud’s algebraic sonnets.'
+        },
+        relatedPlates: ['lewitt', 'sterne-shklovsky', 'llull', 'nabokov'],
+        scriptLang: '10×10 Hamiltonian Knight’s Tour & Lucretian Clinamen Swerve Filter',
+        script: `<span class="code-comment"># Georges Perec — La Vie mode d'emploi (1978) 10x10 Knight's Tour</span>
+<span class="code-comment"># Traverses 100 apartment rooms at 11 Rue Simon-Cransac, Paris</span>
+<span class="code-comment"># Step 66 (Cell [0, 9] — Bottom-Left Cellar) is skipped via the Clinamen</span>
+
+PEREC_TOUR_COORDS = [
+    (5,4),(6,6),(4,5),(2,6),(0,5),(1,7),(3,6),(1,5),(0,7),(2,8),
+    (4,9),(5,7),(7,8),(9,9),(8,7),(9,5),(7,6),(8,8),(6,9),(4,8),
+    (3,9),(1,8),(0,6),(1,4),(0,2),(2,3),(1,1),(3,0),(4,2),(5,0),
+    <span class="code-comment"># ... continues through all 100 rooms; square 66 at (0,9) is bitten off</span>
+]
+
+<span class="code-keyword">def</span> <span class="code-func">apply_clinamen</span>(tour_100, clinamen_index=65):
+    <span class="code-string">"""Applies the Lucretian swerve by excising the 66th square (0, 9)."""</span>
+    <span class="code-keyword">return</span> [coord <span class="code-keyword">for</span> idx, coord <span class="code-keyword">in</span> <span class="code-func">enumerate</span>(tour_100) <span class="code-keyword">if</span> idx != clinamen_index]`,
+        builderControls: [
+            { id: 'stepsShown', label: 'Chapters Traversed (1 to 99)', type: 'range', min: 10, max: 99, value: 68 },
+            { id: 'clinamen', label: 'Square 66 Clinamen Void (Bottom-Left)', type: 'select', options: ['Active (Bitten Corner — 99 Chapters)', 'Unbroken Deterministic Tour (100 Squares)'] }
+        ],
+        renderSvg: (params) => {
+            const steps = params ? parseInt(params.stepsShown) : 68;
+            const hasClinamen = params ? String(params.clinamen).includes('Active') : true;
+
+            // Deterministic 10x10 Knight's Tour sequence (including (0,9) at index 65)
+            const tour = [
+                [5,4],[6,6],[4,5],[2,6],[0,5],[1,7],[3,6],[1,5],[0,7],[2,8],
+                [4,9],[5,7],[7,8],[9,9],[8,7],[9,5],[7,6],[8,8],[6,9],[4,8],
+                [2,9],[0,8],[1,6],[0,4],[2,5],[3,7],[1,8],[3,9],[5,8],[7,9],
+                [9,8],[8,6],[9,4],[8,2],[9,0],[7,1],[5,0],[6,2],[4,1],[2,0],
+                [0,1],[1,3],[0,0],[2,1],[4,0],[3,2],[1,0],[0,2],[2,3],[1,1],
+                [3,0],[5,1],[7,0],[9,1],[8,3],[9,2],[7,3],[8,1],[6,0],[4,2],
+                [3,4],[2,2],[0,3],[1,2],[2,4],[0,9],[1,9],[3,8],[5,9],[6,7],
+                [8,9],[9,7],[7,7],[8,5],[9,3],[7,2],[6,4],[5,2],[4,4],[6,3],
+                [8,4],[9,6],[7,5],[5,6],[4,7],[2,7],[3,5],[5,5],[6,5],[7,4],
+                [5,3],[3,3],[4,6],[6,8],[8,0],[6,1],[4,3],[3,1],[1,4],[2,6]
+            ];
+
+            const ox = 42, oy = 22, cell = 20;
+            let gridCells = '';
+            for (let r = 0; r < 10; r++) {
+                for (let c = 0; c < 10; c++) {
+                    const isCornerVoid = hasClinamen && (c === 0 && r === 9);
+                    const fill = isCornerVoid ? '#9e3b22' : ((r + c) % 2 === 0 ? '#fcfaf5' : '#f1ebe0');
+                    gridCells += `<rect x="${ox + c * cell}" y="${oy + r * cell}" width="${cell}" height="${cell}" fill="${fill}" stroke="#d8cebe" stroke-width="0.6"/>`;
+                }
+            }
+
+            let pathPts = [];
+            for (let i = 0; i < Math.min(steps, tour.length); i++) {
+                if (hasClinamen && i === 65) continue;
+                const [c, r] = tour[i];
+                pathPts.push(`${ox + c * cell + cell / 2},${oy + r * cell + cell / 2}`);
+            }
+
+            return `<svg viewBox="0 0 470 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="470" height="250" fill="#fdfbf7"/>
+                ${gridCells}
+                <polyline points="${pathPts.join(' ')}" fill="none" stroke="#2a5a5b" stroke-width="1.6" stroke-linejoin="round"
+                          class="interactive-path" data-info="Knight's Tour Trajectory across 11 Rue Simon-Cransac (${steps} chapters)"/>
+                
+                <!-- Clinamen Marker at (0,9) -->
+                ${hasClinamen ? `
+                <circle cx="${ox + 10}" cy="${oy + 9 * cell + 10}" r="6" fill="none" stroke="#fff" stroke-width="1.5"/>
+                <text x="${ox + 10}" y="${oy + 9 * cell + 13}" font-family="Courier New" font-size="8" font-weight="bold" fill="#fff" text-anchor="middle">∅</text>
+                ` : ''}
+
+                <!-- Right Explanatory Legend -->
+                <rect x="262" y="24" width="188" height="196" fill="#fbf8f1" stroke="#d8cebe"/>
+                <text x="274" y="44" font-family="Courier New" font-size="8.5" fill="#9e3b22" font-weight="bold">OULIPIAN ARCHITECTURE</text>
+                <text x="274" y="64" font-family="Georgia" font-size="11" fill="#2b241f">11 Rue Simon-Cransac</text>
+                <line x1="274" y1="74" x2="438" y2="74" stroke="#d8cebe"/>
+                <text x="274" y="94" font-family="Georgia" font-size="9" fill="#5c5246">• Grid: 10 × 10 Apartment Elevation</text>
+                <text x="274" y="114" font-family="Georgia" font-size="9" fill="#5c5246">• Path: Hamiltonian Knight’s Tour</text>
+                <text x="274" y="134" font-family="Georgia" font-size="9" fill="#5c5246">• Active Chapters: 1 → ${steps}</text>
+                <text x="274" y="156" font-family="Georgia" font-size="9" font-weight="bold" fill="#9e3b22">
+                    • Square 66 (Cellar 0,9):
+                </text>
+                <text x="274" y="172" font-family="Georgia" font-style="italic" font-size="8.5" fill="#2b241f">
+                    ${hasClinamen ? 'Excised by the Clinamen (“The girl bites off the corner of her Petit-Beurre biscuit”)' : 'Visited deterministically (No Clinamen)'}
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XVIII — CORNELIUS CARDEW: TREATISE GRAPHIC SCORE (1963–1967)
+       ====================================================================== */
+    {
+        id: 'cardew',
+        number: 'PLATE XVIII',
+        refCode: 'REF: MUS-1967-CARDEW',
+        title: 'Cornelius Cardew’s Treatise (Wittgensteinian Graphic Score)',
+        subtitle: '193-Page Indeterminate Geometric Score Without Legend (1963–1967)',
+        thinker: 'Cornelius Cardew',
+        year: '1967',
+        yearSort: 1967,
+        provenance: 'London / Buffalo • Gallery Upstairs Press (193 Folio Pages)',
+        category: 'experimental',
+        categoryLabel: 'Experimental & Avant-Garde • Semiotic Graphic Score',
+        secondaryTags: ['Wittgenstein', 'Tractatus', 'Graphic Notation', 'Indeterminacy'],
+        mold: 'minimal',
+        axiomQuote: '“A musical score is a logical picture of a sonic reality... In Treatise, a central lifeline runs across 193 pages of pure syntax without pre-assigned semantics.” — Cornelius Cardew',
+        blurb: 'Directly inspired by Ludwig Wittgenstein’s Tractatus Logico-Philosophicus (where a proposition is a spatial "picture" of a state of affairs), British avant-garde composer Cornelius Cardew labored for four years to draft 193 pages of razor-sharp geometric notation. Crucially, Cardew refused to supply any instructional legend—forcing musicians to invent their own isomorphism between line, circle, and sound.',
+        useCaseLabel: 'Semiotic & Aesthetic Resonance',
+        useCase: 'Open-interpretation visual protocols, Wittgensteinian picture theory of language, and non-standard timeline interfaces.',
+        triadLabels: ['I. Score Plate', 'II. Tractatus Syntax', 'III. Lifeline Composer'],
+        exegesis: {
+            stakes: 'What happens when a notation system possesses rigorous geometric grammar, internal recurring motifs, and proportional discipline, yet strips away every semantic rule telling the reader what the symbols mean? Cardew’s Treatise (whose title homages Wittgenstein’s Tractatus) stages the ultimate philosophical experiment in pure signifier-play: performers cannot passively decode the page; they must become co-legislators of its grammar.',
+            mechanics: 'Running horizontally across the center of the score is the "Lifeline"—a continuous thread representing narrative continuity or temporal pulse. Below the page sits an empty five-line musical staff for the performer’s annotations. Above and across the lifeline erupt concentric circles, tangent vectors, black geometric weights, and fractured numbers (such as the recurring numeral 34), which warp, sever, and reconstitute the lifeline.',
+            lineage: 'Widely considered the Mount Everest of graphic musical notation, bridging John Cage’s Fontana Mix, Earle Brown’s December 1952, Wittgenstein’s logical pictures, and El Lissitzky’s constructivist typography.'
+        },
+        relatedPlates: ['frege', 'malevich', 'mallarme', 'xenakis'],
+        scriptLang: 'Wittgensteinian Logical Picture Generator & Lifeline Vector Grammar',
+        script: `<span class="code-comment"># Cornelius Cardew — Treatise (1963-1967) Generative Score Grammar</span>
+<span class="code-comment"># Inspired by Wittgenstein's Tractatus (Proposition 2.1: "We make to ourselves pictures of facts")</span>
+
+<span class="code-keyword">def</span> <span class="code-func">compose_treatise_page</span>(page_num=183, circle_mod=3, lifeline_break=0.45):
+    <span class="code-keyword">return</span> {
+        <span class="code-string">"page"</span>: page_num,
+        <span class="code-string">"central_lifeline"</span>: (<span class="code-string">"CONTINUOUS"</span> <span class="code-keyword">if</span> lifeline_break == 0 <span class="code-keyword">else</span> f<span class="code-string">"RUPTURED_AT_{lifeline_break}"</span>),
+        <span class="code-string">"cardinal_motifs"</span>: [<span class="code-string">"Concentric_Orb"</span>, <span class="code-string">"Tangent_Beam"</span>, <span class="code-string">"Numeral_34"</span>, <span class="code-string">"Empty_Reference_Staff"</span>],
+        <span class="code-string">"semantic_key"</span>: <span class="code-keyword">None</span>  <span class="code-comment"># Deliberately withheld by Cardew</span>
+    }`,
+        builderControls: [
+            { id: 'orbRadius', label: 'Acoustic Orb Diameter', type: 'range', min: 24, max: 76, value: 52 },
+            { id: 'beamAngle', label: 'Constructivist Tangent Beam Angle', type: 'range', min: -35, max: 35, value: -16 },
+            { id: 'lifelineGap', label: 'Central Lifeline Interruption', type: 'range', min: 0, max: 80, value: 36 }
+        ],
+        renderSvg: (params) => {
+            const r = params ? parseInt(params.orbRadius) : 52;
+            const angle = params ? parseInt(params.beamAngle) : -16;
+            const gap = params ? parseInt(params.lifelineGap) : 36;
+
+            let staffLines = '';
+            for (let s = 0; s < 5; s++) {
+                const sy = 198 + s * 6;
+                staffLines += `<line x1="35" y1="${sy}" x2="455" y2="${sy}" stroke="#b8ab99" stroke-width="0.7"/>`;
+            }
+
+            return `<svg viewBox="0 0 490 245" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="490" height="245" fill="#ffffff"/>
+
+                <!-- Central Lifeline (With Configurable Gap) -->
+                <line x1="25" y1="108" x2="${225 - gap}" y2="108" stroke="#2b241f" stroke-width="2.2"
+                      class="interactive-path" data-info="The Lifeline: Central horizontal axis of temporal/existential continuity"/>
+                <line x1="${225 + gap}" y1="108" x2="465" y2="108" stroke="#2b241f" stroke-width="2.2"/>
+
+                <!-- Concentric Geometric Orbs -->
+                <circle cx="225" cy="108" r="${r}" fill="none" stroke="#2b241f" stroke-width="2.5"
+                        class="interactive-path" data-info="Primary Acoustic Sphere: Intersects and silences the central lifeline"/>
+                <circle cx="225" cy="108" r="${r * 0.62}" fill="none" stroke="#9e3b22" stroke-width="1.2"/>
+                <circle cx="${225 - r * 0.45}" cy="76" r="9" fill="#2b241f"/>
+
+                <!-- Diagonal Constructivist Beam -->
+                <g transform="translate(265, 95) rotate(${angle})" class="interactive-path" data-info="Dynamic Tangent Vector (${angle}°): Oblique structural intervention">
+                    <line x1="-95" y1="0" x2="125" y2="0" stroke="#2b241f" stroke-width="4.5"/>
+                    <line x1="-70" y1="8" x2="95" y2="8" stroke="#2a5a5b" stroke-width="1.2"/>
+                </g>
+
+                <!-- Recurring Cardew Numeral Signifier -->
+                <text x="115" y="72" font-family="Georgia" font-size="22" font-weight="bold" fill="#2b241f"
+                      class="interactive-path" data-info="Recurring Cipher '34': Appears throughout Treatise without fixed instruction">34</text>
+                <path d="M 335 55 C 365 55, 365 145, 395 145" fill="none" stroke="#2b241f" stroke-width="1.8"/>
+
+                <!-- Bottom Empty 5-Line Reference Staff -->
+                ${staffLines}
+                <text x="35" y="191" font-family="Courier New" font-size="7.5" fill="#8c8070">PERFORMER’S HERMENEUTIC STAFF (TREATISE FOLIO p. 183 VARIATION)</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XIX — VLADIMIR NABOKOV: KINESTHETIC CHRONOTOPE OF ULYSSES (1950)
+       ====================================================================== */
+    {
+        id: 'nabokov',
+        number: 'PLATE XIX',
+        refCode: 'REF: LIT-1950-NABOKOV',
+        title: 'Nabokov’s Forensic Chronotope of Joyce’s Ulysses',
+        subtitle: 'Intersecting Dublin Trajectories of Bloom & Dedalus (June 16, 1904)',
+        thinker: 'Vladimir Nabokov',
+        year: '1950',
+        yearSort: 1950,
+        provenance: 'Cornell University • Lectures on Literature (Manuscript Sketchbook)',
+        category: 'experimental',
+        categoryLabel: 'Experimental & Avant-Garde • Forensic Literary Cartography',
+        secondaryTags: ['James Joyce', 'Chronotope', 'Parallax', 'Spatial Narratology'],
+        mold: 'standard',
+        axiomQuote: '“One must read with a dictionary, an artistic sense, and a spine... Where exactly do Stephen Dedalus and Leopold Bloom brush past each other before nightfall?” — Vladimir Nabokov',
+        blurb: 'Dismissing symbolic myth-criticism in his Cornell lectures, Vladimir Nabokov required his students to master the exact physical topology of literature—from the floor plan of Gregor Samsa’s Prague apartment to the hour-by-hour trajectories of Leopold Bloom and Stephen Dedalus across Dublin on June 16, 1904, graphing their near-misses (parallax) prior to their nocturnal convergence at 7 Eccles Street.',
+        useCaseLabel: 'Narratological & Spatial Resonance',
+        useCase: 'Forensic literary GIS (Franco Moretti), multi-agent spatiotemporal encounter graphs, and parallax narrative tracking.',
+        triadLabels: ['I. Bloomsday Map', 'II. Parallax Vectors', 'III. Dublin Chronotope'],
+        exegesis: {
+            stakes: 'Early readers of Joyce’s Ulysses leaned heavily on Stuart Gilbert’s Homeric schema (Telemachus, Calypso, Scylla and Charybdis). Nabokov argued that the Homeric titles were merely scaffolding: the true miracle of Ulysses is its synchronous space-time choreography—how two lonely consciousnesses orbit through the same city streets, nearly colliding at the Newspaper Office and National Library before finally intersecting at midnight.',
+            mechanics: 'The diagram plots Dublin from northwest (7 Eccles Street & Glasnevin Cemetery) to southeast (Sandymount Strand & Martello Tower). Stephen’s trajectory (ochre/teal dashed line) and Bloom’s trajectory (rust solid line) wind across time checkpoints from 8:00 AM to 2:00 AM. Parallax nodes mark where both characters occupy the same coordinates (1:00 PM at Freeman’s Journal; 2:15 PM at the National Library) before merging into a braided double-helix in "Eumaeus" and "Ithaca."',
+            lineage: 'Published posthumously in Nabokov’s Lectures on Literature (1980), anticipating Mikhail Bakhtin’s theory of the Chronotope and Franco Moretti’s Atlas of the European Novel (1998).'
+        },
+        relatedPlates: ['marey', 'lacan-borromean', 'sterne-shklovsky', 'perec-oulipo'],
+        scriptLang: 'Bloomsday Spatiotemporal Parallax & Encounter Proximity Calculator',
+        script: `<span class="code-comment"># Vladimir Nabokov — Cornell Lecture Map of Joyce's Ulysses (16 June 1904)</span>
+<span class="code-comment"># Tracks spatial distance d(Bloom(t), Stephen(t)) across 18 episodes</span>
+
+BLOOMSDAY_NODES = [
+    {<span class="code-string">"hour"</span>: <span class="code-string">"08:00"</span>, <span class="code-string">"bloom"</span>: <span class="code-string">"7 Eccles St (Calypso)"</span>,     <span class="code-string">"stephen"</span>: <span class="code-string">"Martello Tower (Telemachus)"</span>, <span class="code-string">"parallax_km"</span>: 14.2},
+    {<span class="code-string">"hour"</span>: <span class="code-string">"12:00"</span>, <span class="code-string">"bloom"</span>: <span class="code-string">"Freeman's Journal (Aeolus)"</span>, <span class="code-string">"stephen"</span>: <span class="code-string">"Freeman's Journal (Aeolus)"</span>,  <span class="code-string">"parallax_km"</span>: 0.05},
+    {<span class="code-string">"hour"</span>: <span class="code-string">"14:15"</span>, <span class="code-string">"bloom"</span>: <span class="code-string">"National Library (Scylla)"</span>,  <span class="code-string">"stephen"</span>: <span class="code-string">"National Library (Scylla)"</span>,   <span class="code-string">"parallax_km"</span>: 0.01},
+    {<span class="code-string">"hour"</span>: <span class="code-string">"20:00"</span>, <span class="code-string">"bloom"</span>: <span class="code-string">"Sandymount Strand (Nausicaa)"</span>,<span class="code-string">"stephen"</span>: <span class="code-string">"Holles St Hospital (Oxen)"</span>,  <span class="code-string">"parallax_km"</span>: 3.10},
+    {<span class="code-string">"hour"</span>: <span class="code-string">"22:00"</span>, <span class="code-string">"bloom"</span>: <span class="code-string">"Holles St / Nighttown"</span>,      <span class="code-string">"stephen"</span>: <span class="code-string">"Holles St / Nighttown"</span>,       <span class="code-string">"parallax_km"</span>: 0.00},
+    {<span class="code-string">"hour"</span>: <span class="code-string">"01:30"</span>, <span class="code-string">"bloom"</span>: <span class="code-string">"7 Eccles St (Ithaca)"</span>,       <span class="code-string">"stephen"</span>: <span class="code-string">"7 Eccles St Garden"</span>,          <span class="code-string">"parallax_km"</span>: 0.00}
+]`,
+        builderControls: [
+            { id: 'hourLimit', label: 'Bloomsday Hour Horizon (8 AM to 2 AM)', type: 'range', min: 2, max: 7, value: 7 },
+            { id: 'showParallax', label: 'Near-Miss Parallax Rings', type: 'select', options: ['Highlight Parallax Near-Misses (Aeolus / Scylla)', 'Trajectories Only'] }
+        ],
+        renderSvg: (params) => {
+            const limit = params ? parseInt(params.hourLimit) : 7;
+            const showPar = params ? String(params.showParallax).includes('Highlight') : true;
+
+            const bloomPts = [[75, 48], [55, 28], [185, 95], [245, 138], [345, 165], [275, 148], [315, 88], [75, 48]];
+            const stephPts = [[415, 212], [355, 172], [188, 98], [248, 135], [165, 112], [275, 148], [315, 88], [82, 52]];
+
+            const bSlice = bloomPts.slice(0, limit + 1).map(p => p.join(',')).join(' ');
+            const sSlice = stephPts.slice(0, limit + 1).map(p => p.join(',')).join(' ');
+
+            return `<svg viewBox="0 0 480 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="250" fill="#fcfaf5"/>
+                <!-- River Liffey Axis -->
+                <path d="M 20 112 Q 210 105 460 124" fill="none" stroke="#b8d0d0" stroke-width="7" opacity="0.65"/>
+                <text x="415" y="118" font-family="Georgia" font-style="italic" font-size="8.5" fill="#2a5a5b">River Liffey</text>
+
+                <!-- Leopold Bloom's Path (Solid Rust) -->
+                <polyline points="${bSlice}" fill="none" stroke="#9e3b22" stroke-width="2.3"
+                          class="interactive-path" data-info="Leopold Bloom's Trajectory: 7 Eccles St → Glasnevin → Aeolus → Library → Ormond → Nighttown → Eccles St"/>
+
+                <!-- Stephen Dedalus's Path (Dashed Teal) -->
+                <polyline points="${sSlice}" fill="none" stroke="#2a5a5b" stroke-width="2.1" stroke-dasharray="5,3"
+                          class="interactive-path" data-info="Stephen Dedalus's Trajectory: Martello Tower → Sandymount → Aeolus → Library → Holles St → Nighttown → Eccles St"/>
+
+                <!-- Key Dublin Topographical Nodes -->
+                <circle cx="75" cy="48" r="4.5" fill="#9e3b22" class="interactive-path" data-info="7 Eccles Street: Alpha (8:00 AM Calypso) and Omega (1:30 AM Ithaca)"/>
+                <text x="86" y="51" font-family="Georgia" font-size="9" font-weight="bold" fill="#2b241f">7 Eccles St</text>
+
+                <circle cx="415" cy="212" r="4.5" fill="#2a5a5b" class="interactive-path" data-info="Sandycove Martello Tower: Stephen's 8:00 AM departure"/>
+                <text x="398" y="226" font-family="Georgia" font-size="9" fill="#2a5a5b" text-anchor="end">Martello Tower</text>
+
+                ${showPar ? `
+                <!-- Parallax Near-Misses -->
+                <circle cx="186" cy="96" r="11" fill="none" stroke="#c88a2d" stroke-width="1.6" class="interactive-path" data-info="Parallax I (12:00 PM Aeolus): Bloom and Stephen miss each other by seconds at the newspaper office"/>
+                <text x="186" y="80" font-family="Courier New" font-size="8" fill="#c88a2d" text-anchor="middle">12:00 AEOLUS</text>
+
+                <circle cx="246" cy="136" r="11" fill="none" stroke="#c88a2d" stroke-width="1.6" class="interactive-path" data-info="Parallax II (2:15 PM Scylla & Charybdis): Bloom passes between Stephen and Buck Mulligan on the Library steps"/>
+                <text x="246" y="160" font-family="Courier New" font-size="8" fill="#c88a2d" text-anchor="middle">14:15 LIBRARY</text>
+                ` : ''}
+
+                <circle cx="315" cy="88" r="5" fill="#2b241f" class="interactive-path" data-info="Nighttown / Circe (Midnight): Trajectories fuse into a single double-path"/>
+                <text x="326" y="91" font-family="Georgia" font-size="9" font-weight="bold" fill="#2b241f">Nighttown (Convergence)</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XX — EMMA KUNZ: RADIESTHETIC PENDULUM FIELD (1938–1953)
+       ====================================================================== */
+    {
+        id: 'kunz',
+        number: 'PLATE XX',
+        refCode: 'REF: ESO-1942-KUNZ',
+        title: 'Emma Kunz’s Radiesthetic Pendulum Field (Work No. 020)',
+        subtitle: 'Millimeter-Grid Polar Envelope Chords & Energetic Divination (1938–1953)',
+        thinker: 'Emma Kunz',
+        year: '1942',
+        yearSort: 1942,
+        provenance: 'Waldstatt / Würenlos, Switzerland • Emma Kunz Grotto Archive',
+        category: 'esoteric',
+        categoryLabel: 'Esoteric & Metaphysical • Radiesthetic Vector Field',
+        secondaryTags: ['Sacred Geometry', 'Envelope Curves', 'Pendulum Divination', 'Millimeter Grid'],
+        mold: 'standard',
+        axiomQuote: '“Shape and form expressed as measurement, rhythm, symbol, and transformation of figure and principle... My pictures are meant for the 21st century.” — Emma Kunz (1953)',
+        blurb: 'Standing for up to twenty-four hours at a stretch over meter-wide sheets of millimeter graph paper while swinging a silver-and-jade divining pendulum, Swiss healer Emma Kunz plotted thousands of razor-straight colored pencil chords between polar axes. Without drawing a single curved stroke, the dense intersection of straight lines generates luminous hyperbolic envelopes and crystalline mandorlas.',
+        useCaseLabel: 'Mathematical & Visual Resonance',
+        useCase: 'Differential geometry of envelope curves (string-art parabolas/astroids), Moiré interference fields, and high-density vector phase portraits.',
+        triadLabels: ['I. Pendulum Field', 'II. Envelope Geometry', 'III. Radiesthetic Stage'],
+        exegesis: {
+            stakes: 'Never exhibited in a gallery during her lifetime, Emma Kunz’s hundreds of millimeter-paper diagrams were only rediscovered in 1973 by Harald Szeemann. Unlike automatic surrealist drawing, Kunz worked within the strictest possible Cartesian coordinate grid—demonstrating how purely rectilinear vectors governed by harmonic integer ratios give birth to organic curvature.',
+            mechanics: 'Each work begins on millimeter-ruled graph paper anchored by a central cross and four or eight peripheral polar stations. By connecting point k on one axis to point (N − k) or (m·k mod N) on an adjacent or opposite axis using straight ruler lines in rust, ochre, and teal pencil, the straight lines form tangent families whose collective boundary traces smooth quadric and nephroid envelope curves.',
+            lineage: 'Celebrated alongside Hilma af Klint and Agnes Martin, and mathematically isomorphic to Jakob Steiner’s projective conics and Mary Everest Boole’s 19th-century curve-stitching pedagogy.'
+        },
+        relatedPlates: ['fludd', 'poincare', 'xenakis', 'lewitt'],
+        scriptLang: 'Steiner Projective Envelope & Radiesthetic Chord Lattice Generator',
+        script: `<span class="code-comment"># Emma Kunz — Radiesthetic Millimeter-Grid Chord Envelope Generator</span>
+<span class="code-comment"># Straight lines between harmonic grid coordinates generate emergent curves</span>
+
+<span class="code-keyword">import</span> math
+
+<span class="code-keyword">def</span> <span class="code-func">generate_kunz_chords</span>(divisions=16, radius=95.0, phase_multiplier=2):
+    chords = []
+    <span class="code-keyword">for</span> i <span class="code-keyword">in</span> <span class="code-func">range</span>(divisions):
+        t = i / divisions
+        <span class="code-comment"># Orthogonal axis cross-stitching (Astroid / Hyperbolic Envelope)</span>
+        x_axis_pt = (radius * t, 0.0)
+        y_axis_pt = (0.0, radius * (1.0 - t))
+        chords.append((x_axis_pt, y_axis_pt))
+    <span class="code-keyword">return</span> chords`,
+        builderControls: [
+            { id: 'chordDensity', label: 'Millimeter Grid Chord Density (N)', type: 'range', min: 6, max: 20, value: 12 },
+            { id: 'outerSpread', label: 'Polar Diamond Span (px)', type: 'range', min: 70, max: 112, value: 98 },
+            { id: 'ringMandala', label: 'Outer Radiesthetic Perimeter Chords', type: 'select', options: ['Include Outer Octagonal Web', 'Pure Orthogonal Astroid Envelope'] }
+        ],
+        renderSvg: (params) => {
+            const n = params ? parseInt(params.chordDensity) : 12;
+            const span = params ? parseInt(params.outerSpread) : 98;
+            const showOct = params ? String(params.ringMandala).includes('Include') : true;
+
+            const cx = 235, cy = 125;
+            let lines = '';
+
+            // 4 Quadrant Envelope Stitching
+            for (let i = 0; i <= n; i++) {
+                const t = i / n;
+                const d1 = t * span;
+                const d2 = (1 - t) * span;
+                // Q1, Q2, Q3, Q4
+                lines += `<line x1="${(cx + d1).toFixed(1)}" y1="${cy}" x2="${cx}" y2="${(cy - d2).toFixed(1)}" stroke="#9e3b22" stroke-width="0.7" opacity="0.8"/>`;
+                lines += `<line x1="${(cx - d1).toFixed(1)}" y1="${cy}" x2="${cx}" y2="${(cy - d2).toFixed(1)}" stroke="#9e3b22" stroke-width="0.7" opacity="0.8"/>`;
+                lines += `<line x1="${(cx - d1).toFixed(1)}" y1="${cy}" x2="${cx}" y2="${(cy + d2).toFixed(1)}" stroke="#2a5a5b" stroke-width="0.7" opacity="0.8"/>`;
+                lines += `<line x1="${(cx + d1).toFixed(1)}" y1="${cy}" x2="${cx}" y2="${(cy + d2).toFixed(1)}" stroke="#2a5a5b" stroke-width="0.7" opacity="0.8"/>`;
+            }
+
+            let octLines = '';
+            if (showOct) {
+                for (let k = 0; k < 16; k++) {
+                    const a1 = (k * 22.5 * Math.PI) / 180;
+                    const a2 = (((k + 5) % 16) * 22.5 * Math.PI) / 180;
+                    octLines += `<line x1="${(cx + span * Math.cos(a1)).toFixed(1)}" y1="${(cy + span * Math.sin(a1)).toFixed(1)}" x2="${(cx + span * Math.cos(a2)).toFixed(1)}" y2="${(cy + span * Math.sin(a2)).toFixed(1)}" stroke="#c88a2d" stroke-width="0.55" opacity="0.65"/>`;
+                }
+            }
+
+            return `<svg viewBox="0 0 470 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="470" height="250" fill="#fcfaf5"/>
+                <!-- Subtle Millimeter Graph Paper Ruling -->
+                <g stroke="#e6decb" stroke-width="0.5">
+                    <line x1="115" y1="125" x2="355" y2="125"/><line x1="235" y1="10" x2="235" y2="240"/>
+                    <rect x="${cx - span}" y="${cy - span}" width="${span * 2}" height="${span * 2}" fill="none"/>
+                </g>
+                ${octLines}
+                <g class="interactive-path" data-info="Radiesthetic Envelope Field (${n * 4} rectilinear chords): Pure straight lines generating emergent hyperbolic curvature">
+                    ${lines}
+                </g>
+                <circle cx="${cx}" cy="${cy}" r="3" fill="#2b241f"/>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXI — IANNIS XENAKIS: STOCHASTIC GLISSANDI & ARBORESCENCES (1954)
+       ====================================================================== */
+    {
+        id: 'xenakis',
+        number: 'PLATE XXI',
+        refCode: 'REF: MUS-1954-XENAKIS',
+        title: 'Xenakis’s Ruled-Surface Glissandi & UPIC Arborescences',
+        subtitle: 'Hyperbolic Paraboloid Sound-Space & Brownian Pitch-Time Screens (1954–1977)',
+        thinker: 'Iannis Xenakis',
+        year: '1954',
+        yearSort: 1954,
+        provenance: 'Paris • Metastaseis (1954), Philips Pavilion (1958) & CEMAMu UPIC',
+        category: 'hypercomplex',
+        categoryLabel: 'Hyper-Complex & Nuanced • Stochastic Sound-Space',
+        secondaryTags: ['Ruled Surfaces', 'Stochastic Music', 'Le Corbusier', 'UPIC Tablet'],
+        mold: 'standard',
+        axiomQuote: '“Straight lines of string glissandi rotating in pitch-time space engender acoustic hyperbolic paraboloids—the exact union of architecture and music.” — Iannis Xenakis',
+        blurb: 'Working as a structural engineer in Le Corbusier’s Paris atelier by day and composing radical orchestral works by night, Iannis Xenakis abolished traditional staff notation in favor of engineering graph paper. Assigning pitch (in semitones) to the Y-axis and time (in seconds) to the X-axis, he plotted 61 independent string glissandi as straight lines whose intersection forms a continuous hyperbolic paraboloid.',
+        useCaseLabel: 'Architectural & Algorithmic Resonance',
+        useCase: 'Parametric ruled-surface modeling, stochastic Maxwell-Boltzmann particle synthesis, and vector-to-waveform synthesis (UPIC).',
+        triadLabels: ['I. Glissando Mesh', 'II. Stochastic Law', 'III. Pitch-Time Stage'],
+        exegesis: {
+            stakes: 'By 1954, Xenakis argued that twelve-tone serialism had collapsed into an unreadable "linear polyphony" where individual voices canceled each other out into a statistical cloud. Rather than pretending the ear hears individual counterpoint in a dense mass, Xenakis applied Maxwell-Boltzmann kinetic gas laws, Poisson distributions, and architectural ruled surfaces directly to the macroscopic shape of sound.',
+            mechanics: 'In the opening and closing sections of Metastaseis (1953–1954)—which later became the physical blueprint for the concrete shells of the 1958 Brussels World’s Fair Philips Pavilion—each of the 46 string players starts on a unison note and slides along a straight diagonal line on the Pitch-vs-Time graph at a distinct velocity (glissando slope). Later, in works like Erikhthon (1974) and Mycenae Alpha (drawn on the electromagnetic UPIC tablet), Xenakis introduced branching "Arborescences": organic tree-vectors proliferating across the pitch-time plane.',
+            lineage: 'Published in Formalized Music: Thought and Mathematics in Composition (1963), uniting Le Corbusier’s Modulor, Lucretian clinamen, and computer-aided algorithmic synthesis.'
+        },
+        relatedPlates: ['marey', 'kunz', 'cardew', 'poincare'],
+        scriptLang: 'Xenakian Ruled-Surface Glissando Matrix & Stochastic Pitch Walk',
+        script: `<span class="code-comment"># Iannis Xenakis — Metastaseis (1954) & Formalized Music</span>
+<span class="code-comment"># Y-Axis: Pitch (Logarithmic Semitones) | X-Axis: Time (Seconds)</span>
+<span class="code-comment"># Straight glissando vectors generate a Hyperbolic Paraboloid envelope</span>
+
+<span class="code-keyword">def</span> <span class="code-func">metastaseis_ruled_surface</span>(voices=24, duration_sec=10.0, twist=1.0):
+    glissandi = []
+    <span class="code-keyword">for</span> v <span class="code-keyword">in</span> <span class="code-func">range</span>(voices):
+        u = v / (voices - 1)
+        t_start = u * (duration_sec * 0.45)
+        pitch_start = 48  <span class="code-comment"># Unison G3</span>
+        t_end = duration_sec
+        pitch_end = 24 + (1.0 - u * twist) * 60  <span class="code-comment"># Divergent 46-voice cluster</span>
+        glissandi.append(((t_start, pitch_start), (t_end, pitch_end)))
+    <span class="code-keyword">return</span> glissandi`,
+        builderControls: [
+            { id: 'voiceCount', label: 'String Glissando Voices (12–36)', type: 'range', min: 12, max: 36, value: 22 },
+            { id: 'paraboloidTwist', label: 'Ruled-Surface Torsion', type: 'range', min: 20, max: 100, value: 75 },
+            { id: 'arborescence', label: 'UPIC Branching Arborescence Overlay', type: 'select', options: ['Show Arborescence Pitch-Tree', 'Pure Metastaseis Ruled Surface'] }
+        ],
+        renderSvg: (params) => {
+            const voices = params ? parseInt(params.voiceCount) : 22;
+            const twist = params ? parseInt(params.paraboloidTwist) / 100 : 0.75;
+            const showArb = params ? String(params.arborescence).includes('Show') : true;
+
+            let rays = '';
+            for (let i = 0; i < voices; i++) {
+                const u = i / (voices - 1);
+                const x1 = 55 + u * 210;
+                const y1 = 205 - u * 25;
+                const x2 = 435 - u * (190 * twist);
+                const y2 = 30 + u * 175;
+                const col = i % 3 === 0 ? '#9e3b22' : '#2b241f';
+                rays += `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="${col}" stroke-width="0.85" opacity="0.82"/>`;
+            }
+
+            const arbPath = showArb ? `
+                <g stroke="#2a5a5b" stroke-width="2" fill="none" class="interactive-path" data-info="UPIC Arborescence: Branching pitch-time dendritic structure (Erikhthon / Mycenae Alpha)">
+                    <path d="M 65 135 Q 155 130 225 95 T 385 48"/>
+                    <path d="M 165 122 Q 235 145 335 178"/>
+                    <path d="M 245 88 Q 305 95 395 112"/>
+                    <path d="M 255 152 Q 315 190 405 204"/>
+                </g>` : '';
+
+            return `<svg viewBox="0 0 480 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="250" fill="#fcfaf5"/>
+                <!-- Pitch vs Time Coordinate Axes -->
+                <line x1="45" y1="20" x2="45" y2="218" stroke="#8c8070" stroke-width="1"/>
+                <line x1="45" y1="218" x2="455" y2="218" stroke="#8c8070" stroke-width="1"/>
+                <text x="36" y="120" font-family="Courier New" font-size="8" fill="#5c5246" transform="rotate(-90, 32, 120)" text-anchor="middle">PITCH (SEMITONES)</text>
+                <text x="250" y="236" font-family="Courier New" font-size="8" fill="#5c5246" text-anchor="middle">TIME (MEASURES 309–317 • METASTASEIS GLISSANDI)</text>
+
+                <g class="interactive-path" data-info="Hyperbolic Paraboloid of ${voices} String Glissandi: Straight trajectories creating curved acoustic surfaces">
+                    ${rays}
+                </g>
+                ${arbPath}
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXII — CHRISTOPHER ALEXANDER: A CITY IS NOT A TREE (1965)
+       ====================================================================== */
+    {
+        id: 'alexander',
+        number: 'PLATE XXII',
+        refCode: 'REF: TOP-1965-ALEXANDER',
+        title: 'Christopher Alexander’s Semi-Lattice vs. The Tree',
+        subtitle: 'Set-Theoretic Critique of Hierarchical Compartmentalization (1965)',
+        thinker: 'Christopher Alexander',
+        year: '1965',
+        yearSort: 1965,
+        provenance: 'Berkeley / New York • Architectural Forum (April–May 1965)',
+        category: 'hypercomplex',
+        categoryLabel: 'Hyper-Complex & Nuanced • Set-Theoretic Topology',
+        secondaryTags: ['Semi-Lattice', 'Rhizome Precursor', 'Set Theory', 'Urban Epistemology'],
+        mold: 'wide',
+        axiomQuote: '“For the human mind, the tree is the easiest vehicle for complex thoughts. But the city is not, cannot, and must not be a tree. The city is a receptacle for life—a semi-lattice.” — Christopher Alexander (1965)',
+        blurb: 'Why do artificially planned cities, corporate org-charts, and rigid folder hierarchies feel sterile compared to living towns and organic thought? Using mathematical set theory, architect Christopher Alexander proved that human designers suffer from a cognitive intolerance for overlapping categories—replacing rich Semi-Lattices (where overlapping sets A ∩ B coexist) with amputated Trees (where sets are strictly nested or disjoint).',
+        useCaseLabel: 'Epistemic & Knowledge-Graph Resonance',
+        useCase: 'Direct mathematical foundation for Wiki knowledge architectures, associative Zettelkasten graphs, and Deleuze & Guattari’s Rhizome vs. Tree.',
+        triadLabels: ['I. Dual Topology', 'II. Semi-Lattice Axiom', 'III. Overlap Apparatus'],
+        exegesis: {
+            stakes: 'Alexander identified a profound cognitive pathology: whenever humans confront high-dimensional complexity, we instinctively slice it into non-overlapping buckets (a Tree) because the mind cannot easily hold ambiguous cross-memberships in working memory. Yet in any living ecosystem, literary work, or city street, a single element belongs simultaneously to multiple overlapping systems.',
+            mechanics: 'Alexander defines both structures via one set-theoretic contrast. Semi-Lattice Axiom: "A collection of sets forms a semi-lattice if and only if, when two overlapping sets belong to the collection, the set of elements common to both also belongs to the collection." Tree Axiom: "A collection of sets forms a tree if and only if, for any two sets that belong to the collection, either one is wholly contained in the other, or else they are wholly disjoint." For 20 atomic elements, a Tree permits at most 19 subsets; a Semi-Lattice permits over 1,000,000.',
+            lineage: 'Before inspiring object-oriented design patterns (A Pattern Language, 1977) and Ward Cunningham’s invention of the first Wiki (1995), this 1965 diagram prefigured Deleuze and Guattari’s critique of arborescent thought in A Thousand Plateaus (1980).'
+        },
+        relatedPlates: ['porphyry', 'poincare', 'beer-vsm', 'perec-oulipo'],
+        scriptLang: 'Alexander Set-Theoretic Overlap Validator & Cross-Link Matrix',
+        script: `<span class="code-comment"># Christopher Alexander — "A City is Not a Tree" (1965)</span>
+<span class="code-comment"># Tests whether a family of subsets obeys the Tree Axiom or requires a Semi-Lattice</span>
+
+<span class="code-keyword">def</span> <span class="code-func">classify_epistemic_topology</span>(subsets):
+    overlapping_pairs = []
+    <span class="code-keyword">for</span> i, A <span class="code-keyword">in</span> <span class="code-func">enumerate</span>(subsets):
+        <span class="code-keyword">for</span> B <span class="code-keyword">in</span> subsets[i+1:]:
+            intersection = A & B
+            <span class="code-comment"># Tree violation: A and B overlap, yet neither is a subset of the other</span>
+            <span class="code-keyword">if</span> intersection <span class="code-keyword">and not</span> (A.issubset(B) <span class="code-keyword">or</span> B.issubset(A)):
+                overlapping_pairs.append((A, B, intersection))
+                
+    <span class="code-keyword">if</span> <span class="code-func">len</span>(overlapping_pairs) == 0:
+        <span class="code-keyword">return</span> <span class="code-string">"ARBORESCENT TREE (Zero Cross-Category Ambiguity)"</span>
+    <span class="code-keyword">return</span> f<span class="code-string">"LIVING SEMI-LATTICE ({len(overlapping_pairs)} Overlapping Intersections A ∩ B)"</span>`,
+        builderControls: [
+            { id: 'crossLinks', label: 'Semi-Lattice Cross-Overlaps (A ∩ B)', type: 'range', min: 0, max: 8, value: 6 },
+            { id: 'showVenn', label: 'Bottom Spatial Set Representation', type: 'select', options: ['Show Nested vs. Interlocking Set Enclosures', 'Pure Graph Nodes Only'] }
+        ],
+        renderSvg: (params) => {
+            const links = params ? parseInt(params.crossLinks) : 6;
+            const showVenn = params ? String(params.showVenn).includes('Show') : true;
+
+            const extraEdges = [
+                [295, 78, 385, 132], [355, 78, 305, 132], [415, 78, 345, 132],
+                [295, 78, 425, 132], [355, 78, 275, 132], [415, 78, 385, 132],
+                [275, 132, 375, 178], [345, 132, 415, 178]
+            ];
+
+            let latticeCross = '';
+            for (let i = 0; i < links; i++) {
+                const [x1, y1, x2, y2] = extraEdges[i];
+                latticeCross += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#9e3b22" stroke-width="1.5" class="interactive-path" data-info="Semi-Lattice Cross-Connection #${i + 1}: Shared membership across distinct upper branches"/>`;
+            }
+
+            return `<svg viewBox="0 0 510 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="510" height="250" fill="#fcfaf5"/>
+                <line x1="245" y1="20" x2="245" y2="232" stroke="#d8cebe" stroke-width="1.2" stroke-dasharray="4,3"/>
+
+                <!-- LEFT: THE TREE (STRICT PARTITION) -->
+                <text x="122" y="26" font-family="Courier New" font-size="8.5" font-weight="bold" fill="#5c5246" text-anchor="middle">I. THE TREE (DISJOINT HIERARCHY)</text>
+                <g stroke="#2b241f" stroke-width="1.5">
+                    <line x1="122" y1="42" x2="72" y2="78"/><line x1="122" y1="42" x2="172" y2="78"/>
+                    <line x1="72" y1="78" x2="48" y2="132"/><line x1="72" y1="78" x2="96" y2="132"/>
+                    <line x1="172" y1="78" x2="148" y2="132"/><line x1="172" y1="78" x2="196" y2="132"/>
+                </g>
+                <g fill="#2b241f">
+                    <circle cx="122" cy="42" r="4.5"/><circle cx="72" cy="78" r="4"/><circle cx="172" cy="78" r="4"/>
+                    <circle cx="48" cy="132" r="3.5"/><circle cx="96" cy="132" r="3.5"/><circle cx="148" cy="132" r="3.5"/><circle cx="196" cy="132" r="3.5"/>
+                </g>
+
+                <!-- RIGHT: THE SEMI-LATTICE (OVERLAPPING COMPLEXITY) -->
+                <text x="365" y="26" font-family="Courier New" font-size="8.5" font-weight="bold" fill="#9e3b22" text-anchor="middle">II. THE SEMI-LATTICE (${links} OVERLAPS)</text>
+                <g stroke="#2a5a5b" stroke-width="1.4">
+                    <line x1="355" y1="42" x2="295" y2="78"/><line x1="355" y1="42" x2="355" y2="78"/><line x1="355" y1="42" x2="415" y2="78"/>
+                    <line x1="295" y1="78" x2="275" y2="132"/><line x1="355" y1="78" x2="345" y2="132"/><line x1="415" y1="78" x2="425" y2="132"/>
+                </g>
+                ${latticeCross}
+                <g fill="#9e3b22">
+                    <circle cx="355" cy="42" r="4.5"/><circle cx="295" cy="78" r="4"/><circle cx="355" cy="78" r="4"/><circle cx="415" cy="78" r="4"/>
+                    <circle cx="275" cy="132" r="3.8"/><circle cx="305" cy="132" r="3.8"/><circle cx="345" cy="132" r="3.8"/><circle cx="385" cy="132" r="3.8"/><circle cx="425" cy="132" r="3.8"/>
+                </g>
+
+                ${showVenn ? `
+                <!-- Bottom Set Enclosures Comparison -->
+                <rect x="36" y="168" width="76" height="44" rx="20" fill="none" stroke="#2b241f" stroke-width="1.3"/>
+                <rect x="44" y="176" width="28" height="28" rx="14" fill="#ebe4d5" stroke="#2b241f"/>
+                <rect x="78" y="176" width="28" height="28" rx="14" fill="#ebe4d5" stroke="#2b241f"/>
+                <rect x="132" y="168" width="76" height="44" rx="20" fill="none" stroke="#2b241f" stroke-width="1.3"/>
+                <text x="122" y="228" font-family="Georgia" font-style="italic" font-size="8.5" fill="#5c5246" text-anchor="middle">A ∩ B = ∅  or  A ⊂ B</text>
+
+                <ellipse cx="325" cy="190" rx="52" ry="22" fill="#9e3b22" fill-opacity="0.12" stroke="#9e3b22" stroke-width="1.4"/>
+                <ellipse cx="375" cy="190" rx="52" ry="22" fill="#2a5a5b" fill-opacity="0.12" stroke="#2a5a5b" stroke-width="1.4"/>
+                <ellipse cx="350" cy="190" rx="35" ry="26" fill="#c88a2d" fill-opacity="0.12" stroke="#c88a2d" stroke-width="1.4"/>
+                <text x="365" y="228" font-family="Georgia" font-style="italic" font-size="8.5" fill="#9e3b22" text-anchor="middle">A ∩ B ∈ Σ (Rich Relational Overlap)</text>
+                ` : ''}
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXIII — HENRI POINCARÉ: CONFORMAL HYPERBOLIC DISK (1882)
+       ====================================================================== */
+    {
+        id: 'poincare',
+        number: 'PLATE XXIII',
+        refCode: 'REF: GEOM-1882-POINCARE',
+        title: 'Poincaré’s Hyperbolic Disk & Fuchsian Tessellation',
+        subtitle: 'Non-Euclidean Negative Curvature Model inside a Bounded Horizon (1882)',
+        thinker: 'Henri Poincaré',
+        year: '1882',
+        yearSort: 1882,
+        provenance: 'Paris • Acta Mathematica (“Théorie des groupes fuchsiens”)',
+        category: 'hypercomplex',
+        categoryLabel: 'Hyper-Complex & Nuanced • Non-Euclidean Topology',
+        secondaryTags: ['Hyperbolic Geometry', 'Fuchsian Groups', 'Conformal Disk', 'Infinite Horizon'],
+        mold: 'standard',
+        axiomQuote: '“Geometric axioms are neither synthetic a priori intuitions nor experimental facts. They are conventions.” — Henri Poincaré, Science and Hypothesis (1902)',
+        blurb: 'How do you fit an exponentially expanding infinite universe inside a finite circle without distorting angles? Henri Poincaré modeled the negatively curved hyperbolic plane (ℍ²) inside an open unit disk where "straight lines" (geodesics) are circular arcs meeting the boundary horizon at exact 90° right angles—allowing infinite regular tilings and million-node trees to nest smoothly toward the rim.',
+        useCaseLabel: 'Computational & Epistemic Resonance',
+        useCase: 'Hyperbolic neural network embeddings (Poincaré embeddings for hierarchical ontologies), Xerox PARC hyperbolic tree browsers, and relativistic spacetime conformal boundaries.',
+        triadLabels: ['I. Fuchsian Disk', 'II. Metric Tensor', 'III. Geodesic Apparatus'],
+        exegesis: {
+            stakes: 'For two millennia, Euclid’s Fifth (Parallel) Postulate was revered as an inescapable law of space, and Immanuel Kant enshrined Euclidean geometry as a synthetic a priori structure of human intuition. By constructing a concrete, self-consistent model inside an ordinary Euclidean circle where infinitely many parallel geodesics pass through a single point, Poincaré shattered Kantian geometric absolutism.',
+            mechanics: 'The Poincaré disk is the interior of the unit circle |z| < 1 in the complex plane, equipped with the Riemannian metric ds² = 4|dz|² / (1 − |z|²)². As a traveler walks toward the boundary circle |z| = 1, their Euclidean step length shrinks in proportion to (1 − r²), so the boundary is infinitely far away. Geodesics are diameters or circular arcs orthogonal to the boundary.',
+            lineage: 'Discovered by Poincaré in a famous flash of insight while stepping onto an omnibus at Coutances, later popularized visually by M. C. Escher’s Circle Limit woodcuts (after H. S. M. Coxeter’s 1957 diagrams), and revived in modern machine learning by Nickel & Kiela (2017) for embedding WordNet hierarchies.'
+        },
+        relatedPlates: ['alexander', 'kunz', 'xenakis', 'porphyry'],
+        scriptLang: 'Poincaré Conformal Metric Tensor & Möbius Isometry Transform',
+        script: `<span class="code-comment"># Henri Poincaré — Conformal Hyperbolic Disk Model (1882)</span>
+<span class="code-comment"># Metric Tensor: ds^2 = 4 * |dz|^2 / (1 - |z|^2)^2</span>
+
+<span class="code-keyword">import</span> cmath, math
+
+<span class="code-keyword">def</span> <span class="code-func">hyperbolic_distance</span>(z1, z2):
+    <span class="code-string">"""Intrinsic geodesic distance between two complex points inside |z| < 1."""</span>
+    num = <span class="code-func">abs</span>(z1 - z2) ** 2
+    den = (1 - <span class="code-func">abs</span>(z1) ** 2) * (1 - <span class="code-func">abs</span>(z2) ** 2)
+    <span class="code-keyword">return</span> math.acosh(1 + 2 * (num / den))
+
+<span class="code-keyword">def</span> <span class="code-func">mobius_translation</span>(z, a):
+    <span class="code-string">"""Isometric Möbius transformation shifting point 'a' to the disk origin."""</span>
+    <span class="code-keyword">return</span> (z - a) / (1 - a.conjugate() * z)`,
+        builderControls: [
+            { id: 'symmetryP', label: 'Fuchsian Polygon Symmetry (p)', type: 'range', min: 5, max: 12, value: 7 },
+            { id: 'ringDepth', label: 'Hyperbolic Horizon Depth Rings', type: 'range', min: 2, max: 6, value: 4 },
+            { id: 'arcRadius', label: 'Orthogonal Geodesic Curvature', type: 'range', min: 45, max: 110, value: 72 }
+        ],
+        renderSvg: (params) => {
+            const p = params ? parseInt(params.symmetryP) : 7;
+            const depth = params ? parseInt(params.ringDepth) : 4;
+            const arcR = params ? parseInt(params.arcRadius) : 72;
+
+            const cx = 235, cy = 125, R = 98;
+            let geodesics = '';
+
+            for (let i = 0; i < p; i++) {
+                const a1 = (i * (360 / p) * Math.PI) / 180;
+                const a2 = (((i + 2) % p) * (360 / p) * Math.PI) / 180;
+                const x1 = cx + R * Math.cos(a1);
+                const y1 = cy + R * Math.sin(a1);
+                const x2 = cx + R * Math.cos(a2);
+                const y2 = cy + R * Math.sin(a2);
+                geodesics += `<path d="M ${x1.toFixed(1)} ${y1.toFixed(1)} A ${arcR} ${arcR} 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)}" fill="none" stroke="#9e3b22" stroke-width="1.3" class="interactive-path" data-info="Orthogonal Hyperbolic Geodesic #${i + 1}: Meets boundary horizon |z|=1 at 90°"/>`;
+            }
+
+            let rings = '';
+            for (let d = 1; d <= depth; d++) {
+                // Hyperbolic equal steps compress toward R via tanh(d * 0.45)
+                const rEuc = R * Math.tanh(d * 0.42);
+                rings += `<circle cx="${cx}" cy="${cy}" r="${rEuc.toFixed(1)}" fill="none" stroke="#2a5a5b" stroke-width="0.9" stroke-dasharray="3,2" class="interactive-path" data-info="Hyperbolic Equidistant Shell d=${d}: Constant intrinsic step Δs compressed near the boundary"/>`;
+            }
+
+            return `<svg viewBox="0 0 470 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="470" height="250" fill="#fcfaf5"/>
+                <circle cx="${cx}" cy="${cy}" r="${R}" fill="#fdfbf7" stroke="#2b241f" stroke-width="2.2"
+                        class="interactive-path" data-info="Ideal Boundary Horizon (|z| = 1): Located at infinite hyperbolic distance (ds → ∞)"/>
+                ${rings}
+                ${geodesics}
+                <circle cx="${cx}" cy="${cy}" r="3.5" fill="#2b241f"/>
+                <text x="20" y="32" font-family="Courier New" font-size="8" fill="#5c5246">SCHLÄFLI TILING: {${p}, 3}</text>
+                <text x="20" y="46" font-family="Courier New" font-size="8" fill="#9e3b22">CURVATURE: K = −1</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXIV — STAFFORD BEER: VIABLE SYSTEM MODEL (VSM) (1972)
+       ====================================================================== */
+    {
+        id: 'beer-vsm',
+        number: 'PLATE XXIV',
+        refCode: 'REF: CYB-1972-BEER',
+        title: 'Stafford Beer’s Viable System Model & Algedonic Loop',
+        subtitle: 'Neurocybernetic Five-Tier Recursion & Project Cybersyn Architecture (1972)',
+        thinker: 'Stafford Beer',
+        year: '1972',
+        yearSort: 1972,
+        provenance: 'Manchester / Santiago de Chile • Brain of the Firm & Project Cybersyn',
+        category: 'hypercomplex',
+        categoryLabel: 'Hyper-Complex & Nuanced • Neurocybernetic Topology',
+        secondaryTags: ['Project Cybersyn', 'Requisite Variety', 'Recursive Systems', 'Algedonic Signal'],
+        mold: 'standard',
+        axiomQuote: '“Only variety can absorb variety... Every viable system contains, and is contained in, a viable system of identical topological form.” — Stafford Beer (1972)',
+        blurb: 'Modeled directly on the human autonomic and central nervous systems—and built into the hexagonal operations room of Salvador Allende’s Project Cybersyn in 1973 Chile—Stafford Beer’s Viable System Model maps any autonomous organism across five recursive tiers, complete with variety attenuators, anti-oscillatory damping triangles, and emergency "Algedonic" (pain/pleasure) bypass channels.',
+        useCaseLabel: 'Cybernetic & Agentic Resonance',
+        useCase: 'Multi-agent AI governance, autonomous homeostasis, W. Ross Ashby’s Law of Requisite Variety, and non-authoritarian distributed coordination.',
+        triadLabels: ['I. VSM Topology', 'II. Ashby’s Law', 'III. Homeostat Stage'],
+        exegesis: {
+            stakes: 'Traditional organizational charts confuse power with information: a top executive cannot possibly process the millions of daily states generated by the environment and operations. Drawing on W. Ross Ashby’s Law of Requisite Variety and Warren McCulloch’s neural networks, Beer designed a recursive cybernetic topology where local units retain maximum autonomy, while critical anomalies trigger an "Algedonic" reflex direct to the cortex.',
+            mechanics: 'The diagram stacks five neurocybernetic functions: System 1 (autonomous operational organs, each containing a miniature copy of the entire 5-tier VSM bolted diagonally inside it); System 2 (the lateral spinal cord of anti-oscillatory damping triangles); System 3 (internal homeostasis and the 3* sporadic audit channel); System 4 (the diencephalon looking outward into the future environment); and System 5 (the cerebral cortex balancing present stability against future adaptation).',
+            lineage: 'Developed across Cybernetics and Management (1959), Brain of the Firm (1972), and Platform for Change (1975); chronicled historically in Eden Medina’s Cybernetic Revolutionaries (2011).'
+        },
+        relatedPlates: ['serres-chiasmus', 'alexander', 'spencer-brown', 'marey'],
+        scriptLang: 'Ashby Variety Attenuator & Algedonic Reflex Escalation Engine',
+        script: `<span class="code-comment"># Stafford Beer — Viable System Model (1972) Homeostatic Variety Balancer</span>
+<span class="code-comment"># Enforces Ashby's Law: Variety(Attenuated_Env) == Variety(Amplified_System)</span>
+
+<span class="code-keyword">def</span> <span class="code-func">vsm_homeostat</span>(env_variety, sys1_autonomy=0.75, algedonic_threshold=0.85):
+    residual_stress = env_variety * (1.0 - sys1_autonomy)
+    <span class="code-keyword">if</span> residual_stress >= algedonic_threshold:
+        <span class="code-keyword">return</span> {
+            <span class="code-string">"channel"</span>: <span class="code-string">"ALGEDONIC BYPASS (System 1 ──⚡──> System 5 Cortex)"</span>,
+            <span class="code-string">"state"</span>: <span class="code-string">"NOCICEPTIVE ALERT: Autonomy threshold exceeded"</span>
+        }
+    <span class="code-keyword">return</span> {
+        <span class="code-string">"channel"</span>: <span class="code-string">"System 2 Anti-Oscillatory Damping & System 3 Homeostasis"</span>,
+        <span class="code-string">"state"</span>: <span class="code-string">"ULTRASABLE EQUILIBRIUM"</span>
+    }`,
+        builderControls: [
+            { id: 'envStress', label: 'Environmental Variety Perturbation', type: 'range', min: 20, max: 100, value: 82 },
+            { id: 'damping', label: 'System 2 Anti-Oscillatory Damping', type: 'range', min: 10, max: 90, value: 55 },
+            { id: 'algedonic', label: 'Algedonic Emergency Bypass (S₁ → S₅)', type: 'select', options: ['Triggered (Active Pain/Anomaly Signal)', 'Dormant (Normal Homeostatic Loop)'] }
+        ],
+        renderSvg: (params) => {
+            const env = params ? parseInt(params.envStress) : 82;
+            const damp = params ? parseInt(params.damping) : 55;
+            const alg = params ? String(params.algedonic).includes('Triggered') : true;
+
+            return `<svg viewBox="0 0 480 255" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="255" fill="#fcfaf5"/>
+
+                <!-- Left: External Amoebic Environment -->
+                <path d="M 35 55 Q 15 110 40 165 Q 25 215 65 230 Q 105 220 95 155 Q 110 95 85 45 Z" 
+                      fill="#ebe4d5" stroke="#8c8070" stroke-width="1.5"
+                      class="interactive-path" data-info="External Environment (Variety = ${env}): High-entropy outside world"/>
+                <text x="62" y="138" font-family="Georgia" font-size="8.5" fill="#5c5246" text-anchor="middle">ENVIRONMENT</text>
+                <text x="62" y="150" font-family="Courier New" font-size="7.5" fill="#9e3b22" text-anchor="middle">(V = ${env})</text>
+
+                <!-- Metasystemic Brain (Systems 5, 4, 3) -->
+                <rect x="205" y="16" width="120" height="26" fill="#2b241f" class="interactive-path" data-info="System 5 (Cortex / Identity): Ultimate ethos and closure of the viable system"/>
+                <text x="265" y="33" font-family="Courier New" font-size="8.5" font-weight="bold" fill="#fff" text-anchor="middle">SYS 5: IDENTITY</text>
+
+                <rect x="205" y="54" width="120" height="26" fill="#fbf8f1" stroke="#2a5a5b" stroke-width="1.6" class="interactive-path" data-info="System 4 (Intelligence / Future): Scans external environment and models futures"/>
+                <text x="265" y="71" font-family="Courier New" font-size="8.5" font-weight="bold" fill="#2a5a5b" text-anchor="middle">SYS 4: FORESIGHT</text>
+
+                <rect x="205" y="92" width="120" height="26" fill="#fbf8f1" stroke="#2b241f" stroke-width="1.6" class="interactive-path" data-info="System 3 (Internal Homeostasis): Resource bargain with operational organs"/>
+                <text x="265" y="109" font-family="Courier New" font-size="8.5" font-weight="bold" fill="#2b241f" text-anchor="middle">SYS 3: SYNERGY</text>
+
+                <!-- System 1 Operational Organs (With Recursive Diagonal Mini-VSM) -->
+                <g class="interactive-path" data-info="System 1 Operational Organ A: Contains a recursive miniature VSM inside itself">
+                    <circle cx="235" cy="162" r="22" fill="#f4e8e4" stroke="#9e3b22" stroke-width="1.6"/>
+                    <rect x="228" y="152" width="14" height="18" fill="none" stroke="#2b241f" stroke-width="0.9" transform="rotate(-25, 235, 162)"/>
+                    <text x="235" y="166" font-family="Courier New" font-size="8" font-weight="bold" fill="#9e3b22" text-anchor="middle">S₁A</text>
+                </g>
+
+                <g class="interactive-path" data-info="System 1 Operational Organ B: Autonomous viable sub-unit">
+                    <circle cx="235" cy="216" r="22" fill="#f4e8e4" stroke="#9e3b22" stroke-width="1.6"/>
+                    <rect x="228" y="206" width="14" height="18" fill="none" stroke="#2b241f" stroke-width="0.9" transform="rotate(-25, 235, 216)"/>
+                    <text x="235" y="220" font-family="Courier New" font-size="8" font-weight="bold" fill="#9e3b22" text-anchor="middle">S₁B</text>
+                </g>
+
+                <!-- System 2 Anti-Oscillatory Damping Triangles (Right Spine) -->
+                <polygon points="365,148 385,162 365,176" fill="#c88a2d" class="interactive-path" data-info="System 2 Anti-Oscillatory Damping (${damp}%): Prevents resonant conflict between operational units"/>
+                <polygon points="365,202 385,216 365,230" fill="#c88a2d"/>
+                <line x1="375" y1="105" x2="375" y2="230" stroke="#c88a2d" stroke-width="1.8"/>
+                <text x="422" y="190" font-family="Courier New" font-size="8" fill="#c88a2d" text-anchor="middle">SYS 2 DAMPING</text>
+
+                <!-- Variety Loops (Environment <-> Sys 4 & Sys 1) -->
+                <line x1="98" y1="67" x2="205" y2="67" stroke="#2a5a5b" stroke-width="1.5"/>
+                <line x1="98" y1="162" x2="213" y2="162" stroke="#8c8070" stroke-width="1.4"/>
+                <line x1="98" y1="216" x2="213" y2="216" stroke="#8c8070" stroke-width="1.4"/>
+
+                <!-- Algedonic Emergency Bypass (S1 -> S5) -->
+                ${alg ? `
+                <path d="M 257 216 Q 455 185 325 29" fill="none" stroke="#9e3b22" stroke-width="2.4" stroke-dasharray="5,2"
+                      class="interactive-path" data-info="Algedonic Bypass Signal: Nociceptive alarm leaping directly from System 1 to System 5 Cortex"/>
+                <text x="415" y="95" font-family="Courier New" font-size="8" font-weight="bold" fill="#9e3b22" text-anchor="middle">⚡ ALGEDONIC</text>
+                ` : ''}
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXV — ÉTIENNE-JULES MAREY: SPACE-TIME STRING SCHEDULE (1885)
+       ====================================================================== */
+    {
+        id: 'marey',
+        number: 'PLATE XXV',
+        refCode: 'REF: DIAG-1885-MAREY',
+        title: 'Marey’s Space-Time Graphical Train Schedule',
+        subtitle: 'Chronographic String Schedule of the Paris–Lyon Railroad (1885)',
+        thinker: 'Étienne-Jules Marey & Charles Ibry',
+        year: '1885',
+        yearSort: 1885,
+        provenance: 'Paris • La Méthode Graphique dans les Sciences Expérimentales',
+        category: 'obscure',
+        categoryLabel: 'Rare & Obscure Historical • Space-Time Chronography',
+        secondaryTags: ['Chronophotography', 'Space-Time Mesh', 'Paris-Lyon Line', 'Velocity Slope'],
+        mold: 'standard',
+        axiomQuote: '“Graphic expression supersedes all descriptive text whenever we wish to seize at a glance the simultaneous relations of space, time, and velocity.” — Étienne-Jules Marey (1878)',
+        blurb: 'Before tabular train timetables were standardized, French physiologist and pioneer of chronophotography Étienne-Jules Marey popularized engineer Charles Ibry’s graphical train grid. Stations are spaced along the Y-axis strictly proportional to kilometer distance, and hours run along the X-axis: slope angle immediately reveals train speed, horizontal plateaus expose station stops, and X-crossings pinpoint exact track passing points.',
+        useCaseLabel: 'Modern Telemetry & Epistemic Resonance',
+        useCase: 'Distributed system trace waterfalls (OpenTelemetry), transit headway collision auditing, and Minkowski relativistic spacetime diagrams.',
+        triadLabels: ['I. String Schedule', 'II. Velocity Script', 'III. Timetable Stage'],
+        exegesis: {
+            stakes: 'Nineteenth-century rail networks created an unprecedented epistemological crisis: how do you coordinate dozens of opposing high-speed trains moving along single- and double-track corridors without catastrophic collisions? Tabular numbers required slow mental arithmetic; Ibry and Marey’s space-time graph translated schedule safety into pure Euclidean intersection geometry.',
+            mechanics: 'The vertical axis spaces Paris, Melun, Montereau, Laroche, and Tonnerre according to physical mileage. The horizontal axis divides the 24-hour day into 10-minute rulings. A train departing Paris at 6:00 AM traces a descending diagonal toward Tonnerre; an upbound train traces an ascending diagonal toward Paris. Where a line flattens horizontally (dy/dt = 0), the train is stationary at a platform. Where two opposing diagonals intersect, the dispatcher must ensure a passing siding exists at that exact y-coordinate.',
+            lineage: 'Celebrated by Edward Tufte in The Visual Display of Quantitative Information (1983), and structurally prophetic of Hermann Minkowski’s 1908 spacetime worldlines (where the speed of light c is the ultimate 45° slope).'
+        },
+        relatedPlates: ['husserl', 'nabokov', 'xenakis', 'minard'],
+        scriptLang: 'Chronographic Worldline Slope & Single-Track Passing Solver',
+        script: `<span class="code-comment"># Étienne-Jules Marey — Space-Time Train Worldline Intersection Solver (1885)</span>
+<span class="code-comment"># Stations spaced proportionally to kilometer distance on Y-axis</span>
+
+STATIONS_KM = [(<span class="code-string">"Paris"</span>, 0), (<span class="code-string">"Melun"</span>, 45), (<span class="code-string">"Montereau"</span>, 79), (<span class="code-string">"Laroche"</span>, 155), (<span class="code-string">"Tonnerre"</span>, 196)]
+
+<span class="code-keyword">def</span> <span class="code-func">compute_passing_point</span>(downbound_dep_hr, down_speed_kmh, upbound_dep_hr, up_speed_kmh):
+    <span class="code-string">"""Finds the exact time (t) and kilometer post (y) where opposing trains cross."""</span>
+    total_km = 196.0
+    <span class="code-comment"># y_down(t) = down_speed * (t - down_dep)</span>
+    <span class="code-comment"># y_up(t)   = total_km - up_speed * (t - up_dep)</span>
+    t_cross = (total_km + down_speed_kmh * downbound_dep_hr + up_speed_kmh * upbound_dep_hr) / (down_speed_kmh + up_speed_kmh)
+    km_cross = down_speed_kmh * (t_cross - downbound_dep_hr)
+    <span class="code-keyword">return</span> {<span class="code-string">"crossing_hour"</span>: <span class="code-func">round</span>(t_cross, 2), <span class="code-string">"kilometer_post"</span>: <span class="code-func">round</span>(km_cross, 1)}`,
+        builderControls: [
+            { id: 'trainSpeed', label: 'Downbound Express Velocity (km/h)', type: 'range', min: 45, max: 115, value: 78 },
+            { id: 'dwellTime', label: 'Station Dwell Plateau (minutes)', type: 'range', min: 0, max: 45, value: 18 },
+            { id: 'upboundFreq', label: 'Opposing Upbound Train Cadence', type: 'range', min: 1, max: 4, value: 2 }
+        ],
+        renderSvg: (params) => {
+            const speed = params ? parseInt(params.trainSpeed) : 78;
+            const dwell = params ? parseInt(params.dwellTime) : 18;
+            const upCount = params ? parseInt(params.upboundFreq) : 2;
+            const dwellPx = (dwell / 60) * 55;
+            const dt = Math.round(95 - speed * 0.5);
+
+            let upTrains = '';
+            for (let u = 0; u < upCount; u++) {
+                const startX = 250 + u * 90;
+                upTrains += `<polyline points="${startX},215 ${startX - 55},160 ${startX - 68},160 ${startX - 115},98 ${startX - 165},38" fill="none" stroke="#2a5a5b" stroke-width="1.8" stroke-dasharray="${u % 2 === 1 ? '4,2' : 'none'}" class="interactive-path" data-info="Upbound Train #${u + 1}: Tonnerre → Paris ascending trajectory"/>`;
+            }
+
+            return `<svg viewBox="0 0 490 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="490" height="250" fill="#fcfaf5"/>
+                <!-- Station Horizontal Lines & Hour Verticals -->
+                <g stroke="#e2d8c7" stroke-width="0.8" stroke-dasharray="2,2">
+                    <line x1="68" y1="38" x2="460" y2="38"/><line x1="68" y1="82" x2="460" y2="82"/>
+                    <line x1="68" y1="122" x2="460" y2="122"/><line x1="68" y1="168" x2="460" y2="168"/>
+                    <line x1="68" y1="215" x2="460" y2="215"/>
+                    <line x1="68" y1="38" x2="68" y2="215"/><line x1="146" y1="38" x2="146" y2="215"/>
+                    <line x1="224" y1="38" x2="224" y2="215"/><line x1="302" y1="38" x2="302" y2="215"/>
+                    <line x1="380" y1="38" x2="380" y2="215"/><line x1="458" y1="38" x2="458" y2="215"/>
+                </g>
+
+                <g font-family="Georgia" font-size="8.5" fill="#5c5246" text-anchor="end">
+                    <text x="62" y="41">Paris (0 km)</text><text x="62" y="85">Melun (45)</text>
+                    <text x="62" y="125">Montereau (79)</text><text x="62" y="171">Laroche (155)</text>
+                    <text x="62" y="218">Tonnerre (196)</text>
+                </g>
+
+                <g font-family="Courier New" font-size="8" fill="#8c8070" text-anchor="middle">
+                    <text x="68" y="232">06:00</text><text x="146" y="232">08:00</text>
+                    <text x="224" y="232">10:00</text><text x="302" y="232">12:00</text>
+                    <text x="380" y="232">14:00</text><text x="458" y="232">16:00</text>
+                </g>
+
+                <!-- Downbound Express Trajectories -->
+                <polyline points="68,38 ${68 + dt},82 ${68 + dt + dwellPx},82 ${68 + dt * 2 + dwellPx},122 ${68 + dt * 3.4 + dwellPx},215" 
+                          fill="none" stroke="#9e3b22" stroke-width="2.4"
+                          class="interactive-path" data-info="Downbound Express 101 (${speed} km/h): Horizontal step at Melun marks ${dwell}m station dwell"/>
+                <polyline points="165,38 ${165 + dt},82 ${165 + dt * 2.2},168 ${165 + dt * 3.1},215" 
+                          fill="none" stroke="#9e3b22" stroke-width="1.8" opacity="0.75"/>
+
+                ${upTrains}
+
+                <!-- Dwell Endpoints -->
+                <circle cx="${68 + dt}" cy="82" r="3.2" fill="#9e3b22"/>
+                <circle cx="${68 + dt + dwellPx}" cy="82" r="3.2" fill="#9e3b22"/>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXVI — W. E. B. DU BOIS: PARIS EXPOSITION COILED SPIRAL (1900)
+       ====================================================================== */
+    {
+        id: 'dubois',
+        number: 'PLATE XXVI',
+        refCode: 'REF: SOC-1900-DUBOIS',
+        title: 'W. E. B. Du Bois’s Coiled Sociological Spiral (Plate 11 & 25)',
+        subtitle: 'Non-Linear Scale-Preserving Spiral Infographics (Paris Exposition, 1900)',
+        thinker: 'W. E. B. Du Bois & Atlanta University Sociology Laboratory',
+        year: '1900',
+        yearSort: 1900,
+        provenance: 'Atlanta / Paris • Exposition Universelle (“The Georgia Negro: A Social Study”)',
+        category: 'obscure',
+        categoryLabel: 'Rare & Obscure Historical • Modernist Sociological Art',
+        secondaryTags: ['Paris Exposition 1900', 'Data Modernism', 'Scale Preservation', 'Archimedean Coil'],
+        mold: 'standard',
+        axiomQuote: '“The problem of the Twentieth Century is the problem of the color-line... rendered here in straight rules, gouache, and uncompromising geometric proportion.” — W. E. B. Du Bois (1900)',
+        blurb: 'Created in just four months by W. E. B. Du Bois and his student team at Atlanta University for the 1900 Paris Exposition, these 63 hand-painted gouache plates prefigured Bauhaus and De Stijl abstraction by twenty years. When charting exponential growth in Black-owned property or rural-vs-urban population, rather than truncating the axis or shrinking the scale, Du Bois bent the bar at 45° and coiled it into a hypnotic labyrinth.',
+        useCaseLabel: 'Design & Epistemic Resonance',
+        useCase: 'Visualizing extreme multi-order-of-magnitude ratios without logarithmic distortion; activist counter-cartography.',
+        triadLabels: ['I. Exposition Plate', 'II. Coil Geometry', 'III. Spiral Builder'],
+        exegesis: {
+            stakes: 'At the height of Social Darwinist pseudoscience in 1900, Du Bois recognized that dry statistical tables alone could not shock the international public out of racial prejudice. By inventing an arresting visual language of bold primary colors (crimson, gold, Prussian blue, ink black) and unconventional geometric forms, he forced viewers at the Paris Pavilion of Social Economy to confront the rapid post-Emancipation progress of Black Americans.',
+            mechanics: 'In Plate 11 ("City and Rural Population 1890") and Plate 25 ("Assessed Value of Household and Kitchen Furniture Owned by Georgia Negroes"), initial small cohorts appear as short horizontal bars at the top of the page. When the final cohort (734,952 rural residents, or $1,434,975 in property) exceeds the page width by tenfold, the bar plunges diagonally and winds inward into a dense Archimedean or octagonal spiral—preserving 1:1 linear pixel-to-person fidelity.',
+            lineage: 'Preserved in the Library of Congress Prints and Photographs Division and celebrated globally in Whitney Battle-Baptiste and Britt Rusert’s W. E. B. Du Bois’s Data Portraits: Visualizing Black America (2018).'
+        },
+        relatedPlates: ['malevich', 'minard', 'priestley', 'marey'],
+        scriptLang: 'Du Boisian Scale-Preserving Archimedean & Octagonal Coil Generator',
+        script: `<span class="code-comment"># W. E. B. Du Bois — Paris Exposition (1900) Scale-Preserving Spiral Bar</span>
+<span class="code-comment"># Wraps extreme linear lengths into an inward Archimedean coil without log-compression</span>
+
+<span class="code-keyword">import</span> math
+
+<span class="code-keyword">def</span> <span class="code-func">du_bois_spiral_path</span>(total_value, scale_px_per_unit=0.001, r_outer=85.0, pitch=11.0):
+    target_length = total_value * scale_px_per_unit
+    points = []
+    theta = 0.0
+    <span class="code-keyword">while</span> theta < 6 * math.pi:
+        r = r_outer - (pitch / (2 * math.pi)) * theta
+        <span class="code-keyword">if</span> r < 12: <span class="code-keyword">break</span>
+        points.append((r * math.cos(theta), r * math.sin(theta)))
+        theta += 0.1
+    <span class="code-keyword">return</span> points`,
+        builderControls: [
+            { id: 'revolutions', label: 'Spiral Coil Revolutions (Turns)', type: 'range', min: 1, max: 5, value: 4 },
+            { id: 'ribbonWidth', label: 'Gouache Ribbon Gauge (px)', type: 'range', min: 6, max: 15, value: 10 },
+            { id: 'palette', label: '1900 Paris Exposition Gouache Palette', type: 'select', options: ['Plate 11 (Crimson / Gold / Emerald / Ink)', 'Plate 25 (Concentric Household Wealth Rings)'] }
+        ],
+        renderSvg: (params) => {
+            const turns = params ? parseInt(params.revolutions) : 4;
+            const gauge = params ? parseInt(params.ribbonWidth) : 10;
+            const isPlate25 = params ? String(params.palette).includes('Plate 25') : false;
+
+            const cx = 240, cy = 144;
+            let spiralPts = [];
+            const maxTheta = turns * 2 * Math.PI;
+            for (let t = 0; t <= maxTheta; t += 0.12) {
+                const r = 78 - (t / (2 * Math.PI)) * 13.5;
+                if (r < 8) break;
+                const x = cx + r * Math.cos(t - Math.PI / 2);
+                const y = cy + r * Math.sin(t - Math.PI / 2);
+                spiralPts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+            }
+
+            return `<svg viewBox="0 0 470 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="470" height="250" fill="#f6f2e9"/>
+                
+                <!-- Upper Comparative Linear Bars (Urban Tiers) -->
+                <rect x="65" y="20" width="95" height="9" fill="#2a5a5b" class="interactive-path" data-info="Cities > 10,000 inhabitants: 78,139 Black residents"/>
+                <text x="168" y="28" font-family="Courier New" font-size="8" fill="#2b241f">78,139 (CITIES &gt; 10K)</text>
+
+                <rect x="65" y="34" width="42" height="9" fill="#c88a2d" class="interactive-path" data-info="Towns 2,500–10,000: 35,987 Black residents"/>
+                <text x="115" y="42" font-family="Courier New" font-size="8" fill="#2b241f">35,987 (TOWNS)</text>
+
+                <!-- Diagonal Plunge Stem into Coiled Spiral -->
+                <polyline points="65,50 135,50 ${cx},${cy - 78}" fill="none" stroke="${isPlate25 ? '#c88a2d' : '#9e3b22'}" stroke-width="${gauge}" stroke-linecap="round"/>
+
+                <!-- Main Archimedean Gouache Coil -->
+                <polyline points="${spiralPts.join(' ')}" fill="none" stroke="#9e3b22" stroke-width="${gauge}" stroke-linecap="round"
+                          class="interactive-path" data-info="Du Bois Coiled Spiral (${turns} revolutions): Preserves exact linear scale for 734,952 rural residents"/>
+                <polyline points="${spiralPts.join(' ')}" fill="none" stroke="#2b241f" stroke-width="0.9" opacity="0.4"/>
+
+                <text x="355" y="145" font-family="Georgia" font-size="11" font-weight="bold" fill="#9e3b22">734,952</text>
+                <text x="355" y="159" font-family="Courier New" font-size="7.5" fill="#5c5246">COUNTRY &amp; VILLAGES</text>
+                <text x="355" y="171" font-family="Courier New" font-size="7.5" fill="#5c5246">(${turns} FULL COILS)</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXVII — CHARLES JOSEPH MINARD: SIX-VARIABLE ATTRITION MAP (1869)
+       ====================================================================== */
+    {
+        id: 'minard',
+        number: 'PLATE XXVII',
+        refCode: 'REF: CAR-1869-MINARD',
+        title: 'Minard’s Six-Variable Carte Figurative & Thermal Plumb',
+        subtitle: 'Coupled Somatic Flow Band & Sub-Zero Réaumur Temperature Graph (1869)',
+        thinker: 'Charles Joseph Minard',
+        year: '1869',
+        yearSort: 1869,
+        provenance: 'Paris • Lithograph by Regnier & Dourdet (20 November 1869)',
+        category: 'obscure',
+        categoryLabel: 'Rare & Obscure Historical • Multivariate Cartographic Elegy',
+        secondaryTags: ['Six-Variable Map', 'Sankey Precursor', 'Thermometric Coupling', 'Tolstoy Parallel'],
+        mold: 'wide',
+        axiomQuote: '“The aim of my carte figurative is to convey promptly to the eye the relation not given quickly by numbers requiring mental calculation.” — Charles Joseph Minard (1869)',
+        blurb: 'Drawn in Paris by the 88-year-old retired Inspector General of Bridges and Roads in the exact same year Leo Tolstoy finished War and Peace, Minard’s lithograph compresses six distinct dimensions onto a blank sheet without coordinate axes: troop headcount (1 mm per 10,000 men), 2D geography, direction of march, river-crossing step-haemorrhages, dates, and a synchronized sub-zero Réaumur thermometer tied by vertical plumb lines to the black retreating band.',
+        useCaseLabel: 'Multivariate & Visual Epistemology',
+        useCase: 'Coupled spatial-temporal cohort attrition, multi-pane synchronized telemetry, and narrative anti-monuments.',
+        triadLabels: ['I. Carte Figurative', 'II. 6-Tuple Schema', 'III. Attrition Stage'],
+        exegesis: {
+            stakes: 'Minard’s 1869 lithograph is not a military map; it is a graphic anti-war elegy. By stripping away cities, borders, and topography except for the fatal rivers (the Niemen, the Moskva, the Berezina), Minard turns Napoleon’s Grande Armée of 422,000 men into a living river of flesh that visibly bleeds out across space and freezes against the vertical plumb lines of the lower temperature chart until only 10,000 ghosts recross the Niemen.',
+            mechanics: 'The upper canvas plots the advancing army in warm ochre/rust (starting at 422,000 width) and the retreating army in stark ink-black (starting at 100,000 in Moscow and stepping down sharply at the Berezina crossing from 28,000 to 14,000). Beneath the map sits a reversed-time line chart of temperatures in degrees below zero on the Réaumur scale (0°R to −30°R), linked vertically to the exact geographic points of the retreat.',
+            lineage: 'Named by Étienne-Jules Marey as a work that "defies the pen of the historian in its brutal eloquence," and by Edward Tufte as "probably the best statistical graphic ever drawn."'
+        },
+        relatedPlates: ['marey', 'priestley', 'dubois', 'sterne-shklovsky'],
+        scriptLang: 'Minardian 6-Variable Coupled Flow & Réaumur Thermometric Integrator',
+        script: `<span class="code-comment"># Charles Joseph Minard — Carte Figurative (20 Nov 1869)</span>
+<span class="code-comment"># Couples upper somatic flow width W(x,y) with lower Réaumur thermometer T(x)</span>
+
+GRANDE_ARMEE_VECTORS = [
+    {<span class="code-string">"loc"</span>: <span class="code-string">"Kowno (Niemen)"</span>, <span class="code-string">"phase"</span>: <span class="code-string">"ADVANCE"</span>, <span class="code-string">"men"</span>: 422000, <span class="code-string">"temp_R"</span>: <span class="code-keyword">None</span>},
+    {<span class="code-string">"loc"</span>: <span class="code-string">"Smolensk"</span>,       <span class="code-string">"phase"</span>: <span class="code-string">"ADVANCE"</span>, <span class="code-string">"men"</span>: 175000, <span class="code-string">"temp_R"</span>: <span class="code-keyword">None</span>},
+    {<span class="code-string">"loc"</span>: <span class="code-string">"Moscou"</span>,         <span class="code-string">"phase"</span>: <span class="code-string">"APEX"</span>,    <span class="code-string">"men"</span>: 100000, <span class="code-string">"temp_R"</span>: 0},
+    {<span class="code-string">"loc"</span>: <span class="code-string">"Smolensk (Ret)"</span>, <span class="code-string">"phase"</span>: <span class="code-string">"RETREAT"</span>, <span class="code-string">"men"</span>: 37000,  <span class="code-string">"temp_R"</span>: -21, <span class="code-string">"date"</span>: <span class="code-string">"14 Nov"</span>},
+    {<span class="code-string">"loc"</span>: <span class="code-string">"Berezina River"</span>, <span class="code-string">"phase"</span>: <span class="code-string">"RETREAT"</span>, <span class="code-string">"men"</span>: 28000,  <span class="code-string">"temp_R"</span>: -20, <span class="code-string">"date"</span>: <span class="code-string">"28 Nov"</span>},
+    {<span class="code-string">"loc"</span>: <span class="code-string">"Molodezno"</span>,      <span class="code-string">"phase"</span>: <span class="code-string">"RETREAT"</span>, <span class="code-string">"men"</span>: 12000,  <span class="code-string">"temp_R"</span>: -30, <span class="code-string">"date"</span>: <span class="code-string">"6 Dec"</span>},
+    {<span class="code-string">"loc"</span>: <span class="code-string">"Kowno (Return)"</span>, <span class="code-string">"phase"</span>: <span class="code-string">"RETREAT"</span>, <span class="code-string">"men"</span>: 10000,  <span class="code-string">"temp_R"</span>: -26, <span class="code-string">"date"</span>: <span class="code-string">"14 Dec"</span>}
+]`,
+        builderControls: [
+            { id: 'initialForce', label: 'Niemen Crossing Force (Thousands)', type: 'range', min: 250, max: 450, value: 422 },
+            { id: 'frostSeverity', label: 'Molodezno Frost Depth (−°Réaumur)', type: 'range', min: 15, max: 36, value: 30 },
+            { id: 'plumbLines', label: 'Thermometric Vertical Plumb Lines', type: 'select', options: ['Show Coupled Temperature Plumb Lines', 'Flow Bands Only'] }
+        ],
+        renderSvg: (params) => {
+            const initK = params ? parseInt(params.initialForce) : 422;
+            const frost = params ? parseInt(params.frostSeverity) : 30;
+            const showPlumb = params ? String(params.plumbLines).includes('Show') : true;
+            const w0 = (initK / 422) * 34;
+
+            return `<svg viewBox="0 0 510 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="510" height="250" fill="#fcfaf5"/>
+
+                <!-- Advancing Ochre/Rust Band (422,000 -> 100,000 at Moscow) -->
+                <polygon points="38,${95 - w0 / 2} 165,58 295,48 445,38 445,48 295,66 165,78 38,${95 + w0 / 2}"
+                         fill="#c88a2d" opacity="0.82" stroke="#9e3b22" stroke-width="0.8"
+                         class="interactive-path" data-info="Advancing Grande Armée: ${initK},000 men crossing the Niemen → 100,000 reaching Moscow"/>
+
+                <!-- Retreating Ink-Black Band (100,000 -> 10,000) -->
+                <polygon points="445,48 335,88 225,108 135,118 42,114 42,118 135,124 225,116 335,98 445,56"
+                         fill="#2b241f"
+                         class="interactive-path" data-info="Retreating Survivors (Black Band): 100,000 leaving Moscow → 28,000 at Berezina → 10,000 at Niemen"/>
+
+                <!-- Labels on Map -->
+                <text x="42" y="68" font-family="Georgia" font-size="9" font-weight="bold" fill="#9e3b22">Kowno (${initK},000)</text>
+                <text x="275" y="42" font-family="Georgia" font-size="9" fill="#5c5246">Smolensk (145,000)</text>
+                <text x="445" y="30" font-family="Georgia" font-size="9.5" font-weight="bold" fill="#2b241f" text-anchor="end">MOSCOU (100,000)</text>
+                <text x="48" y="132" font-family="Courier New" font-size="8" font-weight="bold" fill="#2b241f">10,000 SURVIVORS</text>
+
+                <!-- Coupled Lower Réaumur Temperature Graph -->
+                <line x1="65" y1="158" x2="445" y2="158" stroke="#8c8070" stroke-width="1"/>
+                <text x="452" y="161" font-family="Courier New" font-size="7.5" fill="#5c5246">0°R</text>
+                <line x1="65" y1="${158 + frost * 2}" x2="445" y2="${158 + frost * 2}" stroke="#d8cebe" stroke-width="0.8" stroke-dasharray="2,2"/>
+                <text x="452" y="${161 + frost * 2}" font-family="Courier New" font-size="7.5" fill="#2a5a5b">−${frost}°R</text>
+
+                <polyline points="445,158 380,176 335,200 225,198 135,${158 + frost * 2} 95,${150 + frost * 2}"
+                          fill="none" stroke="#2a5a5b" stroke-width="2"
+                          class="interactive-path" data-info="Tableau Graphique de la Température: Plunges to −${frost}° Réaumur (−${Math.round(frost * 1.25)}°C) on Dec 6"/>
+
+                ${showPlumb ? `
+                <!-- Vertical Coupling Plumb Lines -->
+                <g stroke="#9e3b22" stroke-width="0.9" stroke-dasharray="3,2">
+                    <line x1="335" y1="98" x2="335" y2="200"/>
+                    <line x1="225" y1="116" x2="225" y2="198"/>
+                    <line x1="135" y1="124" x2="135" y2="${158 + frost * 2}"/>
+                </g>
+                ` : ''}
+
+                <text x="255" y="242" font-family="Georgia" font-style="italic" font-size="9" fill="#5c5246" text-anchor="middle">
+                    Six Simultaneous Dimensions: Geography (x, y) • Headcount (Width) • Direction (Color) • Time (Dates) • Frost (−${frost}°R)
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXVIII — JOSEPH PRIESTLEY: CHART OF BIOGRAPHY (1765)
+       ====================================================================== */
+    {
+        id: 'priestley',
+        number: 'PLATE XXVIII',
+        refCode: 'REF: CHR-1765-PRIESTLEY',
+        title: 'Joseph Priestley’s Chart of Biography & Uniform Time-Line',
+        subtitle: 'Lockean Spatialization of Historical Duration & Uncertainty Dots (1765)',
+        thinker: 'Joseph Priestley',
+        year: '1765',
+        yearSort: 1765,
+        provenance: 'Warrington Academy / London • Dedicated to Thomas Penn (1765)',
+        category: 'obscure',
+        categoryLabel: 'Rare & Obscure Historical • Chronological Epistemology',
+        secondaryTags: ['Time-Line Origin', 'John Locke', 'Epistemic Uncertainty', 'Gantt Ancestor'],
+        mold: 'standard',
+        axiomQuote: '“Time is here represented by a measurable space, and a longer or shorter space of time by a longer or shorter line... so that the eye beholds contemporaries at a single glance.” — Joseph Priestley (1765)',
+        blurb: 'Before Priestley’s 1765 three-foot copperplate engraving containing 2,000 lifespans from 1200 BC to 1750 AD, historians arranged chronology in typographic tables where centuries expanded or shrank depending on word count. Applying John Locke’s philosophy of duration, Priestley invented the uniform horizontal timeline, horizontal lifespan bars, and graduated stippled dots (…) to encode historical uncertainty.',
+        useCaseLabel: 'Epistemic & Temporal Resonance',
+        useCase: 'Direct ancestor of Gantt charts, flamegraphs, cohort overlap visualization, and fuzzy/uncertain interval encoding.',
+        triadLabels: ['I. Biography Chart', 'II. Lockean Duration', 'III. Cohort Builder'],
+        exegesis: {
+            stakes: 'As Daniel Rosenberg and Anthony Grafton showed in Cartographies of Time (2010), Priestley’s chart was a radical philosophical intervention. Drawing on John Locke’s An Essay Concerning Human Understanding ("Duration is fleeting and perpetually perishing; we can only represent it by the spatial figure of a uniform right line"), Priestley proved that empty historical centuries must occupy the exact same physical width as dense ones.',
+            mechanics: 'The horizontal axis is ruled into equal century and decade intervals. The vertical plane is divided into six thematic bands (Statesmen, Mathematicians/Physicians, Poets/Artists, Orators/Critics, Historians, Divines/Metaphysicians). Each life is a solid black line from birth to death; crucially, where a birth or death date is uncertain, Priestley invented a semantic typography of one, two, or three trailing dots (· · ·) before or after the bar.',
+            lineage: 'Earned Priestley his Fellowship in the Royal Society and Doctor of Laws from Edinburgh in 1765, directly inspiring William Playfair’s invention of the line and bar chart (1786).'
+        },
+        relatedPlates: ['husserl', 'marey', 'minard', 'sterne-shklovsky'],
+        scriptLang: 'Priestleyan Uncertain Lifespan Interval & Contemporaneity Overlap Solver',
+        script: `<span class="code-comment"># Joseph Priestley — A Description of a Chart of Biography (1765)</span>
+<span class="code-comment"># Encodes certain lifespan [birth..death] + stippled uncertainty margin (...)</span>
+
+FIGURES = [
+    {<span class="code-string">"name"</span>: <span class="code-string">"Giordano Bruno"</span>, <span class="code-string">"b"</span>: 1548, <span class="code-string">"d"</span>: 1600, <span class="code-string">"unc_b"</span>: 2, <span class="code-string">"band"</span>: <span class="code-string">"Metaphysicians"</span>},
+    {<span class="code-string">"name"</span>: <span class="code-string">"Robert Fludd"</span>,   <span class="code-string">"b"</span>: 1574, <span class="code-string">"d"</span>: 1637, <span class="code-string">"unc_b"</span>: 0, <span class="code-string">"band"</span>: <span class="code-string">"Physicians"</span>},
+    {<span class="code-string">"name"</span>: <span class="code-string">"René Descartes"</span>, <span class="code-string">"b"</span>: 1596, <span class="code-string">"d"</span>: 1650, <span class="code-string">"unc_b"</span>: 0, <span class="code-string">"band"</span>: <span class="code-string">"Mathematicians"</span>},
+    {<span class="code-string">"name"</span>: <span class="code-string">"Baruch Spinoza"</span>, <span class="code-string">"b"</span>: 1632, <span class="code-string">"d"</span>: 1677, <span class="code-string">"unc_b"</span>: 0, <span class="code-string">"band"</span>: <span class="code-string">"Metaphysicians"</span>},
+    {<span class="code-string">"name"</span>: <span class="code-string">"G. W. Leibniz"</span>,  <span class="code-string">"b"</span>: 1646, <span class="code-string">"d"</span>: 1716, <span class="code-string">"unc_b"</span>: 0, <span class="code-string">"band"</span>: <span class="code-string">"Mathematicians"</span>},
+    {<span class="code-string">"name"</span>: <span class="code-string">"Laurence Sterne"</span>,<span class="code-string">"b"</span>: 1713, <span class="code-string">"d"</span>: 1768, <span class="code-string">"unc_b"</span>: 0, <span class="code-string">"band"</span>: <span class="code-string">"Critics & Wit"</span>}
+]`,
+        builderControls: [
+            { id: 'focusYear', label: 'Simultaneity Vertical Cursor (Year)', type: 'range', min: 1560, max: 1740, value: 1648 },
+            { id: 'uncertaintyDots', label: 'Priestley Uncertainty Dots (c. Date)', type: 'range', min: 0, max: 15, value: 8 }
+        ],
+        renderSvg: (params) => {
+            const year = params ? parseInt(params.focusYear) : 1648;
+            const unc = params ? parseInt(params.uncertaintyDots) : 8;
+
+            const scaleX = (y) => 55 + ((y - 1540) / 230) * 380;
+            const cursorX = scaleX(year);
+
+            const lives = [
+                { name: 'G. Bruno', b: 1548, d: 1600, y: 55, unc: true },
+                { name: 'R. Fludd', b: 1574, d: 1637, y: 82, unc: false },
+                { name: 'R. Descartes', b: 1596, d: 1650, y: 109, unc: false },
+                { name: 'B. Spinoza', b: 1632, d: 1677, y: 136, unc: false },
+                { name: 'G. W. Leibniz', b: 1646, d: 1716, y: 163, unc: true },
+                { name: 'L. Sterne', b: 1713, d: 1768, y: 190, unc: false }
+            ];
+
+            let bars = '';
+            let aliveCount = 0;
+            lives.forEach(l => {
+                const x1 = scaleX(l.b);
+                const x2 = scaleX(l.d);
+                const isAlive = year >= l.b && year <= l.d;
+                if (isAlive) aliveCount++;
+                const col = isAlive ? '#9e3b22' : '#2b241f';
+
+                if (l.unc && unc > 0) {
+                    bars += `<line x1="${(x1 - unc).toFixed(1)}" y1="${l.y}" x2="${x1.toFixed(1)}" y2="${l.y}" stroke="${col}" stroke-width="3" stroke-dasharray="1.5,2.5"/>`;
+                    bars += `<line x1="${x2.toFixed(1)}" y1="${l.y}" x2="${(x2 + unc).toFixed(1)}" y2="${l.y}" stroke="${col}" stroke-width="3" stroke-dasharray="1.5,2.5"/>`;
+                }
+                bars += `
+                    <line x1="${x1.toFixed(1)}" y1="${l.y}" x2="${x2.toFixed(1)}" y2="${l.y}" stroke="${col}" stroke-width="4.5"
+                          class="interactive-path" data-info="${l.name} (${l.b}–${l.d}): ${isAlive ? 'Alive at Year ' + year : 'Outside active year slice'}"/>
+                    <text x="${(x1 - unc - 4).toFixed(1)}" y="${l.y - 6}" font-family="Georgia" font-size="8.5" font-weight="${isAlive ? 'bold' : 'normal'}" fill="${col}">${l.name} (${l.b}–${l.d})</text>`;
+            });
+
+            return `<svg viewBox="0 0 480 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="250" fill="#fcfaf5"/>
+                <!-- Uniform Century & Half-Century Grid -->
+                <g stroke="#e2d8c7" stroke-width="1">
+                    <line x1="${scaleX(1550)}" y1="28" x2="${scaleX(1550)}" y2="212"/>
+                    <line x1="${scaleX(1600)}" y1="28" x2="${scaleX(1600)}" y2="212"/>
+                    <line x1="${scaleX(1650)}" y1="28" x2="${scaleX(1650)}" y2="212"/>
+                    <line x1="${scaleX(1700)}" y1="28" x2="${scaleX(1700)}" y2="212"/>
+                    <line x1="${scaleX(1750)}" y1="28" x2="${scaleX(1750)}" y2="212"/>
+                </g>
+                <g font-family="Courier New" font-size="8" fill="#8c8070" text-anchor="middle">
+                    <text x="${scaleX(1550)}" y="22">1550</text><text x="${scaleX(1600)}" y="22">1600</text>
+                    <text x="${scaleX(1650)}" y="22">1650</text><text x="${scaleX(1700)}" y="22">1700</text>
+                    <text x="${scaleX(1750)}" y="22">1750</text>
+                </g>
+
+                ${bars}
+
+                <!-- Active Simultaneity Slice Line -->
+                <line x1="${cursorX.toFixed(1)}" y1="25" x2="${cursorX.toFixed(1)}" y2="215" stroke="#2a5a5b" stroke-width="1.8" stroke-dasharray="4,2"/>
+                <text x="240" y="234" font-family="Georgia" font-style="italic" font-size="9.5" fill="#2a5a5b" text-anchor="middle">
+                    Simultaneity Slice AD ${year}: ${aliveCount} Living Contemporaries  |  Trailing Dots (···) = Uncertain Dates
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXIX — PORPHYRY & UMBERTO ECO: ARBOR PORPHYRIANA VS. LABYRINTH (270 / 1984)
+       ====================================================================== */
+    {
+        id: 'porphyry',
+        number: 'PLATE XXIX',
+        refCode: 'REF: TAX-0270-PORPHYRY',
+        title: 'Arbor Porphyriana vs. Umberto Eco’s Rhizomatic Labyrinth',
+        subtitle: 'Dichotomous Tree of Substance (c. 270 AD) & Its Encyclopedic Deconstruction (1984)',
+        thinker: 'Porphyry of Tyre (c. 270 AD), Boethius (510 AD) & Umberto Eco (1984)',
+        year: '270 AD',
+        yearSort: 270,
+        provenance: 'Rome / Alexandria (Isagoge) & Bloomington (Semiotics and the Philosophy of Language)',
+        category: 'obscure',
+        categoryLabel: 'Rare & Obscure Historical • Taxonomic & Anti-Taxonomic Logic',
+        secondaryTags: ['Tree of Porphyry', 'Umberto Eco', 'Dictionary vs. Encyclopedia', 'Labyrinth'],
+        mold: 'standard',
+        axiomQuote: '“Every Porphyrian tree can be blown up into a twisted net of differentiae where every node connects to every other: the Dictionary dissolves into the Encyclopedia.” — Umberto Eco (1984)',
+        blurb: 'For seventeen centuries, Porphyry’s Isagoge (illustrated by Boethius and medieval scholastics as a central trunk flanked by dichotomous wings) reigned as the supreme model of definition: Substance → Body → Living → Animal → Rational → Human (Socrates). In 1984, semiotician Umberto Eco proved mathematically that because the sideways differentiae (Corporeal, Animate, Mortal) can recur across branches, every Porphyrian Tree secretly collapses into a tangled rhizomatic Labyrinth.',
+        useCaseLabel: 'Ontological & Knowledge-Architecture Resonance',
+        useCase: 'Contrasting rigid Dictionary taxonomies (strict inheritance trees) against open Encyclopedic knowledge graphs (semantic webs).',
+        triadLabels: ['I. Tree vs. Net', 'II. Eco’s Critique', 'III. Ontology Stage'],
+        exegesis: {
+            stakes: 'Can the meaning of a concept be fixed by a clean hierarchical ladder of Genus and Specific Difference (a "Dictionary"), or does every definition depend on an open-ended web of historical, cultural, and cross-cutting traits (an "Encyclopedia")? This plate stages the 1,700-year duel between Porphyry’s vertical Tree of Substance and Umberto Eco’s Third Labyrinth (the Net).',
+            mechanics: 'In the classical Arbor Porphyriana, the central column descends from the Summum Genus (Substance) to the Infima Species (Human) and individual leaves (Socrates, Plato). At each node, a pair of winged Differentiae splits the genus in two (Corporeal vs. Incorporeal; Rational vs. Irrational). Eco demonstrates that if you ask what defines a "Difference" (e.g., Rational or Mortal), that difference must itself be defined by other differences—Dissolving the rigid vertical spine into a non-hierarchical graph.',
+            lineage: 'Transmitted from Porphyry’s Greek Isagoge via Boethius, Peter of Spain, Ramon Llull’s Arbor Scientiae (1295), and Linnaeus, before being deconstructed by Umberto Eco in Semiotics and the Philosophy of Language (1984).'
+        },
+        relatedPlates: ['alexander', 'greimas', 'llull', 'frege'],
+        scriptLang: 'Porphyrian Dichotomous Ladder vs. Eco Encyclopedic Graph Transformer',
+        script: `<span class="code-comment"># Porphyry (270 AD) vs. Umberto Eco (1984) — Dictionary Tree vs. Encyclopedia Net</span>
+<span class="code-comment"># Shows how recurring differentiae (e.g. "Mortal") short-circuit the strict tree</span>
+
+PORPHYRY_SPINE = [
+    (<span class="code-string">"SUBSTANTIA"</span>, (<span class="code-string">"Corporeal"</span>, <span class="code-string">"Incorporeal"</span>)),
+    (<span class="code-string">"CORPUS"</span>,     (<span class="code-string">"Animate"</span>,   <span class="code-string">"Inanimate"</span>)),
+    (<span class="code-string">"VIVENS"</span>,     (<span class="code-string">"Sensitive"</span>, <span class="code-string">"Insensitive"</span>)),
+    (<span class="code-string">"ANIMAL"</span>,     (<span class="code-string">"Rational"</span>,  <span class="code-string">"Irrational"</span>)),
+    (<span class="code-string">"HOMO"</span>,       (<span class="code-string">"Socrates"</span>,  <span class="code-string">"Plato"</span>))
+]
+
+<span class="code-keyword">def</span> <span class="code-func">eco_labyrinth_entanglement</span>(spine, allow_cross_differentiae=<span class="code-keyword">True</span>):
+    <span class="code-keyword">if not</span> allow_cross_differentiae:
+        <span class="code-keyword">return</span> <span class="code-string">"Labyrinth Type 1/2: Classical Arborescent Dictionary"</span>
+    <span class="code-comment"># E.g., "Mortal" applies to both Rational (Humans) and Irrational (Horses),</span>
+    <span class="code-comment"># while "Rational" applies to both Corporeal (Humans) and Incorporeal (Angels/Gods)</span>
+    <span class="code-keyword">return</span> <span class="code-string">"Labyrinth Type 3 (Rhizomatic Net): Cross-cutting differentiae destroy strict hierarchy"</span>`,
+        builderControls: [
+            { id: 'labyrinthMode', label: 'Epistemic Model (Porphyry vs. Eco)', type: 'select', options: ['Hybrid: Classical Trunk + Eco’s Rhizomatic Short-Circuits', 'Pure Classical Arbor Porphyriana (270 AD)', 'Eco’s Third Labyrinth (Decentered Encyclopedic Net)'] },
+            { id: 'summumGenus', label: 'Summum Genus (Apex Node)', type: 'text', value: 'SUBSTANTIA' },
+            { id: 'individuum', label: 'Individuum (Terminal Leaf)', type: 'text', value: 'SOCRATES' }
+        ],
+        renderSvg: (params) => {
+            const mode = params ? params.labyrinthMode : 'Hybrid: Classical Trunk + Eco’s Rhizomatic Short-Circuits';
+            const topNode = (params && params.summumGenus) ? params.summumGenus : 'SUBSTANTIA';
+            const leafNode = (params && params.individuum) ? params.individuum : 'SOCRATES';
+
+            const showEco = !String(mode).includes('Pure Classical');
+
+            return `<svg viewBox="0 0 480 255" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="255" fill="#fcfaf5"/>
+
+                <!-- Eco's Rhizomatic Short-Circuit Loops (Red/Teal Cross-Cutting Arcs) -->
+                ${showEco ? `
+                <g fill="none" stroke="#9e3b22" stroke-width="1.3" stroke-dasharray="4,2" class="interactive-path" data-info="Umberto Eco's Encyclopedic Short-Circuit: 'Rational' & 'Mortal' cross-link Incorporeal and Irrational branches, collapsing the tree into a net">
+                    <path d="M 355 58 C 435 95, 435 155, 125 182"/>
+                    <path d="M 125 58 C 45 105, 45 165, 355 182"/>
+                    <path d="M 125 118 Q 240 155 355 182" stroke="#2a5a5b"/>
+                </g>
+                ` : ''}
+
+                <!-- Central Porphyrian Trunk -->
+                <line x1="240" y1="36" x2="240" y2="212" stroke="#2b241f" stroke-width="2"/>
+
+                <!-- Dichotomous Wing Branches -->
+                <g stroke="#5c5246" stroke-width="1.2">
+                    <line x1="240" y1="36" x2="125" y2="54"/><line x1="240" y1="36" x2="355" y2="54"/>
+                    <line x1="240" y1="92" x2="125" y2="112"/><line x1="240" y1="92" x2="355" y2="112"/>
+                    <line x1="240" y1="150" x2="125" y2="170"/><line x1="240" y1="150" x2="355" y2="170"/>
+                </g>
+
+                <!-- Central Spine Nodes -->
+                <rect x="185" y="16" width="110" height="22" fill="#f4e8e4" stroke="#9e3b22" stroke-width="1.5"/>
+                <text x="240" y="30" font-family="Georgia" font-size="9.5" font-weight="bold" fill="#9e3b22" text-anchor="middle">${topNode}</text>
+
+                <rect x="185" y="74" width="110" height="22" fill="#fbf8f1" stroke="#2b241f"/>
+                <text x="240" y="88" font-family="Georgia" font-size="9" fill="#2b241f" text-anchor="middle">CORPUS (Body)</text>
+
+                <rect x="185" y="132" width="110" height="22" fill="#fbf8f1" stroke="#2b241f"/>
+                <text x="240" y="146" font-family="Georgia" font-size="9" fill="#2b241f" text-anchor="middle">ANIMAL (Sensitive)</text>
+
+                <rect x="185" y="198" width="110" height="24" fill="#2a5a5b"/>
+                <text x="240" y="214" font-family="Georgia" font-size="9.5" font-weight="bold" fill="#fff" text-anchor="middle">${leafNode}</text>
+
+                <!-- Left & Right Wing Differentiae -->
+                <g font-family="Georgia" font-style="italic" font-size="8.5" fill="#5c5246" text-anchor="middle">
+                    <text x="115" y="65">Corporeal</text><text x="365" y="65">Incorporeal</text>
+                    <text x="115" y="124">Animate</text><text x="365" y="124">Inanimate</text>
+                    <text x="115" y="182">Rational</text><text x="365" y="182">Irrational</text>
+                </g>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXX — HERMAN CHERNOFF: MULTIVARIATE GLYPH FACES (1973)
+       ====================================================================== */
+    {
+        id: 'chernoff',
+        number: 'PLATE XXX',
+        refCode: 'REF: MUL-1973-CHERNOFF',
+        title: 'Chernoff’s Eighteen-Dimensional Physiognomic Glyphs',
+        subtitle: 'Pareidolic High-Dimensional Cluster Recognition via Facial Vectors (1973)',
+        thinker: 'Herman Chernoff',
+        year: '1973',
+        yearSort: 1973,
+        provenance: 'Stanford / Harvard University • Journal of the American Statistical Association',
+        category: 'hypercomplex',
+        categoryLabel: 'Hyper-Complex & Nuanced • Pareidolic Multivariate Mapping',
+        secondaryTags: ['Pareidolia', '18-Dimensional Space', 'Physiognomic Encoding', 'Cluster Perception'],
+        mold: 'standard',
+        axiomQuote: '“People grow up studying faces all their lives; the visual cortex detects micro-shifts in brow slant or mouth curvature far more rapidly than tables of eighteen orthogonal numbers.” — Herman Chernoff (1973)',
+        blurb: 'To project an 18-dimensional vector space onto a two-dimensional page without principal-component information loss, statistician Herman Chernoff hijacked the human fusiform face area. Each statistical dimension controls a geometric parameter of a schematic face (cranium eccentricity, pupil size, brow slant, mouth curvature)—turning cold fossil and geological matrices into an uncanny crowd of expressive witnesses.',
+        useCaseLabel: 'Cognitive & Multivariate Resonance',
+        useCase: 'Pre-attentive anomaly detection in high-dimensional telemetry, pareidolic perception studies, and non-reductive cluster visualization.',
+        triadLabels: ['I. Glyph Matrix', 'II. 18-Vector DSL', 'III. Physiognomy Lab'],
+        exegesis: {
+            stakes: 'Standard Cartesian plots break down past three or four dimensions. Rather than mathematically collapsing 18 variables into 2 synthetic axes via PCA (which destroys interpretability), Chernoff asked a radical perceptual question: what is the highest-bandwidth pattern recognizer already wired into the human primate brain? The answer is facial affect and physiognomy.',
+            mechanics: 'In Chernoff’s original 1973 JASA paper (applied to 87 Nummulited limestone fossil specimens and 53 geological core samples), 18 normalized variables x₁..x₁₈ ∈ [0, 1] drive distinct geometric splines: x₁ controls upper face radius, x₂ lower jaw eccentricity, x₆ nose length, x₈ mouth curvature (quadratic Bézier control point), x₁₁ eye separation, and x₁₆ eyebrow angle.',
+            lineage: 'Sparked decades of debate in perceptual psychology and information design (including critiques that variables mapped to mouth curvature or eye slant dominate human emotional attention over cranium width).'
+        },
+        relatedPlates: ['minard', 'dubois', 'beer-vsm', 'marey'],
+        scriptLang: 'Chernoff 18-Parameter Parametric Face Spline Mapper',
+        script: `<span class="code-comment"># Herman Chernoff — JASA (1973): 18-Variable Physiognomic Vector Projection</span>
+<span class="code-comment"># Maps normalized vector X = [x_1 .. x_18] in [0,1]^18 to SVG spline geometry</span>
+
+<span class="code-keyword">def</span> <span class="code-func">project_chernoff_glyph</span>(vector_18d):
+    <span class="code-keyword">return</span> {
+        <span class="code-string">"cranium_eccentricity"</span>: 30 + vector_18d[0] * 25,
+        <span class="code-string">"eye_aperture_rx"</span>:      3 + vector_18d[1] * 10,
+        <span class="code-string">"brow_obliquity_deg"</span>:  -12 + vector_18d[2] * 24,
+        <span class="code-string">"mouth_bezier_q"</span>:      -20 + vector_18d[3] * 40,
+        <span class="code-string">"nose_bridge_length"</span>:   8 + vector_18d[4] * 16
+    }`,
+        builderControls: [
+            { id: 'smile', label: 'Variable x₈: Mouth Curvature (Q-Point)', type: 'range', min: -22, max: 22, value: 12 },
+            { id: 'eyeSize', label: 'Variable x₁₁: Ocular Aperture', type: 'range', min: 3, max: 13, value: 8 },
+            { id: 'faceRound', label: 'Variable x₁: Cranial Eccentricity', type: 'range', min: 28, max: 52, value: 38 },
+            { id: 'eyebrow', label: 'Variable x₁₆: Superciliary Obliquity', type: 'range', min: -12, max: 12, value: -5 }
+        ],
+        renderSvg: (params) => {
+            const smile = params ? parseInt(params.smile) : 12;
+            const eyeSize = params ? parseInt(params.eyeSize) : 8;
+            const faceRound = params ? parseInt(params.faceRound) : 38;
+            const eyebrow = params ? parseInt(params.eyebrow) : -5;
+
+            return `<svg viewBox="0 0 470 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="470" height="250" fill="#fcfaf5"/>
+
+                <!-- Left Specimen: Active Parameterized Glyph (Cluster Alpha) -->
+                <g transform="translate(145, 125)" class="interactive-path" data-info="Active Specimen Alpha: Encodes x₁=${faceRound}, x₈=${smile}, x₁₁=${eyeSize}, x₁₆=${eyebrow}">
+                    <ellipse cx="0" cy="0" rx="${faceRound}" ry="64" fill="#fbf8f1" stroke="#2b241f" stroke-width="2"/>
+                    <ellipse cx="-16" cy="-14" rx="${eyeSize}" ry="${(eyeSize * 0.68).toFixed(1)}" fill="#fff" stroke="#2b241f" stroke-width="1.5"/>
+                    <ellipse cx="16" cy="-14" rx="${eyeSize}" ry="${(eyeSize * 0.68).toFixed(1)}" fill="#fff" stroke="#2b241f" stroke-width="1.5"/>
+                    <circle cx="-16" cy="-14" r="2.2" fill="#2b241f"/>
+                    <circle cx="16" cy="-14" r="2.2" fill="#2b241f"/>
+                    <line x1="-26" y1="${-28 - eyebrow}" x2="-6" y2="${-28 + eyebrow}" stroke="#9e3b22" stroke-width="2.2"/>
+                    <line x1="6" y1="${-28 + eyebrow}" x2="26" y2="${-28 - eyebrow}" stroke="#9e3b22" stroke-width="2.2"/>
+                    <path d="M -5 -4 L 0 12 L 5 -4" fill="none" stroke="#5c5246" stroke-width="1.4"/>
+                    <path d="M -20 26 Q 0 ${26 + smile} 20 26" fill="none" stroke="#2a5a5b" stroke-width="2.6" stroke-linecap="round"/>
+                    <text x="0" y="84" font-family="Courier New" font-size="8.5" fill="#2b241f" text-anchor="middle">SPECIMEN α (ACTIVE)</text>
+                </g>
+
+                <!-- Right Specimen: Inverse Antipodal Cluster Beta -->
+                <g transform="translate(335, 125)" class="interactive-path" data-info="Antipodal Specimen Beta: Inverse multivariate vector (1 − X) for comparative cluster contrast">
+                    <ellipse cx="0" cy="0" rx="${80 - faceRound}" ry="58" fill="#fbf8f1" stroke="#5c5246" stroke-width="1.6" stroke-dasharray="3,2"/>
+                    <ellipse cx="-16" cy="-14" rx="${16 - eyeSize}" ry="${((16 - eyeSize) * 0.68).toFixed(1)}" fill="#fff" stroke="#5c5246" stroke-width="1.4"/>
+                    <ellipse cx="16" cy="-14" rx="${16 - eyeSize}" ry="${((16 - eyeSize) * 0.68).toFixed(1)}" fill="#fff" stroke="#5c5246" stroke-width="1.4"/>
+                    <circle cx="-16" cy="-14" r="2" fill="#5c5246"/>
+                    <circle cx="16" cy="-14" r="2" fill="#5c5246"/>
+                    <line x1="-26" y1="${-28 + eyebrow}" x2="-6" y2="${-28 - eyebrow}" stroke="#c88a2d" stroke-width="2"/>
+                    <line x1="6" y1="${-28 - eyebrow}" x2="26" y2="${-28 + eyebrow}" stroke="#c88a2d" stroke-width="2"/>
+                    <path d="M -3 -2 L 0 9 L 3 -2" fill="none" stroke="#8c8070" stroke-width="1.2"/>
+                    <path d="M -18 26 Q 0 ${26 - smile} 18 26" fill="none" stroke="#9e3b22" stroke-width="2.2" stroke-linecap="round"/>
+                    <text x="0" y="84" font-family="Courier New" font-size="8.5" fill="#5c5246" text-anchor="middle">SPECIMEN β (INVERSE VECTOR)</text>
+                </g>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXXI — CAPT. RIALL SANKEY: THERMODYNAMIC ENTROPY DISSIPATION (1898)
+       ====================================================================== */
+    {
+        id: 'sankey',
+        number: 'PLATE XXXI',
+        refCode: 'REF: FLUX-1898-SANKEY',
+        title: 'Captain Sankey’s Steam Thermal Dissipation Diagram',
+        subtitle: 'Second-Law Thermodynamic Entropy & Irreversible Loss Flows (1898)',
+        thinker: 'Captain Matthew Henry Phineas Riall Sankey',
+        year: '1898',
+        yearSort: 1898,
+        provenance: 'London • Minutes of Proceedings of the Institution of Civil Engineers (Vol. 134)',
+        category: 'obscure',
+        categoryLabel: 'Rare & Obscure Historical • Thermodynamic Entropy Flux',
+        secondaryTags: ['Thermodynamics', 'Entropy Loss', 'Carnot Cycle', 'Proportional Flux'],
+        mold: 'standard',
+        axiomQuote: '“No heat engine can convert all supplied thermal energy into mechanical work; the branching river of waste heat visually measures the Second Law of Thermodynamics.” — Capt. H. R. Sankey (1898)',
+        blurb: 'Modern software tools reduce "Sankey diagrams" to generic left-to-right alluvial charts. Yet Captain Riall Sankey’s original 1898 plate in the Proceedings of the Institution of Civil Engineers had a far more dramatic philosophical purpose: visualizing the relentless thermodynamic degradation of energy in a steam plant—where a massive trunk of boiler heat bleeds away into radiation, flue gases, friction, and condenser exhaust, leaving a slender ribbon of actual work, recirculating a thin feedwater feedback loop.',
+        useCaseLabel: 'Thermodynamic & Systems Resonance',
+        useCase: 'Irreversible entropy accounting, token/compute dissipation in LLM inference pipelines, and closed-loop recirculation audits.',
+        triadLabels: ['I. Thermal Plate', 'II. Entropy Balance', 'III. Dissipation Stage'],
+        exegesis: {
+            stakes: 'Inspired by Charles Joseph Minard’s flow maps, Sankey sought to make Rudolf Clausius and Lord Kelvin’s Second Law of Thermodynamics visible to practicing engineers: energy is conserved in quantity (First Law, so total band width is constant), yet relentlessly degrades in quality (Second Law, as high-grade heat peel-branches downward into low-grade ambient entropy).',
+            mechanics: 'In Sankey’s original 1898 plate comparing an Actual Steam Engine against an Ideal Carnot Cycle, a vertical/horizontal main artery carries 100,000 BTU of heat from coal combustion. Successive downward curl-branches peel off boiler radiation loss, exhaust steam thrown into the condenser (the largest hemorrhage), and mechanical friction, while a recursive feedback band loops hot-well feedwater back into the boiler.',
+            lineage: 'Published in Plate 5 of the ICE Committee Report on the Thermal Efficiency of Steam Engines (1898), establishing proportional flux geometry for physics, ecology (Howard T. Odum’s energy systems), and industrial metabolism.'
+        },
+        relatedPlates: ['minard', 'beer-vsm', 'marey', 'fludd'],
+        scriptLang: 'Thermodynamic First & Second Law Exergy-Entropy Flux Solver',
+        script: `<span class="code-comment"># Capt. Riall Sankey — Thermal Efficiency of Steam Engines (ICE Proc., 1898)</span>
+<span class="code-comment"># First Law:  Q_in + Q_recirc = W_useful + Q_flue + Q_condenser + Q_friction</span>
+<span class="code-comment"># Second Law: W_useful <= Q_in * (1 - T_cold / T_hot)  [Carnot Limit]</span>
+
+<span class="code-keyword">def</span> <span class="code-func">sankey_thermal_balance</span>(q_input=100.0, useful_eff=14.0, flue_loss=22.0):
+    condenser_exhaust = q_input - useful_eff - flue_loss
+    <span class="code-keyword">return</span> {
+        <span class="code-string">"total_boiler_heat_btu"</span>: q_input,
+        <span class="code-string">"indicated_work_%"</span>: useful_eff,
+        <span class="code-string">"flue_radiation_loss_%"</span>: flue_loss,
+        <span class="code-string">"condenser_entropy_rejection_%"</span>: condenser_exhaust
+    }`,
+        builderControls: [
+            { id: 'efficiency', label: 'Useful Indicated Work (%)', type: 'range', min: 6, max: 35, value: 14 },
+            { id: 'flueLoss', label: 'Boiler & Flue Radiation Loss (%)', type: 'range', min: 10, max: 35, value: 22 }
+        ],
+        renderSvg: (params) => {
+            const eff = params ? parseInt(params.efficiency) : 14;
+            const flue = params ? parseInt(params.flueLoss) : 22;
+            const cond = 100 - eff - flue;
+
+            const wTotal = 60;
+            const wEff = (eff / 100) * wTotal;
+            const wFlue = (flue / 100) * wTotal;
+            const wCond = (cond / 100) * wTotal;
+
+            const topY = 65;
+            const effEndTop = 42;
+            const effEndBot = effEndTop + wEff;
+
+            const flueStartTop = topY + wEff;
+            const flueStartBot = flueStartTop + wFlue;
+
+            const condStartTop = flueStartBot;
+            const condStartBot = topY + wTotal;
+
+            return `<svg viewBox="0 0 480 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="250" fill="#fcfaf5"/>
+
+                <!-- Main Boiler Input Block -->
+                <rect x="28" y="${topY}" width="75" height="${wTotal}" fill="#9e3b22" opacity="0.9"/>
+                <text x="65" y="${topY + wTotal / 2 + 3}" font-family="Courier New" font-size="8.5" font-weight="bold" fill="#fff" text-anchor="middle">100% HEAT</text>
+
+                <!-- 1. Useful Mechanical Work Branch (Top Horizontal Continuation) -->
+                <path d="M 103,${topY} C 185,${topY} 230,${effEndTop} 355,${effEndTop} L 355,${effEndBot.toFixed(1)} C 230,${effEndBot.toFixed(1)} 185,${(topY + wEff).toFixed(1)} 103,${(topY + wEff).toFixed(1)} Z"
+                      fill="#9e3b22" opacity="0.9"
+                      class="interactive-path" data-info="Useful Indicated Work (${eff}%): Slender ribbon surviving thermodynamic dissipation"/>
+                <text x="364" y="${(effEndTop + wEff / 2 + 3).toFixed(1)}" font-family="Georgia" font-size="9.5" font-weight="bold" fill="#9e3b22">${eff}% Effective Work</text>
+
+                <!-- 2. Boiler Flue & Radiation Loss (Early Downward Peel) -->
+                <path d="M 103,${flueStartTop.toFixed(1)} C 155,${flueStartTop.toFixed(1)} 175,180 225,195 L 355,195 L 355,${(195 + wFlue).toFixed(1)} L 220,${(195 + wFlue).toFixed(1)} C 160,${(180 + wFlue).toFixed(1)} 145,${flueStartBot.toFixed(1)} 103,${flueStartBot.toFixed(1)} Z"
+                      fill="#c88a2d" opacity="0.85"
+                      class="interactive-path" data-info="Flue Gas & Radiation Loss (${flue}%): Dissipated prior to cylinder admission"/>
+                <text x="364" y="${(195 + wFlue / 2 + 3).toFixed(1)}" font-family="Georgia" font-size="9" fill="#c88a2d">${flue}% Flue &amp; Radiation</text>
+
+                <!-- 3. Condenser Exhaust Waste Heat (Major Entropy Stream) -->
+                <path d="M 103,${condStartTop.toFixed(1)} C 190,${condStartTop.toFixed(1)} 225,112 355,112 L 355,${(112 + wCond).toFixed(1)} C 225,${(112 + wCond).toFixed(1)} 190,${condStartBot.toFixed(1)} 103,${condStartBot.toFixed(1)} Z"
+                      fill="#2a5a5b" opacity="0.82"
+                      class="interactive-path" data-info="Condenser Exhaust Rejection (${cond}%): Primary Carnot entropy sink"/>
+                <text x="364" y="${(112 + wCond / 2 + 3).toFixed(1)}" font-family="Georgia" font-size="9.5" font-weight="bold" fill="#2a5a5b">${cond}% Condenser Exhaust</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXXII — FLORENCE NIGHTINGALE: COXCOMB POLAR AREA ROSE (1858)
+       ====================================================================== */
+    {
+        id: 'nightingale',
+        number: 'PLATE XXXII',
+        refCode: 'REF: POL-1858-NIGHTINGALE',
+        title: 'Nightingale’s Polar Area Rose (Diagram of the Causes of Mortality)',
+        subtitle: 'Square-Root Radial Scaling of Preventable Zymotic Mortality in the East (1858)',
+        thinker: 'Florence Nightingale & William Farr',
+        year: '1858',
+        yearSort: 1858,
+        provenance: 'London / Scutari • Mortality of the British Army',
+        category: 'obscure',
+        categoryLabel: 'Rare & Obscure Historical • Cyclic Polar Area Geometry',
+        secondaryTags: ['Polar Area Chart', 'Square-Root Scaling', 'Sanitary Reform', 'Crimean War'],
+        mold: 'standard',
+        axiomQuote: '“To affect thro’ the Eyes what we fail to convey to the public through their word-proof ears.” — Florence Nightingale (1858)',
+        blurb: 'To force the British War Office and Queen Victoria to confront the catastrophic sanitary neglect at Scutari hospital during the Crimean War, Florence Nightingale invented the cyclic polar area diagram. Dividing the circle into 12 equal 30° monthly wedges and scaling each radius by the square root of mortality (r ∝ √M) so true geometric area remained honest, she proved that zymotic disease killed seven times more soldiers than Russian bullets.',
+        useCaseLabel: 'Statistical & Rhetorical Resonance',
+        useCase: 'Cyclic/seasonal anomaly visualization, honest area-proportional radial scaling (r = √A), and forensic institutional critique.',
+        triadLabels: ['I. Coxcomb Rose', 'II. √Area Calculus', 'III. Polar Builder'],
+        exegesis: {
+            stakes: 'Early radial diagrams often made a fatal mathematical blunder: scaling a wedge’s radius linearly with the data value (r ∝ x), which causes the visual area of the sector (A = ½θr²) to explode quadratically with x²—grossly distorting large values. Working alongside medical statistician William Farr, Nightingale ensured the area itself represented the death rate by scaling radius to √x.',
+            mechanics: 'Each full circle represents one 12-month cycle (April 1854 to March 1855 on the right; April 1855 to March 1856 on the left, after the Sanitary Commissioners arrived). Each 30° sector contains three superimposed wedges measured from the center: blue/teal for Preventable Zymotic Diseases (cholera, typhus, dysentery), crimson/rust for Death from Wounds, and black/ochre for All Other Causes.',
+            lineage: 'Privately printed in 1858 and distributed to Parliament and Queen Victoria, directly catalyzing the Royal Commission on the Sanitary State of the Army and earning Nightingale election as the first female member of the Royal Statistical Society.'
+        },
+        relatedPlates: ['minard', 'dubois', 'marey', 'priestley'],
+        scriptLang: 'Nightingale Square-Root Radial Area Scaling (r = √(12·M / π))',
+        script: `<span class="code-comment"># Florence Nightingale — Polar Area Rose (1858)</span>
+<span class="code-comment"># Crucial Mathematical Rule: Wedge Area A = (1/2) * (2*pi/12) * r^2</span>
+<span class="code-comment"># Therefore, to keep visual AREA proportional to Mortality M: r = k * sqrt(M)</span>
+
+<span class="code-keyword">import</span> math
+
+<span class="code-keyword">def</span> <span class="code-func">coxcomb_wedge_radius</span>(mortality_rate_per_1000, scale_k=2.8):
+    <span class="code-keyword">return</span> scale_k * math.sqrt(<span class="code-func">max</span>(0.0, mortality_rate_per_1000))`,
+        builderControls: [
+            { id: 'zymoticRate', label: 'Zymotic Disease Mortality (Jan 1855 Peak)', type: 'range', min: 100, max: 1000, value: 820 },
+            { id: 'woundsRate', label: 'Battle Wounds Mortality (Inkhorn Peak)', type: 'range', min: 20, max: 400, value: 110 },
+            { id: 'scalingLaw', label: 'Radial Mathematical Scaling Law', type: 'select', options: ['Nightingale Honest Area Scaling (r ∝ √M)', 'Naive Linear Radius Scaling (Distorted Area ∝ M²)'] }
+        ],
+        renderSvg: (params) => {
+            const zym = params ? parseInt(params.zymoticRate) : 820;
+            const wnd = params ? parseInt(params.woundsRate) : 110;
+            const isSqrt = params ? String(params.scalingLaw).includes('Honest') : true;
+
+            const calcR = (val) => isSqrt ? Math.sqrt(val) * 3.1 : (val / 1000) * 95;
+            const rPeak = Math.min(96, calcR(zym));
+            const rWnd = Math.min(70, calcR(wnd));
+
+            const cx = 235, cy = 126;
+            const months = ['APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC','JAN','FEB','MAR'];
+            const baseRates = [0.08, 0.12, 0.14, 0.42, 0.65, 0.72, 0.58, 0.68, 0.85, 1.0, 0.78, 0.52];
+
+            let wedges = '';
+            for (let m = 0; m < 12; m++) {
+                const a1 = ((m * 30 - 90) * Math.PI) / 180;
+                const a2 = (((m + 1) * 30 - 90) * Math.PI) / 180;
+                const rm = Math.max(12, rPeak * baseRates[m]);
+                const x1 = cx + rm * Math.cos(a1);
+                const y1 = cy + rm * Math.sin(a1);
+                const x2 = cx + rm * Math.cos(a2);
+                const y2 = cy + rm * Math.sin(a2);
+
+                wedges += `<path d="M ${cx} ${cy} L ${x1.toFixed(1)} ${y1.toFixed(1)} A ${rm.toFixed(1)} ${rm.toFixed(1)} 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)} Z" 
+                                 fill="#2a5a5b" fill-opacity="0.68" stroke="#fcfaf5" stroke-width="0.9"
+                                 class="interactive-path" data-info="${months[m]} (Zymotic Disease): Radius r = ${rm.toFixed(1)}px (${isSqrt ? 'r ∝ √M' : 'Linear r'})"/>`;
+
+                // Inner wounds wedge
+                const rw = Math.max(6, rWnd * (m >= 5 && m <= 10 ? 1.0 : 0.35));
+                const wx1 = cx + rw * Math.cos(a1);
+                const wy1 = cy + rw * Math.sin(a1);
+                const wx2 = cx + rw * Math.cos(a2);
+                const wy2 = cy + rw * Math.sin(a2);
+                wedges += `<path d="M ${cx} ${cy} L ${wx1.toFixed(1)} ${wy1.toFixed(1)} A ${rw.toFixed(1)} ${rw.toFixed(1)} 0 0 1 ${wx2.toFixed(1)} ${wy2.toFixed(1)} Z" 
+                                 fill="#9e3b22" fill-opacity="0.88" stroke="#fcfaf5" stroke-width="0.5"/>`;
+            }
+
+            return `<svg viewBox="0 0 470 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="470" height="250" fill="#fcfaf5"/>
+                ${wedges}
+                <circle cx="${cx}" cy="${cy}" r="2.5" fill="#2b241f"/>
+                <text x="24" y="32" font-family="Courier New" font-size="8" fill="#2a5a5b" font-weight="bold">■ ZYMOTIC DISEASE (PEAK: ${zym}‰)</text>
+                <text x="24" y="46" font-family="Courier New" font-size="8" fill="#9e3b22" font-weight="bold">■ BATTLE WOUNDS (${wnd}‰)</text>
+                <text x="24" y="60" font-family="Courier New" font-size="7.5" fill="#5c5246">LAW: ${isSqrt ? 'r = k · √Mortality (True Area)' : 'r = k · Mortality (Quadratic Bias)'}</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXXIII — PAUL KLEE: PEDAGOGICAL SKETCHBOOK (1925)
+       ====================================================================== */
+    {
+        id: 'klee-sketchbook',
+        number: 'PLATE XXXIII',
+        refCode: 'REF: BAU-1925-KLEE',
+        title: 'Paul Klee’s Pedagogical Sketchbook (The Active Line & Arrow)',
+        subtitle: 'Vector Mechanics of the Free-Walking Line, Medial Horizon & Spiral Fate (1925)',
+        thinker: 'Paul Klee',
+        year: '1925',
+        yearSort: 1925,
+        provenance: 'Bauhaus Weimar / Dessau • Bauhausbücher 2 (Pädagogisches Skizzenbuch)',
+        category: 'minimalist',
+        categoryLabel: 'Progressively Minimalist • Kinetic Line Mechanics',
+        secondaryTags: ['Bauhaus', 'Active Line', 'Arrow of Will', 'Centripetal Spiral'],
+        mold: 'minimal',
+        axiomQuote: '“An active line on a walk, moving freely, without goal. A walk for a walk’s sake. The mobility agent is a point, shifting its position forward.” — Paul Klee (1925)',
+        blurb: 'Compiled from his Bauhaus Weimar lecture notebooks and designed by László Moholy-Nagy as Bauhaus Book No. 2, Klee’s Pedagogical Sketchbook treats graphic mark-making as a physics of consciousness. A dead point, struck by tension, leaps into an "active line on a walk"; restricted by numbers, it crystallizes into measure; pulled between terrestrial gravity and ideological longing, it becomes the tragic Arrow ("Father of the thought").',
+        useCaseLabel: 'Gestural & Epistemic Resonance',
+        useCase: 'Foundational grammar for Gesturalist theory (kinesthetic trace vs. bounded plane), vector path kinematics, and minimalist visual poetics.',
+        triadLabels: ['I. Sketchbook Plate', 'II. Vector Poetics', 'III. Line Apparatus'],
+        exegesis: {
+            stakes: 'Klee begins not with static Euclidean shapes (triangles, squares), but with genesis and locomotion: how does a point become a line, and how does a line experience freedom, accompaniment, or death? By contrasting the playful meander of the "free line" against the taut directional arrow and the tightening spiral, Klee turns minimalist geometry into an existential drama of agency and finitude.',
+            mechanics: 'The plate synthesizes three famous sections of the Sketchbook: (I.1) The Active Line meandering freely vs. accompanied by contrapuntal secondary lines; (III.36) The Arrow—composed of shaft, two-finned rudder, and barbed tip—expressing the tragic gulf between human ideological reach ("ability to travel in thought") and physical limitation; and (IV.43) The Spiral, where shortening the radius changes life-giving centrifugal expansion into lethal centripetal constriction ("Wait: do I free myself, or am I dying at the center?").',
+            lineage: 'Translated into English by Sibyl Moholy-Nagy in 1953, deeply influencing Gilles Deleuze & Félix Guattari’s distinction between the nomadic "abstract line" and sedentary contour in A Thousand Plateaus (1980).'
+        },
+        relatedPlates: ['malevich', 'cardew', 'sterne-shklovsky', 'spencer-brown'],
+        scriptLang: 'Kleean Point-Locomotion & Centripetal Spiral Differential Equations',
+        script: `<span class="code-comment"># Paul Klee — Pädagogisches Skizzenbuch (Bauhausbücher 2, 1925)</span>
+<span class="code-comment"># I.1:  Active Line = Point in locomotion p(t)</span>
+<span class="code-comment"># IV.43: Spiral Directionality dR/dθ > 0 (Life / Release) vs. dR/dθ < 0 (Death / Center)</span>
+
+<span class="code-keyword">import</span> math
+
+<span class="code-keyword">def</span> <span class="code-func">klee_kinetic_trace</span>(t_steps=60, excursion_freedom=0.8, spiral_sign=-1):
+    active_walk = [
+        (t, math.sin(t * 0.4) * excursion_freedom + 0.3 * math.cos(t * 1.1))
+        <span class="code-keyword">for</span> t <span class="code-keyword">in</span> <span class="code-func">range</span>(t_steps)
+    ]
+    verdict = <span class="code-string">"CENTRIPETAL DEATH AT CENTER"</span> <span class="code-keyword">if</span> spiral_sign < 0 <span class="code-keyword">else</span> <span class="code-string">"CENTRIFUGAL LIBERATION"</span>
+    <span class="code-keyword">return</span> {<span class="code-string">"walk_trajectory"</span>: active_walk, <span class="code-string">"spiral_fate"</span>: verdict}`,
+        builderControls: [
+            { id: 'walkFreedom', label: 'I.1 Active Line Meander Amplitude', type: 'range', min: 8, max: 46, value: 28 },
+            { id: 'arrowTension', label: 'III.36 Arrow Ideological Reach', type: 'range', min: 50, max: 145, value: 110 },
+            { id: 'spiralTightness', label: 'IV.43 Spiral Turns (Life vs. Center)', type: 'range', min: 2, max: 6, value: 4 }
+        ],
+        renderSvg: (params) => {
+            const amp = params ? parseInt(params.walkFreedom) : 28;
+            const reach = params ? parseInt(params.arrowTension) : 110;
+            const turns = params ? parseInt(params.spiralTightness) : 4;
+
+            let walkPts = [];
+            let compPts = [];
+            for (let i = 0; i <= 50; i++) {
+                const u = i / 50;
+                const x = 35 + u * 235;
+                const y = 72 + amp * Math.sin(u * Math.PI * 3.5) * Math.cos(u * Math.PI * 1.5);
+                const cy = 72 - amp * 0.65 * Math.sin(u * Math.PI * 3.5 - 0.8);
+                walkPts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+                compPts.push(`${x.toFixed(1)},${cy.toFixed(1)}`);
+            }
+
+            let spiralPts = [];
+            const scx = 385, scy = 115;
+            for (let a = 0; a <= turns * 2 * Math.PI; a += 0.14) {
+                const r = 68 * (1 - a / (turns * 2 * Math.PI + 0.5));
+                const sx = scx + r * Math.cos(a);
+                const sy = scy + r * Math.sin(a);
+                spiralPts.push(`${sx.toFixed(1)},${sy.toFixed(1)}`);
+            }
+
+            return `<svg viewBox="0 0 490 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="490" height="250" fill="#ffffff"/>
+                <line x1="295" y1="20" x2="295" y2="230" stroke="#e2d8c7" stroke-width="1" stroke-dasharray="3,3"/>
+
+                <!-- I.1 The Active Line on a Walk -->
+                <text x="35" y="26" font-family="Courier New" font-size="8" fill="#5c5246">FIG. I.1: ACTIVE LINE ON A WALK (WITH ACCOMPANIMENT)</text>
+                <polyline points="${compPts.join(' ')}" fill="none" stroke="#c88a2d" stroke-width="1.2" stroke-dasharray="3,2"/>
+                <polyline points="${walkPts.join(' ')}" fill="none" stroke="#2b241f" stroke-width="2.4"
+                          class="interactive-path" data-info="Fig. I.1: An active line on a walk, moving freely without goal; mobility agent is a shifting point"/>
+                <circle cx="35" cy="72" r="3.5" fill="#9e3b22"/>
+
+                <!-- III.36 The Arrow (Father of Thought) -->
+                <text x="35" y="146" font-family="Courier New" font-size="8" fill="#5c5246">FIG. III.36: THE ARROW (“HOW DO I EXPAND MY REACH OVER THIS RIVER?”)</text>
+                <g class="interactive-path" data-info="Fig. III.36: The Arrow — contrast between ideological capacity to traverse space and physical earthbound gravity">
+                    <line x1="45" y1="185" x2="${45 + reach * 1.4}" y2="185" stroke="#2b241f" stroke-width="2.8"/>
+                    <polygon points="${45 + reach * 1.4},176 ${65 + reach * 1.4},185 ${45 + reach * 1.4},194" fill="#9e3b22"/>
+                    <path d="M 45 174 L 62 185 L 45 196" fill="none" stroke="#2b241f" stroke-width="1.8"/>
+                    <text x="${45 + reach * 0.7}" y="212" font-family="Georgia" font-style="italic" font-size="9" fill="#9e3b22" text-anchor="middle">Ideological Vector (Reach = ${reach})</text>
+                </g>
+
+                <!-- IV.43 The Spiral -->
+                <text x="385" y="26" font-family="Courier New" font-size="8" fill="#5c5246" text-anchor="middle">FIG. IV.43: THE SPIRAL</text>
+                <polyline points="${spiralPts.join(' ')}" fill="none" stroke="#2a5a5b" stroke-width="2"
+                          class="interactive-path" data-info="Fig. IV.43: Shortening the radius narrows the curve more and more till the lovely spectacle dies"/>
+                <circle cx="${scx}" cy="${scy}" r="3.5" fill="#9e3b22"/>
+                <text x="${scx}" y="212" font-family="Georgia" font-style="italic" font-size="8.5" fill="#2a5a5b" text-anchor="middle">“Perishing at the Center” (${turns} Turns)</text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXXIV — BARUCH SPINOZA: MORE GEOMETRICO AXIOMATIC DAG (1677)
+       ====================================================================== */
+    {
+        id: 'spinoza-dag',
+        number: 'PLATE XXXIV',
+        refCode: 'REF: ONT-1677-SPINOZA',
+        title: 'Spinoza’s More Geometrico (Axiomatic Dependency Lattice)',
+        subtitle: 'Directed Acyclic Deduction Graph of the Ethics, Part I: De Deo (1677)',
+        thinker: 'Baruch Spinoza',
+        year: '1677',
+        yearSort: 1677,
+        provenance: 'Amsterdam • Opera Posthuma (Ethica Ordine Geometrico Demonstrata)',
+        category: 'minimalist',
+        categoryLabel: 'Progressively Minimalist • Geometric Ontology',
+        secondaryTags: ['More Geometrico', 'Immanence', 'Directed Acyclic Graph', 'Deus sive Natura'],
+        mold: 'minimal',
+        axiomQuote: '“I shall consider human actions and appetites just as if it were a question of lines, planes, and bodies.” — Baruch Spinoza, Ethics (1677)',
+        blurb: 'Modeling metaphysics strictly upon Euclid’s Elements, Spinoza constructed the Ethics as acrystalline directed acyclic graph (DAG). In Part I (De Deo), 8 Definitions (Causa Sui, Substance, Attribute, Mode) and 7 Axioms converge through 14 propositions like a logical lens onto Proposition 14 ("Except God, no substance can be or be conceived") and radiate outward into the 36 immanent consequences of Deus sive Natura.',
+        useCaseLabel: 'Ontological & Graph-Theoretic Resonance',
+        useCase: 'Formal theorem dependency lattices, immanent causal networks, and Deleuze’s two-speed reading of Spinoza (the geometric spine vs. the volcanic Scholia).',
+        triadLabels: ['I. Deductive Lattice', 'II. Proof DAG', 'III. Immanence Stage'],
+        exegesis: {
+            stakes: 'Why did Spinoza write a treatise on God, joy, bondage, and freedom in the austere Euclidean apparatus of Definitions, Axioms, Propositions, Demonstrations, Corollaries, and Scholia? Because for Spinoza, deductive necessity and ontological production are identical: just as the sum of its angles flows necessarily from the nature of a triangle, infinite modes flow immanently from infinite Substance without teleological purpose.',
+            mechanics: 'When graphed as a formal network, Part I exhibits an unmistakable hourglass bottleneck: Definitions D1, D3, D4, D5, D6 and Axioms A1–A6 feed into two parallel proof chains (Propositions P1–P8 establishing that substances cannot share attributes or produce one another, and P9–P11 proving that a substance of infinite attributes necessarily exists). Both chains fuse at P14 (Substance Monism) and immediately invert into P15 ("Whatever is, is in God") and P16–P36.',
+            lineage: 'Analyzed by Gilles Deleuze in Spinoza: Practical Philosophy (1970/1981) as a triad of three speeds: the continuous chain of Propositions, the volcanic interruptions of the Scholia, and the intuitive lightning of Book V.'
+        },
+        relatedPlates: ['frege', 'peirce', 'deleuze-fold', 'porphyry'],
+        scriptLang: 'Spinozist Deductive Adjacency DAG & Ancestral Proof-Chain Resolver',
+        script: `<span class="code-comment"># Baruch Spinoza — Ethica Ordine Geometrico Demonstrata (1677), Part I: De Deo</span>
+<span class="code-comment"># Encodes the exact citation edges from Definitions (D) & Axioms (A) to Propositions (P)</span>
+
+ETHICS_PART_I_DAG = {
+    <span class="code-string">"P1"</span>:  [<span class="code-string">"D3"</span>, <span class="code-string">"D5"</span>],               <span class="code-comment"># Substance is prior in nature to its affections</span>
+    <span class="code-string">"P5"</span>:  [<span class="code-string">"P1"</span>, <span class="code-string">"D3"</span>, <span class="code-string">"D5"</span>, <span class="code-string">"P4"</span>],  <span class="code-comment"># No two substances can share the same attribute</span>
+    <span class="code-string">"P7"</span>:  [<span class="code-string">"P6"</span>, <span class="code-string">"D1"</span>],               <span class="code-comment"># It pertains to the nature of substance to exist</span>
+    <span class="code-string">"P11"</span>: [<span class="code-string">"A7"</span>, <span class="code-string">"P7"</span>, <span class="code-string">"D6"</span>],        <span class="code-comment"># God (infinite substance) necessarily exists</span>
+    <span class="code-string">"P14"</span>: [<span class="code-string">"D6"</span>, <span class="code-string">"P11"</span>, <span class="code-string">"P5"</span>],       <span class="code-comment"># MONISM APEX: Except God, no substance can be</span>
+    <span class="code-string">"P15"</span>: [<span class="code-string">"P14"</span>, <span class="code-string">"D3"</span>, <span class="code-string">"D5"</span>, <span class="code-string">"A1"</span>], <span class="code-comment"># IMMANENCE: Whatever is, is in God</span>
+    <span class="code-string">"P16"</span>: [<span class="code-string">"D6"</span>, <span class="code-string">"P14"</span>],              <span class="code-comment"># Infinite things in infinite modes follow</span>
+    <span class="code-string">"P29"</span>: [<span class="code-string">"P11"</span>, <span class="code-string">"P15"</span>, <span class="code-string">"P16"</span>],      <span class="code-comment"># In nature there is nothing contingent</span>
+    <span class="code-string">"P36"</span>: [<span class="code-string">"P16"</span>, <span class="code-string">"P25"</span>]              <span class="code-comment"># Nothing exists from whose nature no effect follows</span>
+}`,
+        builderControls: [
+            { id: 'focusProp', label: 'Active Deductive Focal Node', type: 'select', options: ['P14: Substance Monism Bottleneck (Deus sive Natura)', 'P15: Immanence (“Whatever is, is in God”)', 'P7: Causa Sui (“Existence pertains to Substance”)', 'P36: Universal Productivity (Zero Inert Being)'] },
+            { id: 'scholiaLayer', label: 'Deleuzian Second Speed (The Scholia)', type: 'select', options: ['Show Volcanic Scholia Sub-Stream', 'Pure Geometric Spine Only'] }
+        ],
+        renderSvg: (params) => {
+            const focus = params ? params.focusProp : 'P14: Substance Monism Bottleneck (Deus sive Natura)';
+            const showScholia = params ? String(params.scholiaLayer).includes('Show') : true;
+
+            const isP15 = String(focus).includes('P15');
+            const isP7 = String(focus).includes('P7');
+
+            const defs = [
+                { id: 'D1', x: 55, label: 'D1 Causa Sui' },
+                { id: 'D3', x: 135, label: 'D3 Substantia' },
+                { id: 'D4', x: 215, label: 'D4 Attributum' },
+                { id: 'D5', x: 295, label: 'D5 Modus' },
+                { id: 'D6', x: 375, label: 'D6 Deus' },
+                { id: 'A1', x: 440, label: 'A1–A7 Axioms' }
+            ];
+
+            let defNodes = '';
+            defs.forEach(d => {
+                defNodes += `
+                    <rect x="${d.x - 32}" y="18" width="64" height="20" fill="#f6f2e9" stroke="#2b241f" stroke-width="1.2" class="interactive-path" data-info="${d.label}: Foundational primitive of Ethics Part I"/>
+                    <text x="${d.x}" y="31" font-family="Courier New" font-size="7.5" font-weight="bold" fill="#2b241f" text-anchor="middle">${d.id}</text>`;
+            });
+
+            return `<svg viewBox="0 0 490 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="490" height="250" fill="#ffffff"/>
+
+                <!-- Tier 1: Definitions & Axioms -->
+                ${defNodes}
+
+                <!-- Converging Deductive Edges to Tier 2 (P1, P5, P7, P11) -->
+                <g stroke="#8c8070" stroke-width="1.1">
+                    <line x1="135" y1="38" x2="115" y2="75"/><line x1="295" y1="38" x2="115" y2="75"/>
+                    <line x1="135" y1="38" x2="195" y2="75"/><line x1="215" y1="38" x2="195" y2="75"/>
+                    <line x1="55" y1="38" x2="285" y2="75"/><line x1="135" y1="38" x2="285" y2="75"/>
+                    <line x1="375" y1="38" x2="375" y2="75"/><line x1="440" y1="38" x2="375" y2="75"/>
+                </g>
+
+                <!-- Tier 2: Intermediate Propositions -->
+                <rect x="85" y="75" width="60" height="22" fill="#fbf8f1" stroke="#2b241f"/>
+                <text x="115" y="89" font-family="Georgia" font-size="8.5" text-anchor="middle">Prop. 1–4</text>
+
+                <rect x="165" y="75" width="60" height="22" fill="#fbf8f1" stroke="#2b241f"/>
+                <text x="195" y="89" font-family="Georgia" font-size="8.5" text-anchor="middle">Prop. 5</text>
+
+                <rect x="255" y="75" width="60" height="22" fill="${isP7 ? '#f4e8e4' : '#fbf8f1'}" stroke="${isP7 ? '#9e3b22' : '#2b241f'}" stroke-width="${isP7 ? 2 : 1}"/>
+                <text x="285" y="89" font-family="Georgia" font-size="8.5" font-weight="${isP7 ? 'bold' : 'normal'}" fill="${isP7 ? '#9e3b22' : '#2b241f'}" text-anchor="middle">Prop. 7</text>
+
+                <rect x="345" y="75" width="60" height="22" fill="#fbf8f1" stroke="#2b241f"/>
+                <text x="375" y="89" font-family="Georgia" font-size="8.5" text-anchor="middle">Prop. 11</text>
+
+                <!-- Convergence into The Hourglass Bottleneck: PROP. 14 & PROP. 15 -->
+                <g stroke="#9e3b22" stroke-width="1.8">
+                    <line x1="195" y1="97" x2="245" y2="128"/>
+                    <line x1="285" y1="97" x2="245" y2="128"/>
+                    <line x1="375" y1="97" x2="245" y2="128"/>
+                </g>
+
+                <rect x="155" y="128" width="180" height="28" fill="#9e3b22" class="interactive-path" data-info="Proposition 14 & 15 (The Monist Bottleneck): 'Except God, no substance can be or be conceived' → 'Whatever is, is in God'"/>
+                <text x="245" y="146" font-family="Georgia" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">
+                    ${isP15 ? 'PROP. XV: WHATEVER IS, IS IN GOD' : 'PROP. XIV: UNICA SUBSTANTIA'}
+                </text>
+
+                <!-- Diverging Immanent Consequences (P16 -> P29 -> P36) -->
+                <g stroke="#2a5a5b" stroke-width="1.5">
+                    <line x1="245" y1="156" x2="115" y2="194"/>
+                    <line x1="245" y1="156" x2="245" y2="194"/>
+                    <line x1="245" y1="156" x2="375" y2="194"/>
+                </g>
+
+                <rect x="65" y="194" width="100" height="24" fill="#e6f0f0" stroke="#2a5a5b"/>
+                <text x="115" y="209" font-family="Georgia" font-size="8.5" fill="#2a5a5b" text-anchor="middle">Prop. 16 (Infinite Modes)</text>
+
+                <rect x="195" y="194" width="100" height="24" fill="#e6f0f0" stroke="#2a5a5b"/>
+                <text x="245" y="209" font-family="Georgia" font-size="8.5" fill="#2a5a5b" text-anchor="middle">Prop. 29 (Necessity)</text>
+
+                <rect x="325" y="194" width="100" height="24" fill="#e6f0f0" stroke="#2a5a5b"/>
+                <text x="375" y="209" font-family="Georgia" font-size="8.5" fill="#2a5a5b" text-anchor="middle">Prop. 36 (Potentia)</text>
+
+                ${showScholia ? `
+                <!-- Deleuze's Volcanic Scholia Undercurrent -->
+                <path d="M 85 142 C 125 142, 130 235, 245 235 C 360 235, 365 142, 415 142" fill="none" stroke="#c88a2d" stroke-width="1.5" stroke-dasharray="4,2"
+                      class="interactive-path" data-info="The Scholia (Deleuze's 'Second Ethics'): Subterranean polemical line running beneath the geometric chain"/>
+                <text x="245" y="245" font-family="Georgia" font-style="italic" font-size="8.5" fill="#c88a2d" text-anchor="middle">Subterranean Scholia Line (Polemical Counter-Speed)</text>
+                ` : ''}
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXXV — KURT LEWIN: TOPOLOGICAL PSYCHOLOGY & HODOLOGICAL SPACE (1936)
+       ====================================================================== */
+    {
+        id: 'lewin-hodology',
+        number: 'PLATE XXXV',
+        refCode: 'REF: TOP-1936-LEWIN',
+        title: 'Kurt Lewin’s Hodological Space & Life-Space Jordan Curves',
+        subtitle: 'Non-Metric Psychological Topology, Valence Regions & Barrier Vectors (1936)',
+        thinker: 'Kurt Lewin',
+        year: '1936',
+        yearSort: 1936,
+        provenance: 'Berlin / Iowa • Principles of Topological Psychology (1936) & Hodological Space (1938)',
+        category: 'theoretical',
+        categoryLabel: 'Theoretical & Philosophical • Topological Psychology',
+        secondaryTags: ['Hodological Space', 'Jordan Curve', 'Valence (Aufforderungscharakter)', 'Life-Space'],
+        mold: 'standard',
+        axiomQuote: '“Behavior is a function of the Person and their Environment: B = f(P, E) = f(L), mapped not in physical Euclidean meters, but in topological Jordan regions and hodological paths.” — Kurt Lewin (1936)',
+        blurb: 'To formalize human desire, conflict, and psychic locomotion without reducing the mind to physical brain coordinates, Gestalt theorist Kurt Lewin turned to general topology (Jordan curves) and invented "Hodological Space" (from Greek hodos, path). A person (P) is a cellular manifold nested inside a bounded Life-Space ellipse (L), pulled by positive Valences (+Va), repelled by negative Valences (−Va), and deflected around impassable social or psychic Barriers.',
+        useCaseLabel: 'Phenomenological & Behavioral Resonance',
+        useCase: 'Cited directly by Jean-Paul Sartre (Sketch for a Theory of the Emotions) and Gilbert Simondon; models psychological friction, motivational deadlocks, and desire routing.',
+        triadLabels: ['I. Life-Space Oval', 'II. Hodological Law', 'III. Valence Stage'],
+        exegesis: {
+            stakes: 'In physical space, the shortest path between two points is a straight Euclidean line. In psychological experience, however, a goal sitting two feet away across a social taboo or legal prohibition is infinitely harder to reach than a detour through ten intermediate regions. Lewin invented Hodological Space to define the "distinguished path" (ausgezeichneter Weg) of least psychic resistance.',
+            mechanics: 'The outer boundary is a closed Jordan curve separating the psychological Life-Space (L) from the non-psychological hull. Inside L, the Person (P) is divided into central inner-personal strata and an outer perceptual-motor ring (M). Environmental sub-regions carry positive (+Va) or negative (−Va) charges. Impassable Barriers are drawn as thick black hatching; the psychological force vector f(P,G) bends hodologically around the barrier’s boundary conductivity.',
+            lineage: 'Published in Principles of Topological Psychology (1936) and The Conceptual Representation and the Measurement of Psychological Forces (1938); immediately adopted by Jean-Paul Sartre in Esquisse d’une théorie des émotions (1939) and Gilles Deleuze in Cinema 1 (1983).'
+        },
+        relatedPlates: ['peirce', 'lacan-borromean', 'husserl', 'alexander'],
+        scriptLang: 'Lewinian Life-Space B = f(P, E) & Hodological Geodesic Path Solver',
+        script: `<span class="code-comment"># Kurt Lewin — Principles of Topological Psychology (1936)</span>
+<span class="code-comment"># Fundamental Equation: Behavior B = f(Person, Environment) = f(LifeSpace)</span>
+<span class="code-comment"># Force Vector f_{P,G} routes along the Hodological Path of minimum barrier impedance</span>
+
+<span class="code-keyword">def</span> <span class="code-func">hodological_resultant</span>(valence_pos, valence_neg, barrier_permeability=0.2):
+    direct_force = valence_pos * barrier_permeability
+    detour_force = valence_pos * 0.72 - valence_neg * 0.15
+    <span class="code-keyword">if</span> barrier_permeability < 0.35 <span class="code-keyword">and</span> detour_force > direct_force:
+        <span class="code-keyword">return</span> <span class="code-string">"HODOLOGICAL DETOUR (Path curves through peripheral sub-regions E_2 -> E_4 -> Goal)"</span>
+    <span class="code-keyword">return</span> <span class="code-string">"DIRECT LOCOMOTION (Force vector penetrates semi-permeable boundary)"</span>`,
+        builderControls: [
+            { id: 'barrierWidth', label: 'Impassable Barrier Thickness (B)', type: 'range', min: 4, max: 22, value: 12 },
+            { id: 'posValence', label: 'Goal Region Positive Valence (+Va)', type: 'range', min: 1, max: 5, value: 4 },
+            { id: 'personStrata', label: 'Inner-Personal Cellular Differentiation', type: 'range', min: 2, max: 5, value: 3 }
+        ],
+        renderSvg: (params) => {
+            const bThick = params ? parseInt(params.barrierWidth) : 12;
+            const posV = params ? parseInt(params.posValence) : 4;
+            const strata = params ? parseInt(params.personStrata) : 3;
+
+            const plusSigns = '+'.repeat(posV);
+
+            return `<svg viewBox="0 0 480 250" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="250" fill="#fcfaf5"/>
+
+                <!-- Outer Jordan Curve of the Life-Space L = P + E -->
+                <ellipse cx="240" cy="126" rx="205" ry="96" fill="#fbf8f1" stroke="#2b241f" stroke-width="2.5"
+                         class="interactive-path" data-info="Life-Space Jordan Curve (L = P + E): Bounds the totality of psychological facts existing for the person at time t"/>
+
+                <!-- Internal Environmental Region Partition Lines -->
+                <path d="M 185 32 Q 210 126 175 220" fill="none" stroke="#8c8070" stroke-width="1.2"/>
+                <path d="M 310 35 Q 290 126 320 218" fill="none" stroke="#8c8070" stroke-width="1.2"/>
+                <path d="M 192 126 L 445 126" fill="none" stroke="#8c8070" stroke-width="1"/>
+
+                <!-- The Person (P) Differentiated Cellular Manifold on Left -->
+                <g class="interactive-path" data-info="The Person (P): Outer perceptual-motor ring (M) enclosing ${strata} inner-personal tension cells">
+                    <ellipse cx="115" cy="126" rx="46" ry="38" fill="#e6f0f0" stroke="#2a5a5b" stroke-width="2"/>
+                    <ellipse cx="115" cy="126" rx="32" ry="25" fill="#fbf8f1" stroke="#2a5a5b" stroke-width="1.3"/>
+                    <line x1="83" y1="126" x2="147" y2="126" stroke="#2a5a5b" stroke-width="1"/>
+                    ${strata >= 3 ? `<line x1="115" y1="101" x2="115" y2="151" stroke="#2a5a5b" stroke-width="1"/>` : ''}
+                    ${strata >= 4 ? `<line x1="95" y1="108" x2="135" y2="144" stroke="#2a5a5b" stroke-width="1"/>` : ''}
+                    <text x="115" y="80" font-family="Courier New" font-size="9" font-weight="bold" fill="#2a5a5b" text-anchor="middle">PERSON (P)</text>
+                </g>
+
+                <!-- Impassable Psychological Barrier (B) -->
+                <path d="M 248 68 Q 225 126 248 184" fill="none" stroke="#2b241f" stroke-width="${bThick}" stroke-linecap="round"
+                      class="interactive-path" data-info="Impassable Barrier Region (B, thickness=${bThick}): Blocks direct Euclidean locomotion toward the goal"/>
+                <text x="245" y="60" font-family="Courier New" font-size="8" font-weight="bold" fill="#2b241f" text-anchor="middle">BARRIER (B)</text>
+
+                <!-- Goal Region G (+Valence) & Threat Region (−Valence) -->
+                <text x="375" y="88" font-family="Georgia" font-size="16" font-weight="bold" fill="#9e3b22" text-anchor="middle"
+                      class="interactive-path" data-info="Positive Valence (+Va = ${posV}): Attracting goal region G">${plusSigns}</text>
+                <text x="375" y="104" font-family="Courier New" font-size="8" fill="#9e3b22" text-anchor="middle">GOAL REGION (G)</text>
+
+                <text x="375" y="168" font-family="Georgia" font-size="16" font-weight="bold" fill="#5c5246" text-anchor="middle">− −</text>
+                <text x="375" y="184" font-family="Courier New" font-size="8" fill="#5c5246" text-anchor="middle">AVERSION (−Va)</text>
+
+                <!-- Hodological Curved Force Vector w_{P,G} -->
+                <path d="M 161 118 C 195 36, 285 36, 345 78" fill="none" stroke="#9e3b22" stroke-width="2.4" stroke-dasharray="5,3"
+                      class="interactive-path" data-info="Hodological Distinguished Path (w_P,G): Curves through upper permissive sub-regions to circumvent Barrier B"/>
+                <polygon points="345,73 354,81 341,82" fill="#9e3b22"/>
+                <text x="240" y="238" font-family="Georgia" font-style="italic" font-size="9" fill="#5c5246" text-anchor="middle">
+                    Lewin’s Law: B = f(P, E) — Hodological geodesic bends around Barrier B toward +Va (${plusSigns})
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXXVI — CHARLES HOWARD HINTON: FOURTH-DIMENSION TESSERACT (1888)
+       ====================================================================== */
+    {
+        id: 'hinton-tesseract',
+        number: 'PLATE XXXVI',
+        refCode: 'REF: DIM-1888-HINTON',
+        title: 'Hinton’s Tesseract & 81-Cube Fourth-Dimension Drill',
+        subtitle: 'Ana/Kata Four-Dimensional Hypercube Projection & Unfolded Octachoron Cross (1888)',
+        thinker: 'Charles Howard Hinton',
+        year: '1888',
+        yearSort: 1888,
+        provenance: 'London • Swan Sonnenschein & Co. (A New Era of Thought & The Fourth Dimension)',
+        category: 'esoteric',
+        categoryLabel: 'Esoteric & Metaphysical • Higher-Dimensional Intuition',
+        secondaryTags: ['Fourth Dimension', 'Tesseract', 'Ana & Kata', 'Borges Favorite'],
+        mold: 'nocturnal',
+        axiomQuote: '“We must cast out the self-elements of our space perception—Up/Down, Right/Left—and learn to intuit the fourth orthogonal direction: Ana and Kata.” — Charles Howard Hinton (1888)',
+        blurb: 'Coining the word "Tesseract" and the directional pair "Ana / Kata" (up-fourth and down-fourth), Victorian mathematician and bigamist exile Charles Howard Hinton devised an extraordinary meditative discipline: supplying readers with 27 and 81 colored wooden cubes—each face, edge, and vertex named in a synthetic Latin vocabulary—so that by memorizing 4D cross-sections passing through 3D space over months of daily practice, the human imagination could directly perceive four-dimensional reality.',
+        useCaseLabel: 'Literary & Geometric Resonance',
+        useCase: 'Direct inspiration for Jorge Luis Borges ("Tlön, Uqbar, Orbis Tertius" & The Book of Sand), Marcel Duchamp’s Bride Stripped Bare (4D cast shadows), and 4D Schlegel projections.',
+        triadLabels: ['I. Tesseract Plate', 'II. Ana-Kata Drill', 'III. 4D Projection'],
+        exegesis: {
+            stakes: 'Just as a two-dimensional creature in Edwin Abbott’s Flatland (1884) can only perceive a 3D sphere as a circle that mysteriously grows and shrinks over time, Hinton argued that three-dimensional humans can train their spatial intuition to grasp a 4D hypercube (8 bounding cubic cells, 24 faces, 32 edges, 16 vertices) by internalizing either its temporal 3D slices (colored cube drills) or its unfolded 3D net (the 8-cube hyper-cross).',
+            mechanics: 'The left apparatus renders the Schlegel perspective projection of the Tesseract (an inner kata-cube suspended via 8 diagonal w-axis struts inside an outer ana-cube). The right apparatus renders the unfolded 3D net of the 8 bounding cubes (the octachoron cross later painted by Salvador Dalí in Corpus Hypercubus, 1954), color-coded by Hinton’s 1888 mnemonic tinctures.',
+            lineage: 'Edited and championed by Jorge Luis Borges in his Biblioteca Personal (who called Hinton’s cube exercises "both a discipline of the ascetic imagination and a vertigo"), and pivotal to P. D. Ouspensky, Kazimir Malevich’s fourth-dimensional Suprematism, and Marcel Duchamp’s Notes.'
+        },
+        relatedPlates: ['bruno', 'lewitt', 'poincare', 'malevich'],
+        scriptLang: 'Hintonian 4D Hypercube Rotation (XW/YW Plane) & Schlegel Projection',
+        script: `<span class="code-comment"># Charles Howard Hinton — A New Era of Thought (1888)</span>
+<span class="code-comment"># 16 Vertices of the Unit Tesseract in R^4: (±1, ±1, ±1, ±1)</span>
+<span class="code-comment"># 4th Axis Directions: +w = ANA ("upward in 4D") | -w = KATA ("downward in 4D")</span>
+
+<span class="code-keyword">import</span> math
+
+<span class="code-keyword">def</span> <span class="code-func">project_tesseract_vertex</span>(x, y, z, w, angle_xw=0.45, camera_w=2.8):
+    <span class="code-string">"""Rotates 4D vertex in the (X, W) Ana-Kata plane and projects to 2D."""</span>
+    xr = x * math.cos(angle_xw) - w * math.sin(angle_xw)
+    wr = x * math.sin(angle_xw) + w * math.cos(angle_xw)
+    scale = 1.0 / (camera_w - wr)
+    <span class="code-keyword">return</span> (xr * scale, y * scale, z * scale)`,
+        builderControls: [
+            { id: 'kataScale', label: 'Inner Kata-Cube Perspective Scale', type: 'range', min: 22, max: 58, value: 36 },
+            { id: 'anaKataShift', label: '4D Ana-Kata Oblique Shear (px)', type: 'range', min: -28, max: 28, value: 12 },
+            { id: 'tinctureMode', label: 'Hinton 1888 Color-Cube Tinctures', type: 'select', options: ['Active (Ochre / Rust / Teal 4D Faces)', 'Pure Stereometric Wireframe'] }
+        ],
+        renderSvg: (params) => {
+            const inner = params ? parseInt(params.kataScale) : 36;
+            const shear = params ? parseInt(params.anaKataShift) : 12;
+            const showCol = params ? String(params.tinctureMode).includes('Active') : true;
+
+            const cx = 148, cy = 128, outer = 68;
+            const icx = cx + shear, icy = cy - shear * 0.6;
+
+            // Outer Ana-Cube and Inner Kata-Cube vertices
+            const oPts = [
+                [cx - outer, cy - outer], [cx + outer, cy - outer],
+                [cx + outer, cy + outer], [cx - outer, cy + outer]
+            ];
+            const iPts = [
+                [icx - inner, icy - inner], [icx + inner, icy - inner],
+                [icx + inner, icy + inner], [icx - inner, icy + inner]
+            ];
+
+            let wStruts = '';
+            for (let k = 0; k < 4; k++) {
+                wStruts += `<line x1="${oPts[k][0]}" y1="${oPts[k][1]}" x2="${iPts[k][0]}" y2="${iPts[k][1]}" stroke="#e09f5a" stroke-width="1.6" class="interactive-path" data-info="4th-Dimensional Ana-Kata Strut #${k + 1}: Connects 3D outer cell to 4D displaced inner cell"/>`;
+            }
+
+            return `<svg viewBox="0 0 490 255" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="490" height="255" fill="#191613"/>
+
+                <!-- LEFT: Schlegel Projection of the Tesseract (8-Cell) -->
+                <text x="148" y="24" font-family="Courier New" font-size="8" fill="#e09f5a" text-anchor="middle">I. SCHLEGEL TESSERACT (ANA ↔ KATA)</text>
+                ${showCol ? `<polygon points="${oPts[0].join(',')} ${oPts[1].join(',')} ${iPts[1].join(',')} ${iPts[0].join(',')}" fill="#9e3b22" opacity="0.22"/>` : ''}
+                ${showCol ? `<polygon points="${oPts[1].join(',')} ${oPts[2].join(',')} ${iPts[2].join(',')} ${iPts[1].join(',')}" fill="#2a5a5b" opacity="0.25"/>` : ''}
+                
+                <rect x="${cx - outer}" y="${cy - outer}" width="${outer * 2}" height="${outer * 2}" fill="none" stroke="#f4efe6" stroke-width="2"
+                      class="interactive-path" data-info="Outer Cubic Cell (Ana = +w): Bounding three-dimensional envelope"/>
+                ${wStruts}
+                <rect x="${icx - inner}" y="${icy - inner}" width="${inner * 2}" height="${inner * 2}" fill="${showCol ? 'rgba(224,159,90,0.14)' : 'none'}" stroke="#82c0c2" stroke-width="2"
+                      class="interactive-path" data-info="Inner Cubic Cell (Kata = −w): Displaced along the fourth orthogonal axis"/>
+
+                <!-- RIGHT: Unfolded 8-Cube Octachoron Cross + Latin Tinctures -->
+                <text x="372" y="24" font-family="Courier New" font-size="8" fill="#82c0c2" text-anchor="middle">II. UNFOLDED OCTACHORON NET (8 CUBES)</text>
+                <g class="interactive-path" data-info="Unfolded 3D Net of the Tesseract: 8 cubic cells folded through 4-space along shared 2D faces">
+                    <rect x="354" y="42" width="34" height="34" fill="#9e3b22" fill-opacity="0.45" stroke="#f4efe6" stroke-width="1.3"/>
+                    <rect x="354" y="76" width="34" height="34" fill="#e09f5a" fill-opacity="0.55" stroke="#f4efe6" stroke-width="1.5"/>
+                    <rect x="320" y="76" width="34" height="34" fill="#2a5a5b" fill-opacity="0.45" stroke="#f4efe6" stroke-width="1.3"/>
+                    <rect x="388" y="76" width="34" height="34" fill="#2a5a5b" fill-opacity="0.45" stroke="#f4efe6" stroke-width="1.3"/>
+                    <rect x="354" y="110" width="34" height="34" fill="#c88a2d" fill-opacity="0.45" stroke="#f4efe6" stroke-width="1.3"/>
+                    <rect x="354" y="144" width="34" height="34" fill="#9e3b22" fill-opacity="0.45" stroke="#f4efe6" stroke-width="1.3"/>
+                    <rect x="364" y="66" width="34" height="34" fill="none" stroke="#82c0c2" stroke-width="1.2" stroke-dasharray="2,2"/>
+                </g>
+
+                <text x="371" y="202" font-family="Georgia" font-style="italic" font-size="8.5" fill="#c8b9a6" text-anchor="middle">
+                    Hinton Vocabulary: “Uras · Itul ·溪 (Ana/Kata)”
+                </text>
+                <text x="245" y="238" font-family="Courier New" font-size="8" fill="#a89b8c" text-anchor="middle">
+                    16 VERTICES • 32 EDGES • 24 SQUARE FACES • 8 BOUNDING CUBES
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXXVII — OSKAR SCHLEMMER: BAUHAUS RAUMLINEATUR (1924–1928)
+       ====================================================================== */
+    {
+        id: 'schlemmer-raumlineatur',
+        number: 'PLATE XXXVII',
+        refCode: 'REF: BAU-1925-SCHLEMMER',
+        title: 'Oskar Schlemmer’s Raumlineatur (Man in the Sphere of Space)',
+        subtitle: 'Stereometric Stage Diagonals & Kinespheric Gesture Loops (Bauhaus, 1925)',
+        thinker: 'Oskar Schlemmer',
+        year: '1925',
+        yearSort: 1925,
+        provenance: 'Bauhaus Weimar / Dessau • Bauhausbücher 4 (Die Bühne im Bauhaus)',
+        category: 'experimental',
+        categoryLabel: 'Experimental & Avant-Garde • Stereometric Choreography',
+        secondaryTags: ['Bauhaus Stage', 'Raumlineatur', 'Gesture Kinematics', 'Kunstfigur'],
+        mold: 'nocturnal',
+        axiomQuote: '“The laws of surrounding cubical space are the invisible linear network of planimetric and stereometric relationships; to this enters Man, whose organic gesture creates an ambulatory architecture.” — Oskar Schlemmer (1925)',
+        blurb: 'As Master of the Bauhaus Stage Workshop, Oskar Schlemmer mapped the dialectical collision between the abstract Euclidean geometry of the room (Raumlineatur: the taut wireframe of room diagonals, axes, and meridians) and the organic biomechanics of the dancer’s body—synthesizing both into the Kunstfigur (Art-Figure) encased in gyroscopic rings, spiral coils, and metallic clavicles.',
+        useCaseLabel: 'Choreographic & Gestural Resonance',
+        useCase: 'Direct visual anchor for Gesturalist Core Theory (embodied gesture intersecting formal space), motion-capture rigging, and Rudolf Laban’s Kinesphere.',
+        triadLabels: ['I. Raumlineatur', 'II. Gesture Laws', 'III. Stage Apparatus'],
+        exegesis: {
+            stakes: 'Theater historically subordinated space to literary dialogue. Schlemmer reversed this hierarchy: when a human body steps into an empty cubic room, an invisible battle erupts between two geometries—the rigid crystalline laws of the architectural cube and the radial, heartbeat-driven rotational arcs of the human limbs. Costume and choreography exist to make those invisible lines of force visible.',
+            mechanics: 'The diagram overlays two distinct vector systems inside a perspective stage cube: (1) the white/teal straight stereometric diagonals connecting the 8 corners and center-points of the room, and (2) the ochre/rust concentric spirographic orbits (Spirographik) radiating from the dancer’s joints, head, and pelvis—transforming the performer into a living gyroscope at the center of the web.',
+            lineage: 'Published in Die Bühne im Bauhaus (Bauhausbücher 4, 1925) and performed in the Triadic Ballet (Das Triadische Ballett, 1922), deeply influencing Merce Cunningham, Rebecca Horn, and contemporary spatial interface theory.'
+        },
+        relatedPlates: ['klee-sketchbook', 'malevich', 'deleuze-fold', 'hinton-tesseract'],
+        scriptLang: 'Schlemmerian Stereometric Cube-Web & Kinespheric Gyro-Orbit Generator',
+        script: `<span class="code-comment"># Oskar Schlemmer — Mensch und Kunstfigur (Die Bühne im Bauhaus, 1925)</span>
+<span class="code-comment"># Intersects Cubic Room Diagonals (Raumlineatur) with Organic Limb Orbits (Kinesphere)</span>
+
+SCHLEMMER_LAWS = {
+    <span class="code-string">"I_Cubical_Space"</span>:    <span class="code-string">"Stereometric diagonals & orthogonal axes of the stage box"</span>,
+    <span class="code-string">"II_Functional_Body"</span>: <span class="code-string">"Puppet/Marionette joint-vectors, stilts & padded armatures"</span>,
+    <span class="code-string">"III_Rotational_Man"</span>: <span class="code-string">"Top, Snail, Spiral & Disk trajectories in the Kinesphere"</span>,
+    <span class="code-string">"IV_Dematerialized"</span>: <span class="code-string">"Metaphysical symbol-forms (Cross, Infinity-Loop, Star)"</span>
+}`,
+        builderControls: [
+            { id: 'gyroRings', label: 'Kinespheric Gesture Orbits', type: 'range', min: 2, max: 6, value: 4 },
+            { id: 'limbAngle', label: 'Stereometric Limb Extension Angle', type: 'range', min: 15, max: 75, value: 42 },
+            { id: 'cubeLines', label: 'Cubic Raumlineatur Tension Web', type: 'select', options: ['Full Stereometric Room Diagonals', 'Minimalist Horizon & Axis Only'] }
+        ],
+        renderSvg: (params) => {
+            const rings = params ? parseInt(params.gyroRings) : 4;
+            const limb = params ? parseInt(params.limbAngle) : 42;
+            const fullWeb = params ? String(params.cubeLines).includes('Full') : true;
+
+            const cx = 240, cy = 128;
+            let orbits = '';
+            for (let i = 1; i <= rings; i++) {
+                const rx = 24 + i * 22;
+                const ry = 12 + i * 8;
+                const rot = (i % 2 === 0 ? 1 : -1) * (limb * 0.5);
+                orbits += `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="none" stroke="#e09f5a" stroke-width="1.3" transform="rotate(${rot}, ${cx}, ${cy})" class="interactive-path" data-info="Kinespheric Orbit #${i}: Gyroscopic gesture path radiating from the Kunstfigur"/>`;
+            }
+
+            return `<svg viewBox="0 0 480 255" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="480" height="255" fill="#191613"/>
+
+                <!-- Perspective Stage Cube & Stereometric Diagonals (Raumlineatur) -->
+                <rect x="65" y="20" width="350" height="210" fill="none" stroke="#4a4037" stroke-width="1.5"/>
+                <rect x="135" y="55" width="210" height="140" fill="none" stroke="#4a4037" stroke-width="1"/>
+                <g stroke="#82c0c2" stroke-width="0.9" opacity="0.65" class="interactive-path" data-info="Raumlineatur: Invisible linear network of stereometric room diagonals">
+                    <line x1="65" y1="20" x2="415" y2="230"/><line x1="415" y1="20" x2="65" y2="230"/>
+                    ${fullWeb ? `
+                    <line x1="65" y1="20" x2="135" y2="55"/><line x1="415" y1="20" x2="345" y2="55"/>
+                    <line x1="65" y1="230" x2="135" y2="195"/><line x1="415" y1="230" x2="345" y2="195"/>
+                    <line x1="240" y1="20" x2="240" y2="230"/><line x1="65" y1="125" x2="415" y2="125"/>
+                    ` : ''}
+                </g>
+
+                <!-- Concentric Gyroscopic Gesture Orbits -->
+                ${orbits}
+
+                <!-- Central Kunstfigur (Stereometric Dancer) -->
+                <g class="interactive-path" data-info="Die Kunstfigur (The Art-Figure): Synthesis of organic human axis and abstract spatial geometry">
+                    <ellipse cx="${cx}" cy="72" rx="9" ry="12" fill="#f4efe6"/>
+                    <polygon points="${cx - 18},90 ${cx + 18},90 ${cx},132" fill="#9e3b22"/>
+                    <polygon points="${cx},124 ${cx - 15},155 ${cx + 15},155" fill="#f4efe6"/>
+                    <!-- Extended Geometric Limbs -->
+                    <line x1="${cx - 16}" y1="92" x2="${cx - 30 - limb}" y2="${92 - limb * 0.6}" stroke="#f4efe6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="${cx + 16}" y1="92" x2="${cx + 30 + limb}" y2="${92 - limb * 0.6}" stroke="#f4efe6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="${cx - 10}" y1="155" x2="${cx - 18 - limb * 0.4}" y2="208" stroke="#f4efe6" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="${cx + 10}" y1="155" x2="${cx + 18 + limb * 0.4}" y2="208" stroke="#f4efe6" stroke-width="3" stroke-linecap="round"/>
+                </g>
+
+                <text x="240" y="244" font-family="Courier New" font-size="8" fill="#c8b9a6" text-anchor="middle">
+                    RAUMLINEATUR × KINESPHERE (${rings} GYROSCOPIC ORBITS • ${limb}° EXTENSION)
+                </text>
+            </svg>`;
+        }
+    },
+
+    /* ======================================================================
+       PLATE XXXVIII — RENÉ THOM: CUSP CATASTROPHE MANIFOLD (1972)
+       ====================================================================== */
+    {
+        id: 'thom-catastrophe',
+        number: 'PLATE XXXVIII',
+        refCode: 'REF: TOP-1972-THOM',
+        title: 'René Thom’s Cusp Catastrophe Manifold & Bifurcation Fold',
+        subtitle: 'Smooth Differential Potential V(x) = ¼x⁴ + ½ax² + bx & Discontinuous Morphogenesis (1972)',
+        thinker: 'René Thom & E. C. Zeeman',
+        year: '1972',
+        yearSort: 1972,
+        provenance: 'Bures-sur-Yvette (IHÉS) • Stabilité structurelle et morphogénèse',
+        category: 'hypercomplex',
+        categoryLabel: 'Hyper-Complex & Nuanced • Differential Morphogenesis',
+        secondaryTags: ['Catastrophe Theory', 'Bifurcation Cusp', 'Hysteresis Jump', 'Morphogenesis'],
+        mold: 'wide',
+        axiomQuote: '“All creation or destruction of forms—all morphogenesis—can be described by the disappearance of attractors on a smooth folded manifold.” — René Thom (1972)',
+        blurb: 'How do smooth, gradual, continuous changes in underlying forces suddenly trigger violent, discontinuous leaps in form—the breaking of an ocean wave, the snapping of a beam, the sudden shift from fear to rage, or the semantic bifurcation of a verb? Fields Medalist René Thom proved that for systems governed by up to four control parameters, all generic discontinuities classify into exactly seven elementary topological surfaces, anchored by the Cusp Catastrophe.',
+        useCaseLabel: 'Topological & Morphogenetic Resonance',
+        useCase: 'Phase transitions with hysteresis memory, semantic verb valency topologies (Thom’s linguistic archetypes), and sudden paradigm shifts.',
+        triadLabels: ['I. Cusp Manifold', 'II. Potential V(x)', 'III. Bifurcation Stage'],
+        exegesis: {
+            stakes: 'Classical Newtonian calculus was built to describe smooth, continuous processes; whenever a physical or biological system jumped discontinuously (a phase transition, an embryological fold, a sudden linguistic shift), continuous differential equations seemed to fail. Thom used Whitney’s singularity theory of smooth mappings to prove that discontinuous jumps are the natural geometric shadow of a smooth surface folded over itself in higher-dimensional space.',
+            mechanics: 'In the canonical Cusp Catastrophe with potential V(x) = ¼x⁴ + ½ax² + bx, the equilibrium surface M is given by dV/dx = x³ + ax + b = 0 in 3D space (a, b, x). Above the control plane (a, b), the surface M develops an S-shaped pleat. Projecting the two fold edges downward onto the horizontal control plane traces the semi-cubical parabola 4a³ + 27b² = 0 (the Bifurcation Set). When a trajectory crosses the far edge of the cusp, the state drops vertically off the upper sheet onto the lower sheet.',
+            lineage: 'Published in Stabilité structurelle et morphogénèse (1972), applied to behavioral and biological transitions by E. C. Zeeman, and admired by Salvador Dalí (whose final paintings, The Swallow’s Tail, 1983, were dedicated directly to René Thom).'
+        },
+        relatedPlates: ['deleuze-fold', 'poincare', 'xenakis', 'spencer-brown'],
+        scriptLang: 'Thomian Quartic Potential dV/dx = x³ + ax + b = 0 & Cardan Discriminant Solver',
+        script: `<span class="code-comment"># René Thom — Stabilité structurelle et morphogénèse (1972)</span>
+<span class="code-comment"># Elementary Catastrophe #2 (The Cusp / Riemann-Hugoniot Manifold)</span>
+<span class="code-comment"># Equilibrium Manifold M: x^3 + a*x + b = 0  |  Bifurcation Cusp: 4*a^3 + 27*b^2 = 0</span>
+
+<span class="code-keyword">def</span> <span class="code-func">cusp_discriminant_regime</span>(splitting_a, normal_b):
+    delta = 4 * (splitting_a ** 3) + 27 * (normal_b ** 2)
+    <span class="code-keyword">if</span> delta < 0:
+        <span class="code-keyword">return</span> {
+            <span class="code-string">"regime"</span>: <span class="code-string">"BIMODAL HYSTERESIS ZONE (Inside Cusp: Δ < 0)"</span>,
+            <span class="code-string">"sheets"</span>: <span class="code-string">"2 Stable Attractors (Upper & Lower) + 1 Unstable Middle Pleat"</span>
+        }
+    <span class="code-keyword">elif</span> delta == 0:
+        <span class="code-keyword">return</span> {<span class="code-string">"regime"</span>: <span class="code-string">"CATASTROPHIC FOLD THRESHOLD (Δ = 0: Sudden Vertical Jump)"</span>}
+    <span class="code-keyword">return</span> {<span class="code-string">"regime"</span>: <span class="code-string">"UNIMODAL CONTINUOUS SHEET (Outside Cusp: Δ > 0)"</span>}`,
+        builderControls: [
+            { id: 'pleatDepth', label: 'Upper Manifold S-Pleat Overhang', type: 'range', min: 15, max: 65, value: 42 },
+            { id: 'controlPath', label: 'Control Parameter b (Cross-Cusp Sweep)', type: 'range', min: -40, max: 40, value: 24 },
+            { id: 'showPlumb', label: 'Catastrophic Vertical Jump Vector', type: 'select', options: ['Show Hysteresis Cliff Jump (Upper → Lower Sheet)', 'Manifold & Bifurcation Cusp Only'] }
+        ],
+        renderSvg: (params) => {
+            const pleat = params ? parseInt(params.pleatDepth) : 42;
+            const bPos = params ? parseInt(params.controlPath) : 24;
+            const showJump = params ? String(params.showPlumb).includes('Show') : true;
+
+            const jumpX = 250 + bPos;
+
+            return `<svg viewBox="0 0 510 255" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect width="510" height="255" fill="#fcfaf5"/>
+
+                <!-- UPPER 3D FOLDED EQUILIBRIUM MANIFOLD (M: x³ + ax + b = 0) -->
+                <path d="M 75 52 L 285 26 C ${285 + pleat} 58, ${215 - pleat} 82, 265 112 L 435 95 L 385 138 L 125 142 C ${195 - pleat} 105, ${275 + pleat} 82, 165 62 Z"
+                      fill="#f4e8e4" fill-opacity="0.78" stroke="#2b241f" stroke-width="1.8"
+                      class="interactive-path" data-info="Equilibrium Surface M (x³ + ax + b = 0): Smooth 3D manifold with an S-shaped unstable middle pleat"/>
+
+                <!-- S-Fold Edge Highlight on Upper Manifold -->
+                <path d="M 245 48 C ${285 + pleat} 68, ${195 - pleat} 96, 265 122" fill="none" stroke="#9e3b22" stroke-width="2.5"
+                      class="interactive-path" data-info="Singularity Fold Curve (3x² + a = 0): Edge where the upper stable attractor vanishes"/>
+
+                <!-- LOWER 2D CONTROL PLANE (a, b) & BIFURCATION CUSP (4a³ + 27b² = 0) -->
+                <polygon points="85,172 395,156 445,232 135,244" fill="#ebe4d5" stroke="#8c8070" stroke-width="1.2"
+                         class="interactive-path" data-info="Control Parameter Plane (a = Splitting Factor, b = Normal Factor)"/>
+                
+                <!-- Semi-Cubical Parabola Cusp -->
+                <path d="M 195 236 Q 255 202 252 178 Q 258 202 335 228" fill="#9e3b22" fill-opacity="0.18" stroke="#9e3b22" stroke-width="2.2"
+                      class="interactive-path" data-info="Bifurcation Cusp (4a³ + 27b² = 0): Shadow of the upper fold where bimodal hysteresis occurs"/>
+
+                ${showJump ? `
+                <!-- Vertical Projection Plumb & Sudden Catastrophe Jump -->
+                <line x1="${jumpX}" y1="58" x2="${jumpX}" y2="118" stroke="#9e3b22" stroke-width="2.5" stroke-dasharray="3,2"
+                      class="interactive-path" data-info="Catastrophic Jump: Instantaneous vertical leap from upper sheet to lower sheet at fold threshold"/>
+                <circle cx="${jumpX}" cy="58" r="4" fill="#9e3b22"/>
+                <circle cx="${jumpX}" cy="118" r="4" fill="#2a5a5b"/>
+                <line x1="${jumpX}" y1="118" x2="${jumpX}" y2="210" stroke="#2a5a5b" stroke-width="1.1" stroke-dasharray="2,2"/>
+                <circle cx="${jumpX}" cy="210" r="3.5" fill="#2a5a5b"/>
+                ` : ''}
+
+                <text x="85" y="24" font-family="Courier New" font-size="8.5" font-weight="bold" fill="#2b241f">MANIFOLD M: dV/dx = x³ + ax + b = 0</text>
+                <text x="375" y="218" font-family="Courier New" font-size="8" font-weight="bold" fill="#9e3b22" text-anchor="middle">4a³ + 27b² = 0</text>
+            </svg>`;
+        }
+    }
+];
+
+/* ==========================================================================
+   ANNOTATED PRIMARY & SECONDARY BIBLIOGRAPHY APPARATUS FOR ALL 32 PLATES
+   ========================================================================== */
+const PLATE_BIBLIOGRAPHY = {
+    'spencer-brown': {
+        primary: 'Spencer-Brown, George. Laws of Form. London: Allen & Unwin, 1969 (Prefaced by Bertrand Russell; expanded ed. Julian Press, 1972).',
+        secondary: 'Varela, Francisco J., “A Calculus for Self-Reference,” Int. J. General Systems 2.1 (1975): 5–24; Luhmann, Niklas, Theories of Distinction: Redescribing the Descriptions of Modernity (Stanford UP, 2002); Kauffman, Louis H., “Self-Reference and Recursive Forms” (1987).'
+    },
+    'husserl': {
+        primary: 'Husserl, Edmund. Vorlesungen zur Phänomenologie des inneren Zeitbewußtseins (1905–1917), ed. Edith Stein & Martin Heidegger (1928); Husserliana Vol. X (Nijhoff, 1966, §10 & §43).',
+        secondary: 'Derrida, Jacques, Speech and Phenomena (1967); Merleau-Ponty, Maurice, Phenomenology of Perception (1945, Part III, Ch. 2); Kortooms, Toine, Phenomenology of Time (Kluwer, 2002).'
+    },
+    'peirce': {
+        primary: 'Peirce, Charles Sanders. Lowell Lectures of 1903 (“Syllabus of Certain Topics of Logic”) & MS 514 (1909), in Collected Papers Vol. 4, Book II: “Existential Graphs” (Harvard UP, 1933).',
+        secondary: 'Stjernfelt, Frederik, Diagrammatology: An Investigation on the Borderlines of Phenomenology, Ontology, and Semiotics (Springer, 2007); Shin, Sun-Joo, The Iconic Logic of Peirce’s Graphs (MIT Press, 2002).'
+    },
+    'frege': {
+        primary: 'Frege, Gottlob. Begriffsschrift, eine der arithmetischen nachgebildete Formelsprache des reinen Denkens. Halle a. S.: Verlag von Louis Nebert, 1879.',
+        secondary: 'Macbeth, Danielle, Frege’s Logic (Harvard UP, 2005); Krämer, Sybille, Symbolische Maschinen: Die Idee der Formalisierung in geschichtlichem Abriß (1988).'
+    },
+    'malevich': {
+        primary: 'Malevich, Kazimir. Die Gegenstandslose Welt (The Non-Objective World). Bauhausbücher 11, ed. Walter Gropius & László Moholy-Nagy (Munich: Albert Langen, 1927); GINKhUK Analytical Charts (1924–1927).',
+        secondary: 'Tupitsyn, Margarita, Malevich and Film (Yale UP, 2002); Bois, Yve-Alain, “Malevich, the Square, the High-Wire” (Guggenheim, 2003).'
+    },
+    'lewitt': {
+        primary: 'LeWitt, Sol. Incomplete Open Cubes. New York: John Weber Gallery, 1974.',
+        secondary: 'Krauss, Rosalind, “LeWitt in Progress,” October 6 (1978): 46–60; Baume, Nicholas, ed., Sol LeWitt: Incomplete Open Cubes (MIT Press, 2001).'
+    },
+    'greimas': {
+        primary: 'Greimas, Algirdas Julien, & François Rastier. “The Interaction of Semiotic Constraints,” Yale French Studies 41 (1968): 86–105; Greimas, Du Sens (Paris: Seuil, 1970).',
+        secondary: 'Jameson, Fredric, The Political Unconscious: Narrative as a Socially Symbolic Act (Cornell UP, 1981); Krauss, Rosalind, “Sculpture in the Expanded Field,” October 8 (1979): 30–44.'
+    },
+    'deleuze-fold': {
+        primary: 'Deleuze, Gilles. Le Pli: Leibniz et le Baroque. Paris: Les Éditions de Minuit, 1988 (Ch. 1, p. 7). Trans. Tom Conley as The Fold: Leibniz and the Baroque (Minnesota UP, 1993).',
+        secondary: 'Cache, Bernard, Earth Moves: The Furnishing of Territories (MIT Press, 1995); Badiou, Alain, “Gilles Deleuze, The Fold” (Routledge, 1994).'
+    },
+    'lacan-borromean': {
+        primary: 'Lacan, Jacques. Le Séminaire, Livre XX: Encore (Paris: Seuil, 1975); Livre XXII: R.S.I. (1974–1975); & Livre XXIII: Le Sinthome (Paris: Seuil, 2005).',
+        secondary: 'Rabaté, Jean-Michel, Jacques Lacan: Psychoanalysis and the Subject of Literature (Palgrave, 2001); Ragland, Ellie, & Dragan Milovanovic, eds., Lacan: Topologically Speaking (2004).'
+    },
+    'serres-chiasmus': {
+        primary: 'Serres, Michel. Le Parasite. Paris: Éditions Grasset, 1980. Trans. Lawrence R. Schehr as The Parasite (Johns Hopkins UP, 1982).',
+        secondary: 'Atlan, Henri, Entre le cristal et la fumée (Seuil, 1979); Brown, Steven D., “Michel Serres: Science, Translation and the Logic of the Parasite,” Theory, Culture & Society 19.3 (2002).'
+    },
+    'llull': {
+        primary: 'Llull, Ramon. Ars generalis ultima (1305–1308) & Ars brevis (Pisa, 1308), in Raimundi Lulli Opera Latina Vol. XIV (Brepols, 1986); trans. Anthony Bonner, Selected Works of Ramon Llull (Princeton UP, 1985).',
+        secondary: 'Bonner, Anthony, The Art and Logic of Ramon Llull (Brill, 2007); Eco, Umberto, The Search for the Perfect Language (Blackwell, 1995, Ch. 4); Gardner, Martin, Logic Machines and Diagrams (1958).'
+    },
+    'fludd': {
+        primary: 'Fludd, Robert. Utriusque Cosmi Maioris Scilicet et Minoris Metaphysica, Physica Atque Technica Historia, Tomus I. Oppenheim: Johann Theodor de Bry, engraved by Matthäus Merian, 1617.',
+        secondary: 'Pauli, Wolfgang, “The Influence of Archetypal Ideas on the Scientific Theories of Kepler” (Bollingen, 1955); Godwin, Joscelyn, Robert Fludd: Hermetic Philosopher and Surveyor of Two Worlds (1979).'
+    },
+    'bruno': {
+        primary: 'Bruno, Giordano. De umbris idearum (Paris: Aegidius Gorbinus, 1582) & Explicatio triginta sigillorum (London, 1583), in Opere mnemotiche, ed. Michele Ciliberto, Marco Matteoli, & Rita Sturlese (Adelphi, 2004).',
+        secondary: 'Yates, Frances A., The Art of Memory (1966, Ch. 9); Sturlese, Rita, “Per un’interpretazione del De umbris idearum” (1992); Couliano, Ioan P., Eros and Magic in the Renaissance (1987).'
+    },
+    'leibniz-iching': {
+        primary: 'Leibniz, Gottfried Wilhelm. “Explication de l’Arithmétique Binaire... avec des remarques sur ce qu’elle donne le sens des anciennes figures chinoises de Fohy,” Mémoires de l’Académie Royale des Sciences (1703): 85–89.',
+        secondary: 'Strickland, Lloyd, & Harry R. Lewis, Leibniz on Binary: The Invention of Computer Arithmetic (MIT Press, 2022); Perkins, Franklin, Leibniz and China: A Commerce of Light (Cambridge UP, 2004).'
+    },
+    'sterne-shklovsky': {
+        primary: 'Sterne, Laurence. The Life and Opinions of Tristram Shandy, Gentleman, Vol. VI, Ch. 40 (London, 1762); Shklovsky, Viktor, Tristram Shandy Sterna i teoriia romana (Petrograd: Opoiaz, 1921).',
+        secondary: 'Shklovsky, Viktor, Theory of Prose, trans. Benjamin Sher (Dalkey Archive, 1990); Drucker, Johanna, Graphesis: Visual Forms of Knowledge Production (Harvard UP, 2014).'
+    },
+    'mallarme': {
+        primary: 'Mallarmé, Stéphane. “Un Coup de Dés jamais n’abolira le Hasard,” Cosmopolis 6.17 (May 1897): 417–427 (Vollard/NRF Didot Folio, 1914); Broodthaers, Marcel, Un coup de dés: Image (Antwerp, 1969).',
+        secondary: 'Meillassoux, Quentin, The Number and the Siren: A Decipherment of Mallarmé’s Coup de Dés (Urbanomic, 2012); Valéry, Paul, “Le Coup de dés” (1920).'
+    },
+    'perec-oulipo': {
+        primary: 'Perec, Georges. La Vie mode d’emploi: Romans (Paris: Hachette / P.O.L, 1978); Perec, Cahier des charges de La Vie mode d’emploi, ed. Hans Hartje, Bernard Magné, & Jacques Neefs (CNRS / Zulma, 1993).',
+        secondary: 'Motte, Warren F., Jr., “Clinamen Redux,” Contemporary Literature 27.3 (1986): 263–281; Bellos, David, Georges Perec: A Life in Words (1993).'
+    },
+    'cardew': {
+        primary: 'Cardew, Cornelius. Treatise (193 Folio Pages). Buffalo, NY: Gallery Upstairs Press, 1967; Treatise Handbook (London: Edition Peters, 1971).',
+        secondary: 'Tilbury, John, Cornelius Cardew (1936–1981): A Life Unfinished (Copula, 2008); Dennis, Brian, “Cardew’s Treatise (Mainly the Visual Aspects),” Tempo 177 (1991).'
+    },
+    'nabokov': {
+        primary: 'Nabokov, Vladimir. Lectures on Literature, ed. Fredson Bowers (New York: Harcourt Brace Jovanovich, 1980, “James Joyce’s Ulysses,” pp. 285–370).',
+        secondary: 'Moretti, Franco, Atlas of the European Novel 1800–1900 (Verso, 1998); Bakhtin, Mikhail, “Forms of Time and of the Chronotope in the Novel” (1937–1938).'
+    },
+    'kunz': {
+        primary: 'Kunz, Emma. Das Wunder der schöpferischen Offenbarung: Gestaltung und Form als Maß, Rhythmus, Symbol und Wandlung von Zahl und Prinzip. Waldstatt, 1953.',
+        secondary: 'Zegher, Catherine de, & Hendel Teicher, eds., 3 × Abstraction: Hilma af Klint, Emma Kunz, and Agnes Martin (Yale UP, 2005); Szeemann, Harald, Emma Kunz (1973).'
+    },
+    'xenakis': {
+        primary: 'Xenakis, Iannis. Metastaseis B (1953–1954; Boosey & Hawkes, 1967) & Musiques formelles (1963), expanded as Formalized Music: Thought and Mathematics in Composition (Indiana UP, 1971).',
+        secondary: 'Kanach, Sharon, ed., Music and Architecture by Iannis Xenakis (Pendragon Press, 2008).'
+    },
+    'alexander': {
+        primary: 'Alexander, Christopher. “A City is Not a Tree,” Architectural Forum 122.1–2 (April–May 1965): 58–62.',
+        secondary: 'Mehaffy, Michael W., ed., A City is Not a Tree: 50th Anniversary Edition (Sustasis Press, 2015); Deleuze, Gilles, & Félix Guattari, A Thousand Plateaus (1980, “Introduction: Rhizome”).'
+    },
+    'poincare': {
+        primary: 'Poincaré, Henri. “Théorie des groupes fuchsiens,” Acta Mathematica 1 (1882): 1–62; La Science et l’Hypothèse (Paris: Flammarion, 1902).',
+        secondary: 'Stillwell, John, Sources of Hyperbolic Geometry (AMS, 1996); Nickel, Maximilian, & Douwe Kiela, “Poincaré Embeddings for Learning Hierarchical Representations” (NeurIPS, 2017).'
+    },
+    'beer-vsm': {
+        primary: 'Beer, Stafford. Brain of the Firm: The Managerial Cybernetics of Organization. London: Allen Lane, 1972 (2nd ed. with Project Cybersyn chapters, Wiley, 1981).',
+        secondary: 'Medina, Eden, Cybernetic Revolutionaries: Technology and Politics in Allende’s Chile (MIT Press, 2011); Pickering, Andrew, The Cybernetic Brain (Chicago UP, 2010).'
+    },
+    'marey': {
+        primary: 'Marey, Étienne-Jules. La Méthode graphique dans les sciences expérimentales. Paris: G. Masson, 1878 / 1885 (Fig. 9, p. 20, after Charles Ibry).',
+        secondary: 'Braun, Marta, Picturing Time: The Work of Etienne-Jules Marey (Chicago UP, 1992); Tufte, Edward R., The Visual Display of Quantitative Information (1983).'
+    },
+    'dubois': {
+        primary: 'Du Bois, W. E. B., & Atlanta University Sociology Laboratory. The Georgia Negro: A Social Study (Exposition Universelle, Paris, 1900; Library of Congress LOT 11931).',
+        secondary: 'Battle-Baptiste, Whitney, & Britt Rusert, eds., W. E. B. Du Bois’s Data Portraits: Visualizing Black America (Princeton Architectural Press, 2018).'
+    },
+    'minard': {
+        primary: 'Minard, Charles Joseph. Carte figurative des pertes successives en hommes de l’Armée Française dans la campagne de Russie 1812–1813. Paris: Regnier & Dourdet, 20 Nov 1869.',
+        secondary: 'Rendgen, Sandra, The Minard System: The Complete Statistical Graphics of Charles-Joseph Minard (Princeton Architectural Press, 2018).'
+    },
+    'priestley': {
+        primary: 'Priestley, Joseph. A Chart of Biography & A Description of a Chart of Biography. Warrington / London: J. Bowles, 1765.',
+        secondary: 'Rosenberg, Daniel, & Anthony Grafton, Cartographies of Time: A History of the Timeline (Princeton Architectural Press, 2010, Ch. 4).'
+    },
+    'porphyry': {
+        primary: 'Porphyry of Tyre. Isagoge (c. 270 AD), Latin trans. & commentary by Boethius (c. 510 AD); Eco, Umberto, Semiotics and the Philosophy of Language (Indiana UP, 1984, Ch. 2).',
+        secondary: 'Verboon, Annemieke R., Lines of Thought: Branching Diagrams and the Medieval Mind (Brill, 2010).'
+    },
+    'chernoff': {
+        primary: 'Chernoff, Herman. “The Use of Faces to Represent Points in k-Dimensional Space Graphically,” Journal of the American Statistical Association 68.342 (June 1973): 361–368.',
+        secondary: 'Friendly, Michael, & Howard Wainer, A History of Data Visualization and Graphic Communication (Harvard UP, 2021).'
+    },
+    'sankey': {
+        primary: 'Sankey, Capt. H. Riall. “Introductory Note on the Thermal Efficiency of Steam-Engines,” Minutes of Proceedings of the Institution of Civil Engineers 134 (1898): 278–283, Plate 5.',
+        secondary: 'Schmidt, Mario, “The Sankey Diagram in Energy and Material Flow Management,” Journal of Industrial Ecology 12.1 (2008): 82–94.'
+    },
+    'nightingale': {
+        primary: 'Nightingale, Florence. Notes on Matters Affecting the Health, Efficiency, and Hospital Administration of the British Army. London: Harrison and Sons, 1858.',
+        secondary: 'Small, Hugh, Florence Nightingale: Avenging Angel (1998); Friendly & Wainer, A History of Data Visualization (Harvard UP, 2021).'
+    },
+    'klee-sketchbook': {
+        primary: 'Klee, Paul. Pädagogisches Skizzenbuch (Bauhausbücher 2, ed. Walter Gropius & László Moholy-Nagy). Munich: Albert Langen Verlag, 1925. Trans. Sibyl Moholy-Nagy as Pedagogical Sketchbook (1953).',
+        secondary: 'Deleuze, Gilles, & Félix Guattari, A Thousand Plateaus (1980, “1837: Of the Refrain”); Boulez, Pierre, Le Pays fertile: Paul Klee (Gallimard, 1989).'
+    },
+    'spinoza-dag': {
+        primary: 'Spinoza, Baruch. Ethica Ordine Geometrico Demonstrata (Part I: De Deo), in Opera Posthuma (Amsterdam, 1677). Trans. Edwin Curley, The Collected Works of Spinoza (Princeton UP, 1985).',
+        secondary: 'Deleuze, Gilles, Spinoza: Practical Philosophy (1970/1981) & Expressionism in Philosophy: Spinoza (1968); Gueroult, Martial, Spinoza I: Dieu (Aubier, 1968).'
+    },
+    'lewin-hodology': {
+        primary: 'Lewin, Kurt. Principles of Topological Psychology (New York: McGraw-Hill, 1936) & The Conceptual Representation and the Measurement of Psychological Forces (Duke UP, 1938).',
+        secondary: 'Sartre, Jean-Paul, Sketch for a Theory of the Emotions (1939); Simondon, Gilbert, Individuation in Light of Notions of Form and Information (1958).'
+    },
+    'hinton-tesseract': {
+        primary: 'Hinton, Charles Howard. A New Era of Thought (London: Swan Sonnenschein, 1888) & The Fourth Dimension (1904).',
+        secondary: 'Borges, Jorge Luis,ed., Charles Howard Hinton: Relatos científicos (Biblioteca Personal, 1986); Henderson, Linda Dalrymple, The Fourth Dimension and Non-Euclidean Geometry in Modern Art (MIT Press, 2013).'
+    },
+    'schlemmer-raumlineatur': {
+        primary: 'Schlemmer, Oskar. “Mensch und Kunstfigur,” in Die Bühne im Bauhaus (Bauhausbücher 4, Munich: Albert Langen, 1925). Trans. as The Theater of the Bauhaus (Wesleyan UP, 1961).',
+        secondary: 'Gropius, Walter, & Arthur S. Wensinger, eds., The Theater of the Bauhaus (1961); Trimingham, Melissa, The Theatre of the Bauhaus: The Modern and Postmodern Stage of Oskar Schlemmer (Routledge, 2011).'
+    },
+    'thom-catastrophe': {
+        primary: 'Thom, René. Stabilité structurelle et morphogénèse: Essai d’une théorie générale des modèles. Reading, MA: W. A. Benjamin, 1972.',
+        secondary: 'Zeeman, E. Christopher, Catastrophe Theory: Selected Papers, 1972–1977 (Addison-Wesley, 1977); Petitot, Jean, Morphogenesis of Meaning (Peter Lang, 2004).'
+    }
+};
+
+/* Build fast key-indexed lookup dictionary while preserving ordered array */
+const DIAGRAM_DATA = {};
+SPECIMEN_LIST.forEach(item => {
+    item.bibliography = PLATE_BIBLIOGRAPHY[item.id] || null;
+    DIAGRAM_DATA[item.id] = item;
+});
+
